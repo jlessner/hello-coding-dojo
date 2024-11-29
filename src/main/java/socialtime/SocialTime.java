@@ -3,14 +3,15 @@ package socialtime;
 public class SocialTime {
 
 	String render(int age){
-		int minutes = age%60;
-		int seconds = age-minutes*60;
+		int minutes = age/60;
+		int seconds = age%60;
 
 		if(age < 10){
 			return "few seconds";
-		}
-		else {
+		} else if (minutes == 0) {
 			return seconds + " seconds";
+		} else {
+			return minutes + " minute(s), " + seconds + " second(s)";
 		}
 	}
 

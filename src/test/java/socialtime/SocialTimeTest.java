@@ -20,5 +20,12 @@ class SocialTimeTest {
 		assertEquals("11 seconds",stringFewMoreSeconds);
 	}
 
+	@Test
+	void renderMinutesAndSeconds() {
+		SocialTime socialTime = new SocialTime();
+		String stringMinutesAndSeconds = socialTime.render(60);
+		assertEquals("1 minute(s), 0 second(s)",stringMinutesAndSeconds);
+	}
+
 
 }
