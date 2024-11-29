@@ -11,7 +11,7 @@ public class SocialTime {
 		} else if (minutes == 0) {
 			return seconds + " seconds";
 		} else {
-			return minutes + " minute(s), " + seconds + " second(s)";
+			return minutes + " minute(s), " + seconds + " seconds";
 		}
 	}
 
