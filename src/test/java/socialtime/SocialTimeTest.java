@@ -34,5 +34,11 @@ class SocialTimeTest {
 		assertEquals("1 minute(s), 9 seconds",stringMinutesAndSeconds);
 	}
 
+	@Test
+	void renderNegativeSeconds() {
+		SocialTime socialTime = new SocialTime();
+		assertThrows(IllegalArgumentException.class, () -> socialTime.render(-1));
+	}
+
 
 }
