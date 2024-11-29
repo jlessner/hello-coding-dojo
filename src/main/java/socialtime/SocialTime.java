@@ -6,12 +6,18 @@ public class SocialTime {
 		int minutes = age/60;
 		int seconds = age%60;
 
+		if(age > 0){
+
+
 		if(age < 10){
 			return "few seconds";
 		} else if (minutes == 0) {
 			return seconds + " seconds";
 		} else {
 			return minutes + " minute(s), " + seconds + " seconds";
+		}
+		} else {
+			throw new IllegalArgumentException("Age must be positive");
 		}
 	}
 
