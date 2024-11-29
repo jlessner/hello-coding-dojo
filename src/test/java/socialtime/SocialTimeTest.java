@@ -24,7 +24,14 @@ class SocialTimeTest {
 	void renderMinutesAndSeconds() {
 		SocialTime socialTime = new SocialTime();
 		String stringMinutesAndSeconds = socialTime.render(60);
-		assertEquals("1 minute(s), 0 second(s)",stringMinutesAndSeconds);
+		assertEquals("1 minute(s), 0 seconds",stringMinutesAndSeconds);
+	}
+
+	@Test
+	void renderMinutesAndSeconds2() {
+		SocialTime socialTime = new SocialTime();
+		String stringMinutesAndSeconds = socialTime.render(69);
+		assertEquals("1 minute(s), 9 seconds",stringMinutesAndSeconds);
 	}
 
 
