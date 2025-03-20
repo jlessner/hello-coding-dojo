@@ -18,7 +18,6 @@ public class SocialTimeTest {
     return Stream.of(
       Arguments.of(60, "1 minute(s), 0 second(s)"),
       Arguments.of(61, "1 minute(s), 1 second(s)")
-
     );
   }
 
