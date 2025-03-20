@@ -1,15 +1,23 @@
 package rostock;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SocialTimeTest {
-  private SocialTime socialTime = new SocialTime();
+  private SocialTime socialTime;
 
-  @Test
-  void testFewSeconds() {
-    assertEquals("few seconds", socialTime.socialTime(1));
-    assertEquals("few seconds", socialTime.socialTime(9));
+  @BeforeEach
+  void setUp() {
+    socialTime = new SocialTime();
+  }
+
+  @ParameterizedTest
+  @ValueSource(ints = {0, 1, 5, 9})
+  void testFewSeconds(int seconds) {
+    assertEquals("few seconds", socialTime.socialTime(seconds));
   }
 }
