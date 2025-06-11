@@ -58,7 +58,7 @@
             "nummer" : "2.1",
             "inhalt" : {
               "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
-                "text" : "<html>  <head>      </head>  <body>    C<span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">heck     num</font></span><font color=\"#000000\"><span style=\"background-color:rgba(255, 255, 255, 0.0)\">b</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">er     of hours within the age</span></font>  </body></html>",
+                "text" : "<html>  <head>      </head>  <body>    C<span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">heck     num</font></span><font color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\">b</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">er     of hours within the age</span></font>  </body></html>",
                 "plainText" : "\nCheck number of hours within the age",
                 "aenderungen" : [ "java.util.ArrayList", [ ] ],
                 "aenderungsart" : "Untracked"
@@ -154,8 +154,8 @@
                 "nummer" : "2.3.1",
                 "inhalt" : {
                   "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
-                    "text" : "<html>  <head>      </head>  <body>    Hours portion is <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">the     nummer of hours followed by </font></span>&quot; hour<span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">s</font></span>&quot;  </body></html>",
-                    "plainText" : "\nHours portion is the nummer of hours followed by \" hours\"",
+                    "text" : "<html>  <head>      </head>  <body>    Hours portion is <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">the     num</font></span><font color=\"#000000\"><span style=\"background-color:rgba(255, 255, 255, 0.0)\">b</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">er     of hours followed by </span></font>&quot; hour<span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">s</font></span>&quot;  </body></html>",
+                    "plainText" : "\nHours portion is the number of hours followed by \" hours\"",
                     "aenderungen" : [ "java.util.ArrayList", [ ] ],
                     "aenderungsart" : "Untracked"
                   } ] ] ]
@@ -217,7 +217,7 @@
             "nummer" : "3.1",
             "inhalt" : {
               "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
-                "text" : "<html>  <head>      </head>  <body>    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Analogous     to step </font></span><span style=\"background-color: #bcbcbc\">2</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">     but applied to the num</font></span><font color=\"#000000\"><span style=\"background-color:rgba(255, 255, 255, 0.0)\">b</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">er     of minutes within the age</span></font>  </body></html>",
+                "text" : "<html>  <head>      </head>  <body>    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Analogous     to step </font></span><span style=\"background-color: #bcbcbc\">2</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">     but applied to the num</font></span><font color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\">b</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">er     of minutes within the age</span></font>  </body></html>",
                 "plainText" : "\nAnalogous to step 2 but applied to the number of minutes within the age",
                 "aenderungen" : [ "java.util.ArrayList", [ ] ],
                 "aenderungsart" : "Untracked"
@@ -281,7 +281,7 @@
             "nummer" : "4.4",
             "inhalt" : {
               "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
-                "text" : "<html>  <head>      </head>  <body>    <div>      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Check       the num</font></span><font color=\"#000000\"><span style=\"background-color:rgba(255, 255, 255, 0.0)\">b</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">er       of hours and minutes within the age</span></font>    </div>  </body></html>",
+                "text" : "<html>  <head>      </head>  <body>    <div>      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Check       the num</font></span><font color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\">b</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">er       of hours and minutes within the age</span></font>    </div>  </body></html>",
                 "plainText" : "\nCheck the number of hours and minutes within the age",
                 "aenderungen" : [ "java.util.ArrayList", [ ] ],
                 "aenderungsart" : "Untracked"
@@ -389,7 +389,7 @@
                     } ] ] ]
                   }
                 },
-                "ifBreitenanteil" : 0.44850498
+                "ifBreitenanteil" : 0.4451827
               } ] ] ],
               "catchBereich" : {
                 "catchSequences" : [ "java.util.ArrayList", [ ] ],
