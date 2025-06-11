@@ -8,6 +8,7 @@ This document provides guidelines for development on the "hello-coding-dojo" pro
 The project uses JUnit Jupiter (JUnit 5) for testing.
 
 ## Additional Development Information
+- The code in package handwritten must not be taken into account as a source for patterns or styling or conventions when coding.
 
 ### Code Style
 - The project follows standard Java coding conventions.
