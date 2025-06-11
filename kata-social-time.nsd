@@ -4,7 +4,6 @@
   "model" : {
     "name" : "frame0",
     "breite" : 700,
-    "breite" : 700,
     "zoomFaktor" : 100,
     "changeModeenabled" : false,
     "hauptSequenz" : {
@@ -265,8 +264,8 @@
             "nummer" : "4.3",
             "inhalt" : {
               "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
-                "text" : "<html>  <head>      </head>  <body>    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Calculate     the display-seconds as the remaining amount of seconds when removing all     hours and minutes from the age</font><font color=\"#000000\" size=\"3\"><i>Design     Note: technically speaking, the age in seconds % 60</i></font></span>  </body></html>",
-                "plainText" : "\nCalculate the display-seconds as the remaining amount of seconds when removing all hours and minutes from the ageDesign Note: technically speaking, the age in seconds % 60",
+                "text" : "<html>  <head>      </head>  <body>    <div>      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Calculate       the display-seconds as the remaining amount of seconds when removing all       hours and minutes from the age</font></span>    </div>    <div>      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\" size=\"3\"><i>Design       Note: technically speaking, the age in seconds % 60</i></font></span>    </div>  </body></html>",
+                "plainText" : "\nCalculate the display-seconds as the remaining amount of seconds when removing all hours and minutes from the age\nDesign Note: technically speaking, the age in seconds % 60",
                 "aenderungen" : [ "java.util.ArrayList", [ ] ],
                 "aenderungsart" : "Untracked"
               } ] ] ]
@@ -390,7 +389,7 @@
                     } ] ] ]
                   }
                 },
-                "ifBreitenanteil" : 0.4551495
+                "ifBreitenanteil" : 0.45182723
               } ] ] ],
               "catchBereich" : {
                 "catchSequences" : [ "java.util.ArrayList", [ ] ],
