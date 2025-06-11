@@ -1,0 +1,1 @@
+Create a class SocialTime in package thementag which implements the functionality specified in kata-social-time.nsd. Let the code structure follow the structure and the wording of the specification where possible. Don't take existing code fom package handwritten into account. Code like an experienced Java developer taking care for elegant code structures.
