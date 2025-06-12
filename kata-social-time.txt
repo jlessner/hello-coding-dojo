@@ -1,0 +1,5 @@
+Postings in a social media platform should not be displayed with date/time of their creation but by their age. Implement a function which displays the age, given as a period of seconds in a reader-friendly style according to the following rules:
+- Display an age of less than 10 seconds as "few seconds", otherwise as "## seconds".
+- An age of a minute or more as "## minute(s), ## second(s)" where the plural 's' should only be displayed for amounts of seconds and minutes more than one.
+- If the age has a minute portion and the number of seconds is less than 10, the seconds should be omitted.
+- An age of an hour or more should be displayed as "## hour(s), ## minute(s)" where the plural 's' should only be displayed for amounts of minutes, and hours more than one. Seconds should be omitted. Minutes should be omitted if they are zero.
