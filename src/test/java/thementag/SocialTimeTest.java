@@ -28,6 +28,20 @@ class SocialTimeTest {
     assertEquals(expected, time);
   }
 
+  @ParameterizedTest
+  @CsvSource({
+      "60, 1 minute(s)",
+      "61, 1 minute(s)",
+      "62, 1 minute(s)",
+      "119, '1 minute(s), 59 seconds'",
+      "120, 2 minute(s)",
+      "121, 2 minute(s)"
+  })
+  void testMinutesAndSeconds(int seconds, String expected) {
+    String time = new SocialTime().socialTime(seconds);
+    assertEquals(expected, time);
+  }
+
   @Test
   void testNegativeSeconds() {
     boolean exception = false;

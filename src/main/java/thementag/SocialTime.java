@@ -27,7 +27,7 @@ public class SocialTime {
     } else {
       int minutes = ageInSeconds / 60;
       int seconds = ageInSeconds % 60;
-      if (seconds == 0) {
+      if (seconds < 10) {
         return minutes + " minute(s)";
       } else {
         return minutes + " minute(s), " + seconds + " seconds";
