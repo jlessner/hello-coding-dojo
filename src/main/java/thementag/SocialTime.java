@@ -2,6 +2,10 @@ package thementag;
 
 public class SocialTime {
 
+  private static final int THRESHOLD_FEW_SECONDS = 10;
+  private static final int SECONDS_PER_MINUTE = 60;
+  private static final int THRESHOLD_SECONDS_DISPLAY_WITH_MINUTES = 10;
+
   /**
    * Convert seconds into string "## seconds" with following rules:
    * - Periods under 10 seconds are represented as "few seconds".
@@ -20,18 +24,33 @@ public class SocialTime {
       throw new IllegalArgumentException("Age in seconds cannot be negative");
     }
 
-    if (ageInSeconds < 10) {
-      return "few seconds";
-    } else if (ageInSeconds < 60) {
-      return ageInSeconds + " seconds";
+    if (ageInSeconds < THRESHOLD_FEW_SECONDS) {
+      return formatFewSeconds();
+    } else if (ageInSeconds < SECONDS_PER_MINUTE) {
+      return formatSecondsOnly(ageInSeconds);
     } else {
-      int minutes = ageInSeconds / 60;
-      int seconds = ageInSeconds % 60;
-      if (seconds < 10) {
-        return minutes + " minute(s)";
-      } else {
-        return minutes + " minute(s), " + seconds + " seconds";
-      }
+      return formatMinutesAndSeconds(ageInSeconds);
+    }
+  }
+
+  private String formatFewSeconds() {
+    return "few seconds";
+  }
+
+  private String formatSecondsOnly(int seconds) {
+    return String.format("%d seconds", seconds);
+  }
+
+  private String formatMinutesAndSeconds(int totalSeconds) {
+    int minutes = totalSeconds / SECONDS_PER_MINUTE;
+    int remainingSeconds = totalSeconds % SECONDS_PER_MINUTE;
+
+    boolean displaySeconds = remainingSeconds >= THRESHOLD_SECONDS_DISPLAY_WITH_MINUTES;
+
+    if (displaySeconds) {
+      return String.format("%d minute(s), %d seconds", minutes, remainingSeconds);
+    } else {
+      return String.format("%d minute(s)", minutes);
     }
   }
 }
