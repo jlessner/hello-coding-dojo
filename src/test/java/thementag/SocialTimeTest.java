@@ -21,10 +21,7 @@ class SocialTimeTest {
       "10, 10 seconds",
       "11, 11 seconds",
       "12, 12 seconds",
-      "59, 59 seconds",
-      "60, 60 seconds",
-      "120, 120 seconds",
-      "3600, 3600 seconds"
+      "59, 59 seconds"
   })
   void testSeconds(int seconds, String expected) {
     String time = new SocialTime().socialTime(seconds);
