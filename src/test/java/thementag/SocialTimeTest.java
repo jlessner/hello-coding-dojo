@@ -63,4 +63,11 @@ class SocialTimeTest {
         assertEquals("1 hour(s), 2 minutes", socialTime.formatTime(3720)); // 1 hour, 2 minutes
     }
 
+    @Test
+    // ERzeuge einen Test für 3 Stunden, 5 Minuten und 30 Sekunden
+    void testThreeHoursFiveMinutesThirtySeconds() {
+        SocialTime socialTime = new SocialTime();
+        assertEquals("3 hour(s), 5 minutes", socialTime.formatTime(11130)); // 3 hours, 5 minutes, 30 seconds
+    }
+
 }
