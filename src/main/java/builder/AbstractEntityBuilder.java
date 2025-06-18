@@ -6,7 +6,7 @@ abstract public class AbstractEntityBuilder {
 
   protected void assertHasBuilt() {
     if (!hasBuilt) {
-      throw new RuntimeException("please run build() or persist() before calling entity().");
+      throw new RuntimeException("please run build() or persist() before accessing the results.");
     }
   }
 
