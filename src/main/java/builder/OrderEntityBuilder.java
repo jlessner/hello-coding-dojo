@@ -18,6 +18,11 @@ public class OrderEntityBuilder extends AbstractEntityBuilder {
     return OrderEntityBuilderDefaults.withDefaults(this);
   }
 
+  public OrderEntityBuilder withCustomerId(int customerId) {
+    orderEntity.setCustomerId(customerId);
+    return this;
+  }
+
   public OrderEntityBuilder withOrderNumber(int orderNumber) {
     orderEntity.setOrderNumber(orderNumber);
     return this;

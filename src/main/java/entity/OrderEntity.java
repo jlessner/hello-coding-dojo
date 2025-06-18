@@ -4,11 +4,20 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class OrderEntity {
+  private int customerId;
   private int orderNumber;
   private Date orderDate;
   private int articleId;
   private int quantity;
   private BigDecimal price;
+
+  public int getCustomerId() {
+    return customerId;
+  }
+
+  public void setCustomerId(int customerId) {
+    this.customerId = customerId;
+  }
 
   public int getArticleId() {
     return articleId;
