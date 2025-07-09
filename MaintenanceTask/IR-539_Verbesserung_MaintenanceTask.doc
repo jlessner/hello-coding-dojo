@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[#IR-539] PRO / PHÖ Verbesserungen MaintenanceTask</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('https://jira.leipziger.cloud/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [IR-539]&nbsp;<a href="https://jira.leipziger.cloud/browse/IR-539">PRO / PHÖ Verbesserungen MaintenanceTask</a>
+            <span class="subText">
+               Created: 24/May/24                   &nbsp;Updated: 11/Sep/24
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">DOR</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Project:</b></td>
+        <td width="80%"><a href="https://jira.leipziger.cloud/secure/BrowseProject.jspa?id=10600">Interstellar</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Component/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Affects Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Fix Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Type:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Story
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Priority:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Medium
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Reporter:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                            <a class="user-hover" rel="hannes.awolin@bertelsmann.de" id="word_reporter_hannes.awolin@bertelsmann.de" href="https://jira.leipziger.cloud/secure/ViewProfile.jspa?name=hannes.awolin%40bertelsmann.de">Hannes Awolin</a>
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Assignee:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                    Unassigned
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolution:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Unresolved
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votes:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Labels:</b>
+        </td>
+        <td id="labels-49118-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            None
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Remaining Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Time Spent:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Original Estimate:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+        
+    
+
+
+
+                                    <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Involved Teams:</b></td>
+                <td id="customfield_10031-49118-value" class="value" bgcolor="#ffffff" width="80%">
+
+
+    <div class="shorten" id="customfield_10031-field">
+        							<span>Interstellar - Prometheus</span>,			        							<span>Interstellar - Phoenix</span>			            </div>
+</td>
+            </tr>
+                                            <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Release Zuordnung:</b></td>
+                <td id="customfield_11302-49118-value" class="value" bgcolor="#ffffff" width="80%">
+
+
+    <div class="shorten" id="customfield_11302-field">
+        							<span>Major Release</span>			            </div>
+</td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Epic Link:</b></td>
+                <td id="customfield_10014-49118-value" class="value" bgcolor="#ffffff" width="80%">
+    <a class="aui-label ghx-label-10" href="https://jira.leipziger.cloud/browse/IT-2916">
+        Technische Schulden
+    </a>
+</td>
+            </tr>
+                                            <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Story Points:</b></td>
+                <td id="customfield_10026-49118-value" class="value" bgcolor="#ffffff" width="80%">    10.5
+</td>
+            </tr>
+                        </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Description</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <h2><a name="Problem%2FZiel"></a>Problem/Ziel</h2>
+
+<p>Aktuell gibt es den Activiti-Prozess "MaintenanceProcess", dieser ruft MaintenanceProcessDelegate auf. Dadurch wird eine hard-kodierte Liste von Implementierungen des MaintenanceTask Interface aufgerufen, wodurch unterschiedliche Aufgaben erledigt werden können. Der Prozess wird zeitgesteuert zyklisch ausgeführt.</p>
+
+<p>Perspektivisch wird der MaintenanceTask vermehrt für die einmalige wie regelmäßige Anpassung / Bereinigung von Daten nach der Auslieferung neuer MBS Releases verwendet. Dazu soll die bisherige Logik um neue Features erweitert werden.</p>
+
+<p>Es sollen 2 neue Tabelle angelegt werden:</p>
+<h3><a name="1%29NeueTabellezurSteuerung%C2%A0"></a>1) Neue Tabelle zur Steuerung </h3>
+
+<p>Es soll eine neue Tabelle zur Steuerung <em>FL_MaintenanceProcessConfiguration</em> der MaintenanceTask angelegt werden, welche die hard-kodierte Liste aus MaintenanceProcessDelegate ersetzt. Die Tabelle soll folgende Informationen enthalten:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Spalte</th>
+<th class='confluenceTh'>Datentyp</th>
+<th class='confluenceTh'>Bezeichnung</th>
+<th class='confluenceTh'>Verwendung</th>
+</tr>
+<tr>
+<td class='confluenceTd'>classname_</td>
+<td class='confluenceTd'>varchar</td>
+<td class='confluenceTd'>Full-qualified Classname einer Ableitung von MaintenanceTask</td>
+<td class='confluenceTd'>Vergleichbar mit dem ServiceLoader soll der Prozess alle auszuführenden Tasks aus dieser Tabelle lesen und selbstständig initialisieren, alle Tasks mit state_ = ACTIVE sind relevant</td>
+</tr>
+<tr>
+<td class='confluenceTd'>executionState_</td>
+<td class='confluenceTd'>varchar</td>
+<td class='confluenceTd'>Status des Tasks (Werte: PENDING/aktiv, RUNNING/wird ausgeführt, DONE/fertig)</td>
+<td class='confluenceTd'>Eindeutiger Bezeichner (ENUM) für den Ausführungsstatus des Tasks</td>
+</tr>
+<tr>
+<td class='confluenceTd'>lastExecution_</td>
+<td class='confluenceTd'>timestamp</td>
+<td class='confluenceTd'>Letzte Ausführung</td>
+<td class='confluenceTd'>Datum bzw. Zeitstempel der letzten Ausführung</td>
+</tr>
+<tr>
+<td class='confluenceTd'>executionType_</td>
+<td class='confluenceTd'>varChar</td>
+<td class='confluenceTd'>Art der Ausführung (Werte: ONCE/einmalig, REPEAT/mehrmalig)</td>
+<td class='confluenceTd'>Eindeutiger Bezeichner (ENUM) für den Ausführungszyklus</td>
+</tr>
+<tr>
+<td class='confluenceTd'>priority_</td>
+<td class='confluenceTd'>number</td>
+<td class='confluenceTd'>Priorität eines Tasks als positive Ganzzahl 1,2,3,...</td>
+<td class='confluenceTd'>Tasks sollen in einer bestimmten Reihenfolge ausgeführt werden: zuerst der Task mit der höchsten Prio (1), danach mit der nächsten Prio (2) usw.</td>
+</tr>
+<tr>
+<td class='confluenceTd'>description_</td>
+<td class='confluenceTd'>varchar</td>
+<td class='confluenceTd'>Beschreibung</td>
+<td class='confluenceTd'>eine kurze, menschenlesbare Beschreibung, was der Task machen soll</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p> </p>
+<h3><a name="2%29NeueTabellezumLog"></a>2) Neue Tabelle zum Log</h3>
+
+<p>Es soll eine Tabelle zum Task-spezifischen Logging erstellt werden: <em>FL_MaintenanceProcessLog.</em> Diese Tabelle soll folgenden Aufbau haben:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Spalte</th>
+<th class='confluenceTh'>Datentyp</th>
+<th class='confluenceTh'>Bezeichnung</th>
+<th class='confluenceTh'>Verwendung</th>
+</tr>
+<tr>
+<td class='confluenceTd'>task_</td>
+<td class='confluenceTd'>bigint</td>
+<td class='confluenceTd'>FK zu fl_maintenanceprocessconfiguration</td>
+<td class='confluenceTd'>Fremdschlüssel</td>
+</tr>
+<tr>
+<td class='confluenceTd'>start_</td>
+<td class='confluenceTd'>timestamp</td>
+<td class='confluenceTd'>Startzeitpunkt der aktuellen Ausführung</td>
+<td class='confluenceTd'> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>end_</td>
+<td class='confluenceTd'>timestamp</td>
+<td class='confluenceTd'>Endzeitpunkt der aktuellen Ausführung</td>
+<td class='confluenceTd'> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>count_</td>
+<td class='confluenceTd'>number</td>
+<td class='confluenceTd'>Anzahl der in der aktuellen Ausführung bearbeiteten Objekte</td>
+<td class='confluenceTd'> </td>
+</tr>
+<tr>
+<td class='confluenceTd'>expirationDate_</td>
+<td class='confluenceTd'>timestamp</td>
+<td class='confluenceTd'>max. Zeitpunkt, bis dieses Log aufgehoben wird</td>
+<td class='confluenceTd'>Default: +1 Monat in die Zukunft. Der MaintenanceProcess soll seine Logs selbst aufräumen</td>
+</tr>
+<tr>
+<td class='confluenceTd'>errorLog_</td>
+<td class='confluenceTd'>text</td>
+<td class='confluenceTd'>Fehler-Log</td>
+<td class='confluenceTd'>hier können fehlerhafte Objekte und Traces abgelegt werden</td>
+</tr>
+<tr>
+<td class='confluenceTd'>log_</td>
+<td class='confluenceTd'>text</td>
+<td class='confluenceTd'>Allgemeines Log</td>
+<td class='confluenceTd'>hier können z.B. die IDs der bearbeiteten Objekte ablegt werden</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>Pro Ausführung kann ein Task diese Tabelle beschreiben. Wird beispielsweise ein Task in 3 Nächten hintereinander ausgeführt, entstehen 3 Einträge in dieser Tabelle.</p>
+<h3><a name="3%29AnpassungdesProzesses%2FImpl.derTasks"></a>3) Anpassung des Prozesses / Impl. der Tasks</h3>
+<ul>
+	<li>Der Prozess soll so angepasst werden, dass nur noch die Konfiguration nach der Tabelle aus Punkt 1 zählt</li>
+	<li>Jeder Task muss nach seiner Ausführung bestimmen, ob sein executionState_ ACTIVE (es gibt noch was zu tun) oder DONE ist (nichts mehr zu tun) 
+	<ul>
+		<li>Zyklische Tasks (executionType_ = REPEAT) liefern dabei immer ACTIVE zurück</li>
+		<li><b>Hinweis:</b> falls machbar, kann dies das Delegate selbst entscheiden auf Basis des executionType_ und des Bearbeitungsfortschritts des Tasks. Letztes existiert schon im heutigen Prozess.</li>
+	</ul>
+	</li>
+	<li>Beim Ausführen wird der executionState_ zuerst auf RUNNING, dann auf den vom Task bestimmten Folgestatus gesetzt</li>
+	<li>Tasks mit executionState_=DONE werden nie ausgeführt</li>
+	<li>Jeder Task muss selbst entscheiden, ob das Log aus Punkt 2 geschrieben wird. Das Interface von MaintenanceTask sollte eine Methode erhalten, die das Log nach Ausführung des Tasks zurückgibt und durch den Prozess in MaintenanceProcessDelegate zentral gespeichert werden</li>
+	<li>Mit Einführung der Konfiguration können die GPs SKIP_MAINTENANCE_PROCESS und GP FORCE_MAINTENANCE_PROCESS entfernt werden</li>
+	<li>Der MaintenanceProzess soll jeden Tag am Ende seiner Ausführung die eigenen Logs aus Punkt 2 abräumen, sobald deren expirationDate_ erreicht ist</li>
+	<li>Der Prozess soll im default weiterhin über Actitviti um 20 Uhr ausgeführt werden (MaintenanceProcess)</li>
+</ul>
+
+
+<h3><a name="4%29ManuellerStartdesProzesses"></a>4) Manueller Start des Prozesses</h3>
+
+<p>Der Prozess soll zusätzlich durch Entwickler gestartet werden können. Dazu soll ein Support-Servlet hinzugefügt werden, welches den Prozess über das MessageEvent <em>MaintenanceExecutionStart</em> startet.<br/>
+Dazu kann eine Klasse mit API-Route mit @SupportController erstellt werden</p>
+<h2><a name="Akzeptanzkriterien"></a>Akzeptanzkriterien</h2>
+<ul>
+	<li>Neue Tabellen angelegt</li>
+	<li>Neue Enums angelegt</li>
+	<li>Bereits bestehende Tasks wurden in neue Konfiguration überführt und funktionieren wie bisher</li>
+	<li>Funktion des MaintencanceProcess wie beschrieben erweitert</li>
+</ul>
+
+
+<h2><a name="Hinweise"></a>Hinweise</h2>
+<ul>
+	<li>Im Rahmen dieses Tickets wird keine UI entwickelt</li>
+</ul>
+
+
+<h2><a name="Nachstellen"></a>Nachstellen</h2>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+Generated at Fri Nov 15 08:21:40 CET 2024 by Philipp Schwerm using Jira 9.12.12#9120012-sha1:9afad32836b39ea19f5a357a6aae8106be665a8f.
+
+</body>
+</html>
