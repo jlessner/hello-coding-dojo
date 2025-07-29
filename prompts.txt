@@ -1,0 +1,2 @@
+Create the builder for SmgwCertificateStateEntity, use as reference ReferenceEntityBuilder, store the builder into the com.nextlevel.gwa.ui.services package.
+
