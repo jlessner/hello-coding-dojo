@@ -9,7 +9,7 @@ import reference.entity.ReferenceEntity;
 
 import static reference.builder.ReferenceEntityBuilderDefaults.defaults;
 
-public class ReferenceEntityBuilder {
+public class ReferenceEntityBuilder implements ReferenceEntityBuilderI<ReferenceEntity> {
 
     private final ReferenceEntity referenceEntity;
 
@@ -27,6 +27,7 @@ public class ReferenceEntityBuilder {
         return referenceEntity;
     }
 
+    @Override
     public ReferenceEntity persist() {
         // Implement persistence logic here if needed
         // For example, save to a database or another storage

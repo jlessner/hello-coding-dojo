@@ -92,6 +92,21 @@ public class BuilderStructureTest {
   }
 
   @Test
+  void testBuildersHavePersistMethod_AlternativeWay() {
+    DescribedPredicate<JavaClass> publicPersistMethod = DescribedPredicate.describe("public method persist()",
+      javaClass ->  javaClass.getMethods()
+        .stream()
+        .filter(method -> method.getName().equals("persist"))
+        .filter(method -> method.getModifiers().contains(JavaModifier.PUBLIC))
+        .findAny()
+        .isPresent());
+
+    builderClasses
+      .should(have(publicPersistMethod))
+      .check(allClasses);
+  }
+
+  @Test
   void testBuilderStructure() {
     builderClasses.should(haveDefaultsClass).check(allClasses);
   }
