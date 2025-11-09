@@ -1,8 +1,10 @@
 package de.sundn.bars.server.websocket.processing.commands.reporting.exchangerate;
 
+import de.sundn.bars.server.business.execution.KeyGenerator;
+import de.sundn.bars.server.business.objects.businessobjects.Currency;
 import de.sundn.bars.server.websocket.processing.commands.Command;
-import org.jetbrains.annotations.NotNull;
 
+import javax.validation.constraints.Size;
 import java.util.List;
 
 /**
@@ -11,8 +13,8 @@ import java.util.List;
  * Is executed by the {@link LoadExchangeRatesCommandExecutor}.
  */
 public record LoadExchangeRatesCommand(
-        @NotNull String targetCurrency,
-        @NotNull List<String> statementKeys,
-        @NotNull ExchangeRateType exchangeRateType
+        @Size(max = Currency.CURRENCY_ISO_CODE_MAX_LENGTH) String targetCurrency,
+        List<@Size(min = KeyGenerator.KEY_LENGTH, max = KeyGenerator.KEY_LENGTH) String> statementKeys,
+        ExchangeRateType exchangeRateType
 ) implements Command<LoadExchangeRatesResponse> {
 }

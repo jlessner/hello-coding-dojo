@@ -1,13 +1,11 @@
 package de.sundn.bars.server.websocket.processing.commands.reporting.exchangerate;
 
+import de.sundn.bars.server.authorization.RequiresRights;
+import de.sundn.bars.server.business.data.StaticDataBroker;
+import de.sundn.bars.server.business.execution.ExchangeRateLoader;
 import de.sundn.bars.server.business.objects.UserRight;
-import de.sundn.bars.server.business.objects.businessobjects.ConsUnit;
-import de.sundn.bars.server.business.objects.businessobjects.ExchangeRate;
-import de.sundn.bars.server.business.objects.businessobjects.Statement;
-import de.sundn.bars.server.business.objects.businessobjects.StatementList;
-import de.sundn.bars.server.business.position.positioncalculator.ExchangeRateAccess;
+import de.sundn.bars.server.business.objects.businessobjects.*;
 import de.sundn.bars.server.util.InvalidOperationException;
-import de.sundn.bars.server.websocket.processing.authorization.RequiresRights;
 import de.sundn.bars.server.websocket.processing.commands.AbstractCommandExecutor;
 import de.sundn.bars.server.websocket.processing.commands.CommandProcessingException;
 import de.sundn.bars.server.websocket.processing.commands.consolidationunit.ConsUnitNotFoundException;
@@ -59,7 +57,7 @@ public class LoadExchangeRatesCommandExecutor extends AbstractCommandExecutor<Lo
                                                                       SessionCustomer sessionCustomer)
           throws ConsUnitNotFoundException, ExchangeRateNotFoundException {
     return retrieveExchangeRates(targetCurrency, statements, sessionCustomer,
-            statement -> LocalDate.now());
+            _ -> LocalDate.now());
   }
 
   private static HashMap<String, Double> retrieveMostRecentStatementDateExchangeRates(String targetCurrency,
@@ -68,24 +66,27 @@ public class LoadExchangeRatesCommandExecutor extends AbstractCommandExecutor<Lo
           throws ConsUnitNotFoundException, ExchangeRateNotFoundException {
     LocalDate mostRecentDate = retrieveMostRecentStatementDate(statements);
     return retrieveExchangeRates(targetCurrency, statements, sessionCustomer,
-            statement -> mostRecentDate);
+            _ -> mostRecentDate);
   }
 
-  private static HashMap<String, Double> retrieveExchangeRates(String targetCurrency,
+  private static HashMap<String, Double> retrieveExchangeRates(String targetCurrencyIsoCode,
                                                                StatementList statements,
                                                                SessionCustomer sessionCustomer,
                                                                Function<Statement, LocalDate> dateResolver)
           throws ConsUnitNotFoundException, ExchangeRateNotFoundException {
     HashMap<String, Double> exchangeRates = new HashMap<>();
     for (Statement statement : statements) {
-      String sourceCurrency = retrieveSourceCurrencyIsoCode(statement, sessionCustomer);
       LocalDate date = dateResolver.apply(statement);
-      ExchangeRate exchangeRate = ExchangeRateAccess.getExchangeRate(
+      String sourceCurrencyIsoCode = retrieveSourceCurrencyIsoCode(statement, sessionCustomer);
+      CurrencyHashMap currencies = StaticDataBroker.getInstance().getCurrencyHashMap();
+      Currency sourceCurrency = currencies.get(sourceCurrencyIsoCode);
+      Currency targetCurrency = currencies.get(targetCurrencyIsoCode);
+      ExchangeRate exchangeRate = ExchangeRateLoader.loadExchangeRate(
               sourceCurrency,
               targetCurrency,
               date
       );
-      assertExchangeRateNotNull(exchangeRate, sourceCurrency, targetCurrency, date);
+      assertExchangeRateNotNull(exchangeRate, sourceCurrencyIsoCode, targetCurrencyIsoCode, date);
       exchangeRates.put(statement.getStatementInfo().getStatementKey(), exchangeRate.getFactor());
     }
     return exchangeRates;
