@@ -9,11 +9,6 @@ public class DrinksSlot {
   final String id;
   final Queue<Drink> stock = new LinkedList<>();
 
-  public void checkDrinkAvailability(TotalDepositAmount totalDepositAmount) throws InsufficientPaymentException, SlotEmptyException {
-    checkSufficientPayment(totalDepositAmount);
-    checkSufficientStock();
-  }
-
   public void checkSufficientPayment(TotalDepositAmount totalDepositAmount) throws InsufficientPaymentException {
     if (totalDepositAmount.totalInCent < priceInCent) {
       throw new InsufficientPaymentException();

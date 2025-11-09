@@ -15,7 +15,8 @@ public class VendingMachine {
 
   public DrinkAndChange buyDrink(String slotID) throws UnknownSlotException, InsufficientPaymentException, SlotEmptyException, CantChangeException {
     DrinksSlot slot = warehouse.findSlot(slotID);
-    slot.checkDrinkAvailability(cashbox.getTotalDepositAmount());
+    slot.checkSufficientStock();
+    slot.checkSufficientPayment(cashbox.getTotalDepositAmount());
     Collection<Coin> change = cashbox.calculateChange(slot.getPriceInCent());
     cashbox.clearDeposit();
     Drink drink = slot.poll();
