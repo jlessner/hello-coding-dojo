@@ -9,16 +9,12 @@ public class DrinksSlot {
   final String id;
   final Queue<Drink> stock = new LinkedList<>();
 
-  public void checkSufficientPayment(TotalDepositAmount totalDepositAmount) throws InsufficientPaymentException {
-    if (totalDepositAmount.totalInCent < priceInCent) {
-      throw new InsufficientPaymentException();
-    }
+  public boolean paymentSufficient(TotalDepositAmount totalDepositAmount) {
+    return totalDepositAmount.totalInCent >= priceInCent;
   }
 
-  public void checkSufficientStock() throws SlotEmptyException {
-    if (stock.isEmpty()) {
-      throw new SlotEmptyException();
-    }
+  public boolean isEmpty() {
+    return stock.isEmpty();
   }
 
   public Drink poll() {

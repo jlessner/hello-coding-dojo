@@ -6,12 +6,8 @@ import java.util.Map;
 public class DrinksWarehouse {
   Map<String, DrinksSlot> slots = new HashMap<>();
 
-  public DrinksSlot findSlot(String slotID) throws UnknownSlotException {
-    DrinksSlot slot = slots.get(slotID);
-    if (slot == null) {
-      throw new UnknownSlotException();
-    }
-    return slot;
+  public DrinksSlot findSlot(String slotID) {
+    return slots.get(slotID);
   }
 
   public void add(DrinksSlot slot) {

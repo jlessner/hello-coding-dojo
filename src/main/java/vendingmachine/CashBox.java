@@ -27,9 +27,9 @@ public class CashBox {
     return new TotalDepositAmount(sum);
   }
 
-  public Collection<Coin> calculateChange(int priceToPay) throws CantChangeException {
+  public Collection<Coin> calculateChange(int priceToPay) {
     if (priceToPay < getTotalDepositAmount().totalInCent) {
-      throw new CantChangeException();
+      return null;
     }
     return new  ArrayList<>();
   }

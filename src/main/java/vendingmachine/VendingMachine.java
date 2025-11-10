@@ -13,14 +13,28 @@ public class VendingMachine {
     return cashbox.getTotalDepositAmount();
   }
 
-  public DrinkAndChange buyDrink(String slotID) throws UnknownSlotException, InsufficientPaymentException, SlotEmptyException, CantChangeException {
+  public DrinkAndChange buyDrink(String slotID) {
     DrinksSlot slot = warehouse.findSlot(slotID);
-    slot.checkSufficientStock();
-    slot.checkSufficientPayment(cashbox.getTotalDepositAmount());
-    Collection<Coin> change = cashbox.calculateChange(slot.getPriceInCent());
-    cashbox.clearDeposit();
-    Drink drink = slot.poll();
-    return new DrinkAndChange(drink, change);
+    if (slot != null) {
+      if (slot.paymentSufficient(cashbox.getTotalDepositAmount())) {
+        if (slot.isEmpty()) {
+          return new DrinkAndChange(Errorcode.SlotEmpty);
+        }
+        Collection<Coin> change = cashbox.calculateChange(slot.getPriceInCent());
+        if (change == null) {
+          return new DrinkAndChange(Errorcode.CantChange);
+        }
+        cashbox.clearDeposit();
+        Drink drink = slot.poll();
+        return new DrinkAndChange(drink, change);
+      }
+      else {
+        return new DrinkAndChange(Errorcode.InsufficientPayment);
+      }
+    }
+    else {
+      return new DrinkAndChange(Errorcode.UnknownSlot);
+    }
   }
 
   /************** Methods for Maintenance Interface *********************/

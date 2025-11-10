@@ -49,7 +49,8 @@ public class VendingMachineTest {
   @Test
   void testInsufficiantPayment() throws Exception {
     vendingMachine.insertCoin(new Coin(FiftyCent));
-    assertThrows(InsufficientPaymentException.class,() -> vendingMachine.buyDrink(DRINKSLOT_ID));
+    DrinkAndChange dac = vendingMachine.buyDrink(DRINKSLOT_ID);
+    assertEquals(Errorcode.InsufficientPayment, dac.error);
   }
 
   @Test
