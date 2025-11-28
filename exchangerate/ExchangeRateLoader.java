@@ -17,15 +17,11 @@ public class ExchangeRateLoader {
     // Functional class
   }
 
-  public static ExchangeRate loadExchangeRate(Currency sourceCurrency, Currency targetCurrency) {
-    return calculateExchangeRate(sourceCurrency, targetCurrency, LocalDate.now());
-  }
-
-  public static ExchangeRate loadExchangeRate(Currency sourceCurrency, Currency targetCurrency, LocalDate date) {
+  public static ExchangeRate loadExchangeRate(Currency sourceCurrency, Currency targetCurrency, LocalDate date) throws ExchangeRateMissingException {
     return calculateExchangeRate(sourceCurrency, targetCurrency, date);
   }
 
-  private static ExchangeRate calculateExchangeRate(Currency sourceCurrency, Currency targetCurrency, LocalDate date) {
+  private static ExchangeRate calculateExchangeRate(Currency sourceCurrency, Currency targetCurrency, LocalDate date) throws ExchangeRateMissingException {
     ExchangeRateBroker broker = BrokerServer.getInstance().getExchangeRateBroker();
     Connection connection = BrokerServer.getInstance().getConnection();
     try {
@@ -58,45 +54,35 @@ public class ExchangeRateLoader {
     return rate;
   }
 
-  private static ExchangeRate exchangeRateToEuro(Currency sourceCurrency, ExchangeRateBroker broker, LocalDate date) {
+  private static ExchangeRate exchangeRateToEuro(Currency sourceCurrency, ExchangeRateBroker broker, LocalDate date) throws ExchangeRateMissingException {
     ExchangeRate rate = createExchangeRate(sourceCurrency.getCurrencyIsoCode(), CURRENCY_ISO_CODE_EUR);
-    ExchangeRate sourceRate = loadEuroExchangeRate(broker, sourceCurrency, date);
-    if (sourceRate != null) {
-      rate.setFactor(1.0 / sourceRate.getFactor());
-      rate.setValidFrom(sourceRate.getValidFrom());
-      rate.setValidTo(sourceRate.getValidTo());
-      return rate;
-    }
-    return null;
+    ExchangeRate sourceRate = loadEuroExchangeRateFromDB(broker, sourceCurrency, date);
+    rate.setFactor(1.0 / sourceRate.getFactor());
+    rate.setValidFrom(sourceRate.getValidFrom());
+    rate.setValidTo(sourceRate.getValidTo());
+    return rate;
   }
 
-  private static ExchangeRate exchangeRateFromEuro(Currency destCurrency, ExchangeRateBroker broker, LocalDate date) {
+  private static ExchangeRate exchangeRateFromEuro(Currency destCurrency, ExchangeRateBroker broker, LocalDate date) throws ExchangeRateMissingException {
     ExchangeRate rate = createExchangeRate(CURRENCY_ISO_CODE_EUR, destCurrency.getCurrencyIsoCode());
-    ExchangeRate destinationRate = loadEuroExchangeRate(broker, destCurrency, date);
-    if (destinationRate != null) {
-      rate.setFactor(destinationRate.getFactor());
-      rate.setValidFrom(destinationRate.getValidFrom());
-      rate.setValidTo(destinationRate.getValidTo());
-      rate.setParity(destinationRate.getParity());
-      return rate;
-    }
-    return null;
+    ExchangeRate destinationRate = loadEuroExchangeRateFromDB(broker, destCurrency, date);
+    rate.setFactor(destinationRate.getFactor());
+    rate.setValidFrom(destinationRate.getValidFrom());
+    rate.setValidTo(destinationRate.getValidTo());
+    rate.setParity(destinationRate.getParity());
+    return rate;
   }
 
   private static ExchangeRate exchangeRateForOtherCurrencies(Currency sourceCurrency,
                                                              Currency destCurrency,
                                                              LocalDate date,
-                                                             ExchangeRateBroker broker) {
+                                                             ExchangeRateBroker broker) throws ExchangeRateMissingException {
     ExchangeRate rate = createExchangeRate(sourceCurrency.getCurrencyIsoCode(), destCurrency.getCurrencyIsoCode());
     ExchangeRate sourceRate;
     ExchangeRate destinationRate;
     // none is euro (get two rates against euro)
-    sourceRate = loadEuroExchangeRate(broker, sourceCurrency, date);
-    destinationRate = loadEuroExchangeRate(broker, destCurrency, date);
-
-    if (sourceRate == null || destinationRate == null) {
-      return null;
-    }
+    sourceRate = loadEuroExchangeRateFromDB(broker, sourceCurrency, date);
+    destinationRate = loadEuroExchangeRateFromDB(broker, destCurrency, date);
 
     rate.setFactor(destinationRate.getFactor() / sourceRate.getFactor());
     rate.setValidFrom(calculateValidFromDate(sourceRate, destinationRate));
@@ -121,8 +107,17 @@ public class ExchangeRateLoader {
             .getValidFrom();
   }
 
-  private static ExchangeRate loadEuroExchangeRate(ExchangeRateBroker broker,
-                                                   Currency targetCurrency, LocalDate date) {
-    return broker.queryBySourceAndTargetAndDate(CURRENCY_ISO_CODE_EUR, targetCurrency.getCurrencyIsoCode(), date);
+  private static ExchangeRate loadEuroExchangeRateFromDB(ExchangeRateBroker broker,
+                                                         Currency targetCurrency,
+                                                         LocalDate date) throws ExchangeRateMissingException {
+    ExchangeRate exchangeRate = broker.queryBySourceAndTargetAndDate(CURRENCY_ISO_CODE_EUR, targetCurrency.getCurrencyIsoCode(), date);
+    assertExchangeRateNotNull(exchangeRate,targetCurrency.getCurrencyIsoCode(), date);
+    return exchangeRate;
+  }
+
+  private static void assertExchangeRateNotNull(ExchangeRate rate, String currencyIsoCode, LocalDate date) throws ExchangeRateMissingException {
+    if (rate == null) {
+      throw new ExchangeRateMissingException(String.format("Exchange rate from EUR to %s on date %s not found", currencyIsoCode, date));
+    }
   }
 }

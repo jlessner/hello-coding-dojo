@@ -8,11 +8,12 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SocialTimeTest {
+  SocialTimeWithTangledResponsibility socialTime = new SocialTimeWithTangledResponsibility();
 
   @ParameterizedTest
   @ValueSource(ints = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9})
   void testFewSeconds(int seconds) {
-    String time = new SocialTime().socialTime(seconds);
+    String time = socialTime.socialTime(seconds);
     assertEquals("few seconds", time);
   }
 
@@ -24,7 +25,7 @@ class SocialTimeTest {
       "59, 59 seconds"
   })
   void testSeconds(int seconds, String expected) {
-    String time = new SocialTime().socialTime(seconds);
+    String time = socialTime.socialTime(seconds);
     assertEquals(expected, time);
   }
 
@@ -38,12 +39,12 @@ class SocialTimeTest {
       "121, 2 minutes"
   })
   void testMinutesAndSeconds(int seconds, String expected) {
-    String time = new SocialTime().socialTime(seconds);
+    String time = socialTime.socialTime(seconds);
     assertEquals(expected, time);
   }
 
   @Test
   void testNegativeSeconds() {
-    assertThrows(IllegalArgumentException.class, () -> new SocialTime().socialTime(-1));
+    assertThrows(IllegalArgumentException.class, () -> socialTime.socialTime(-1));
   }
 }
