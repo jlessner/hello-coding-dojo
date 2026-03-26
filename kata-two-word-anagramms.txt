@@ -1,0 +1,1 @@
+Schreibe ein Programm, das Zwei-Wort-Anagramme des Strings "documenting" findet. Die Datei wordlist.txt enthält eine Liste von Wörtern.
