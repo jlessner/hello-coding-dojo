@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /c/work/jlessner/presentations/spezifikation/javamagazin-2025/livesession-april-2026/livesession-april-2026-projekt/src/main/java/zweiwort_anagramme)",
+      "Bash(mkdir -p /c/work/jlessner/presentations/spezifikation/javamagazin-2025/livesession-april-2026/livesession-april-2026-projekt/src/test/java/zweiwort_anagramme)",
+      "Bash(mvn test:*)"
+    ]
+  }
+}
