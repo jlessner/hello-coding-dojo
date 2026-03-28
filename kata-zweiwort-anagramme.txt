@@ -1,1 +1,1 @@
-Schreibe ein Programm, das Zwei-Wort-Anagramme des Strings "documenting" findet und ausgibt. Die Datei wordlist.txt enthält eine Liste von Wörtern.
+Schreibe ein Programm, das Zwei-Wort-Anagramme des Strings "documenting" findet und ausgibt. Die Datei wordlist.txt enthält eine Liste von Wörtern. Das Vokabular kann in der echten Anwendung eine 6-stellige Anzahl an Wörtern enthalten.

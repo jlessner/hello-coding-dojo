@@ -1,0 +1,525 @@
+{
+  "specmanVersion" : "1.1.2",
+  "modelType" : "specman.model.v001.StruktogrammModel_V001",
+  "model" : {
+    "name" : "frame0",
+    "breite" : 840,
+    "zoomFaktor" : 120,
+    "changeModeenabled" : false,
+    "hauptSequenz" : {
+      "id" : {
+        "nummern" : [ "java.util.ArrayList", [ 0 ] ]
+      },
+      "aenderungsart" : "Untracked",
+      "schritte" : [ "java.util.ArrayList", [ [ "specman.model.v001.SubsequenzSchrittModel_V001", {
+        "id" : {
+          "nummern" : [ "java.util.ArrayList", [ 1 ] ]
+        },
+        "nummer" : "1",
+        "inhalt" : {
+          "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+            "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <b><span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Vokabular \n    einlesen</font></span></b>\n  </body>\n</html>\n",
+            "plainText" : "\nVokabular einlesen",
+            "markups" : [ "java.util.ArrayList", [ ] ],
+            "aenderungsart" : "Untracked"
+          } ] ] ]
+        },
+        "farbe" : -1,
+        "aenderungsart" : "Untracked",
+        "quellschrittID" : null,
+        "decorationStyle" : "None",
+        "zugeklappt" : false,
+        "subsequenz" : {
+          "id" : {
+            "nummern" : [ "java.util.ArrayList", [ 1, 0 ] ]
+          },
+          "aenderungsart" : "Untracked",
+          "schritte" : [ "java.util.ArrayList", [ [ "specman.model.v001.EinfacherSchrittModel_V001", {
+            "id" : {
+              "nummern" : [ "java.util.ArrayList", [ 1, 1 ] ]
+            },
+            "nummer" : "1.1",
+            "inhalt" : {
+              "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <div>\n      Das System liest die Datei mit den <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">W&#246;rtern</font></span> \n      des Vokabulars ein.\n    </div>\n    <div>\n      \n    </div>\n    <div>\n      <i><font size=\"3\">Hinweis: </font></i>\n    </div>\n    <div>\n      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\" size=\"3\"><i>Der \n      Spezifikation liegt eine Datei wordlist.txt bei, die hier als Beispiel \n      dienen kann</i></font></span><font color=\"#000000\" size=\"3\"><i><span style=\"background-color: rgba(255, 255, 255, 0.0)\">.</span></i></font>\n    </div>\n  </body>\n</html>\n",
+                "plainText" : "\nDas System liest die Datei mit den Wörtern des Vokabulars ein.\n\nHinweis: \nDer Spezifikation liegt eine Datei wordlist.txt bei, die hier als Beispiel dienen kann.",
+                "markups" : [ "java.util.ArrayList", [ ] ],
+                "aenderungsart" : "Untracked"
+              } ] ] ]
+            },
+            "farbe" : -1,
+            "aenderungsart" : "Untracked",
+            "quellschrittID" : null,
+            "decorationStyle" : "None"
+          } ], [ "specman.model.v001.WhileSchrittModel_V001", {
+            "id" : {
+              "nummern" : [ "java.util.ArrayList", [ 1, 2 ] ]
+            },
+            "nummer" : "1.2",
+            "inhalt" : {
+              "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">F&#252;r \n    jede Zeile der Datei</font></span>...\n  </body>\n</html>\n",
+                "plainText" : "\nFür jede Zeile der Datei...",
+                "markups" : [ "java.util.ArrayList", [ ] ],
+                "aenderungsart" : "Untracked"
+              } ] ] ]
+            },
+            "farbe" : -1,
+            "aenderungsart" : "Untracked",
+            "quellschrittID" : null,
+            "decorationStyle" : "None",
+            "zugeklappt" : false,
+            "wiederholSequenz" : {
+              "id" : {
+                "nummern" : [ "java.util.ArrayList", [ 1, 2, 0 ] ]
+              },
+              "aenderungsart" : "Untracked",
+              "schritte" : [ "java.util.ArrayList", [ [ "specman.model.v001.EinfacherSchrittModel_V001", {
+                "id" : {
+                  "nummern" : [ "java.util.ArrayList", [ 1, 2, 1 ] ]
+                },
+                "nummer" : "1.2.1",
+                "inhalt" : {
+                  "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                    "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">... \n    n</font></span><font color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\">immt \n    das System eine Aufteilung der Zeile anhand von Wortgrenzen vor, bestehend \n    aus einer ununterbrochenen Abfolge von Leer- und Tabulatorzeichen</span></font>\n  </body>\n</html>\n",
+                    "plainText" : "\n... nimmt das System eine Aufteilung der Zeile anhand von Wortgrenzen vor, bestehend aus einer ununterbrochenen Abfolge von Leer- und Tabulatorzeichen",
+                    "markups" : [ "java.util.ArrayList", [ ] ],
+                    "aenderungsart" : "Untracked"
+                  } ] ] ]
+                },
+                "farbe" : -1,
+                "aenderungsart" : "Untracked",
+                "quellschrittID" : null,
+                "decorationStyle" : "None"
+              } ], [ "specman.model.v001.EinfacherSchrittModel_V001", {
+                "id" : {
+                  "nummern" : [ "java.util.ArrayList", [ 1, 2, 2 ] ]
+                },
+                "nummer" : "1.2.2",
+                "inhalt" : {
+                  "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                    "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <div>\n      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">... \n      </font></span><font color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\">und \n      f&#252;gt die aus der Zeile gewonnenen W&#246;rter dem Vokabular hinzu</span></font>\n    </div>\n    <div>\n      \n    </div>\n    <div>\n      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\" size=\"3\"><i>Beispiel</i></font></span><font color=\"#000000\" size=\"3\"><i><span style=\"background-color: rgba(255, 255, 255, 0.0)\">: \n      </span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">Die Zeile</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\"> \n      </span></i></font>\n    </div>\n    <pre><span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\" size=\"3\"><i>Peter Paul    Mary </i></font></span></pre>\n    <div>\n      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\" size=\"3\"><i>steuert \n      die W&#246;rter </i></font></span><font color=\"#000000\" size=\"3\"><i><span style=\"background-color: rgba(255, 255, 255, 0.0)\">&#8222;Peter&#8220;, \n      &#8222;Paul&#8220;</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\"> \n      und </span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">&#8222;Mary&#8220; \n      </span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">zum \n      Vokabular bei</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">to \n      the vocabulary. </span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">Es \n      erfolgt keine Pr&#252;fung auf etwaige Sonderzeichen innerhalb der gefundenen \n      W&#246;rter.</span></i></font>\n    </div>\n  </body>\n</html>\n",
+                    "plainText" : "\n... und fügt die aus der Zeile gewonnenen Wörter dem Vokabular hinzu\n\nBeispiel: Die Zeile \nPeter Paul    Mary \nsteuert die Wörter „Peter“, „Paul“ und „Mary“ zum Vokabular beito the vocabulary. Es erfolgt keine Prüfung auf etwaige Sonderzeichen innerhalb der gefundenen Wörter.",
+                    "markups" : [ "java.util.ArrayList", [ ] ],
+                    "aenderungsart" : "Untracked"
+                  } ] ] ]
+                },
+                "farbe" : -1,
+                "aenderungsart" : "Untracked",
+                "quellschrittID" : null,
+                "decorationStyle" : "None"
+              } ] ] ],
+              "catchBereich" : {
+                "catchSequences" : [ "java.util.ArrayList", [ ] ],
+                "sequencesWidthPercent" : null,
+                "zugeklappt" : false
+              }
+            },
+            "balkenbreite" : 33
+          } ], [ "specman.model.v001.BreakSchrittModel_V001", {
+            "id" : {
+              "nummern" : [ "java.util.ArrayList", [ 1, 3 ] ]
+            },
+            "nummer" : "1.3",
+            "inhalt" : {
+              "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <b><span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Weniger \n    als zwei </font></span><font color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\">W&#246;rter</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\"> \n    im Vokabular </span></font></b>\n  </body>\n</html>\n",
+                "plainText" : "\nWeniger als zwei Wörter im Vokabular ",
+                "markups" : [ "java.util.ArrayList", [ ] ],
+                "aenderungsart" : "Untracked"
+              } ] ] ]
+            },
+            "farbe" : -1,
+            "aenderungsart" : "Untracked",
+            "quellschrittID" : null,
+            "decorationStyle" : "None"
+          } ] ] ],
+          "catchBereich" : {
+            "catchSequences" : [ "java.util.ArrayList", [ ] ],
+            "sequencesWidthPercent" : null,
+            "zugeklappt" : false
+          }
+        },
+        "flatNumbering" : false
+      } ], [ "specman.model.v001.SubsequenzSchrittModel_V001", {
+        "id" : {
+          "nummern" : [ "java.util.ArrayList", [ 2 ] ]
+        },
+        "nummer" : "2",
+        "inhalt" : {
+          "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+            "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\"><b>Differenzverzeichnis \n    bilden</b></font></span>\n  </body>\n</html>\n",
+            "plainText" : "\nDifferenzverzeichnis bilden",
+            "markups" : [ "java.util.ArrayList", [ ] ],
+            "aenderungsart" : "Untracked"
+          } ] ] ]
+        },
+        "farbe" : -1,
+        "aenderungsart" : "Untracked",
+        "quellschrittID" : null,
+        "decorationStyle" : "None",
+        "zugeklappt" : false,
+        "subsequenz" : {
+          "id" : {
+            "nummern" : [ "java.util.ArrayList", [ 2, 0 ] ]
+          },
+          "aenderungsart" : "Untracked",
+          "schritte" : [ "java.util.ArrayList", [ [ "specman.model.v001.WhileSchrittModel_V001", {
+            "id" : {
+              "nummern" : [ "java.util.ArrayList", [ 2, 1 ] ]
+            },
+            "nummer" : "2.1",
+            "inhalt" : {
+              "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">F&#252;r \n    jedes Wort des Vokabulars f&#252;hrt das System die folgenden Schritte aus:</font></span>\n  </body>\n</html>\n",
+                "plainText" : "\nFür jedes Wort des Vokabulars führt das System die folgenden Schritte aus:",
+                "markups" : [ "java.util.ArrayList", [ ] ],
+                "aenderungsart" : "Untracked"
+              } ] ] ]
+            },
+            "farbe" : -1,
+            "aenderungsart" : "Untracked",
+            "quellschrittID" : null,
+            "decorationStyle" : "None",
+            "zugeklappt" : false,
+            "wiederholSequenz" : {
+              "id" : {
+                "nummern" : [ "java.util.ArrayList", [ 2, 1, 0 ] ]
+              },
+              "aenderungsart" : null,
+              "schritte" : [ "java.util.ArrayList", [ [ "specman.model.v001.EinfacherSchrittModel_V001", {
+                "id" : {
+                  "nummern" : [ "java.util.ArrayList", [ 2, 1, 1 ] ]
+                },
+                "nummer" : "2.1.1",
+                "inhalt" : {
+                  "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                    "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <div>\n      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Das \n      System </font></span><font color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\">pr&#252;ft \n      </span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">ob das \n      Wort </span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">generell \n      </span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">geeignet \n      ist</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">, d.h.</span></font>\n    </div>\n  </body>\n</html>\n",
+                    "plainText" : "\nDas System prüft ob das Wort generell geeignet ist, d.h.",
+                    "markups" : [ "java.util.ArrayList", [ ] ],
+                    "aenderungsart" : "Untracked"
+                  } ], [ "specman.model.v001.ListItemEditAreaModel_V001", {
+                    "content" : {
+                      "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                        "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n  </body>\n</html>\n",
+                        "plainText" : "\n",
+                        "markups" : [ "java.util.ArrayList", [ ] ],
+                        "aenderungsart" : "Untracked"
+                      } ] ] ]
+                    },
+                    "ordered" : false,
+                    "aenderungsart" : "Untracked"
+                  } ], [ "specman.model.v001.ListItemEditAreaModel_V001", {
+                    "content" : {
+                      "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                        "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Es \n    tauchen keine Buchstaben darin auf die in &quot;documenting&quot; nicht auftauchen</font></span>\n  </body>\n</html>\n",
+                        "plainText" : "\nEs tauchen keine Buchstaben darin auf die in \"documenting\" nicht auftauchen",
+                        "markups" : [ "java.util.ArrayList", [ ] ],
+                        "aenderungsart" : "Untracked"
+                      } ] ] ]
+                    },
+                    "ordered" : false,
+                    "aenderungsart" : "Untracked"
+                  } ], [ "specman.model.v001.ListItemEditAreaModel_V001", {
+                    "content" : {
+                      "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                        "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Kein \n    Buchstabe taucht darin h&#228;ufiger auf als in &quot;documenting&quot;</font></span>\n  </body>\n</html>\n",
+                        "plainText" : "\nKein Buchstabe taucht darin häufiger auf als in \"documenting\"",
+                        "markups" : [ "java.util.ArrayList", [ ] ],
+                        "aenderungsart" : "Untracked"
+                      } ] ] ]
+                    },
+                    "ordered" : false,
+                    "aenderungsart" : "Untracked"
+                  } ] ] ]
+                },
+                "farbe" : -1,
+                "aenderungsart" : "Untracked",
+                "quellschrittID" : null,
+                "decorationStyle" : "None"
+              } ], [ "specman.model.v001.IfSchrittModel_V001", {
+                "id" : {
+                  "nummern" : [ "java.util.ArrayList", [ 2, 1, 2 ] ]
+                },
+                "nummer" : "2.1.2",
+                "inhalt" : {
+                  "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                    "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <div align=\"left\">\n      Das System pr&#252;ft ob das Wort generell geeignet ist, d.h.\n    </div>\n  </body>\n</html>\n",
+                    "plainText" : "\nDas System prüft ob das Wort generell geeignet ist, d.h.",
+                    "markups" : [ "java.util.ArrayList", [ ] ],
+                    "aenderungsart" : "Untracked"
+                  } ], [ "specman.model.v001.ListItemEditAreaModel_V001", {
+                    "content" : {
+                      "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                        "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Es \n    ist k&#252;rzer als das Wort &quot;documenting&quot; und</font></span>\n  </body>\n</html>\n",
+                        "plainText" : "\nEs ist kürzer als das Wort \"documenting\" und",
+                        "markups" : [ "java.util.ArrayList", [ ] ],
+                        "aenderungsart" : "Untracked"
+                      } ] ] ]
+                    },
+                    "ordered" : false,
+                    "aenderungsart" : "Untracked"
+                  } ], [ "specman.model.v001.ListItemEditAreaModel_V001", {
+                    "content" : {
+                      "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                        "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Es \n    tauchen keine Buchstaben darin auf die in &quot;documenting&quot; nicht auftauchen \n    und</font></span>\n  </body>\n</html>\n",
+                        "plainText" : "\nEs tauchen keine Buchstaben darin auf die in \"documenting\" nicht auftauchen und",
+                        "markups" : [ "java.util.ArrayList", [ ] ],
+                        "aenderungsart" : "Untracked"
+                      } ] ] ]
+                    },
+                    "ordered" : false,
+                    "aenderungsart" : "Untracked"
+                  } ], [ "specman.model.v001.ListItemEditAreaModel_V001", {
+                    "content" : {
+                      "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                        "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Kein \n    Buchstabe taucht darin h&#228;ufiger auf als in &quot;documenting&quot;</font></span>\n  </body>\n</html>\n",
+                        "plainText" : "\nKein Buchstabe taucht darin häufiger auf als in \"documenting\"",
+                        "markups" : [ "java.util.ArrayList", [ ] ],
+                        "aenderungsart" : "Untracked"
+                      } ] ] ]
+                    },
+                    "ordered" : false,
+                    "aenderungsart" : "Untracked"
+                  } ] ] ]
+                },
+                "farbe" : -1,
+                "aenderungsart" : "Untracked",
+                "quellschrittID" : null,
+                "decorationStyle" : "None",
+                "zugeklappt" : false,
+                "ifSequenz" : {
+                  "id" : {
+                    "nummern" : [ "java.util.ArrayList", [ 2, 1, 2, 0 ] ]
+                  },
+                  "aenderungsart" : "Untracked",
+                  "schritte" : [ "java.util.ArrayList", [ [ "specman.model.v001.EinfacherSchrittModel_V001", {
+                    "id" : {
+                      "nummern" : [ "java.util.ArrayList", [ 2, 1, 2, 1 ] ]
+                    },
+                    "nummer" : "2.1.2.1",
+                    "inhalt" : {
+                      "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                        "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    Das System ermittelt die Buchstabendifferenz des Wortes gegen&#252;ber \n    &quot;documenting&quot; und tr&#228;gt es unter Angabe der Differenz in einem \n    Differenverzeichnis ein.\n\n    <div>\n      <font size=\"3\"><i>Designanmerkung: </i></font>\n    </div>\n    <div>\n      <font size=\"3\"><i>Buchstaben alphbetisch sortiert inkl. Anzahl der \n      Differenzh&#228;ufigkeit je Buchstabe. Die Differenz bildet einen Schl&#252;ssel \n      f&#252;r eine Map, &#252;ber die man </i></font><i><font size=\"3\" color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\">in \n      Schritt </span></font><font size=\"3\">3.1.1</font><font size=\"3\" color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\"> \n      ohne zus&#228;tzliche lineare Suche die </span></font><font size=\"3\">die \n      zugeordneten W&#246;rter finden kann.</font><font size=\"3\" color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\"> \n      Wir bleiben dadurch bei einer O(n).</span></font></i>\n    </div>\n  </body>\n</html>\n",
+                        "plainText" : "\nDas System ermittelt die Buchstabendifferenz des Wortes gegenüber \"documenting\" und trägt es unter Angabe der Differenz in einem Differenverzeichnis ein.\nDesignanmerkung: \nBuchstaben alphbetisch sortiert inkl. Anzahl der Differenzhäufigkeit je Buchstabe. Die Differenz bildet einen Schlüssel für eine Map, über die man in Schritt 3.1.1 ohne zusätzliche lineare Suche die die zugeordneten Wörter finden kann. Wir bleiben dadurch bei einer O(n).",
+                        "markups" : [ "java.util.ArrayList", [ {
+                          "from" : 330,
+                          "to" : 334,
+                          "type" : "Steplink"
+                        } ] ],
+                        "aenderungsart" : "Untracked"
+                      } ] ] ]
+                    },
+                    "farbe" : -1,
+                    "aenderungsart" : "Untracked",
+                    "quellschrittID" : null,
+                    "decorationStyle" : "None"
+                  } ] ] ],
+                  "catchBereich" : {
+                    "catchSequences" : [ "java.util.ArrayList", [ ] ],
+                    "sequencesWidthPercent" : null,
+                    "zugeklappt" : false
+                  },
+                  "ueberschrift" : {
+                    "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                      "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <div align=\"right\">\n      W<span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">ort \n      ist geeignet</font></span>\n    </div>\n  </body>\n</html>\n",
+                      "plainText" : "\nWort ist geeignet",
+                      "markups" : [ "java.util.ArrayList", [ ] ],
+                      "aenderungsart" : "Untracked"
+                    } ] ] ]
+                  }
+                },
+                "leerBreite" : 24
+              } ] ] ],
+              "catchBereich" : {
+                "catchSequences" : [ "java.util.ArrayList", [ ] ],
+                "sequencesWidthPercent" : null,
+                "zugeklappt" : false
+              }
+            },
+            "balkenbreite" : 21
+          } ] ] ],
+          "catchBereich" : {
+            "catchSequences" : [ "java.util.ArrayList", [ ] ],
+            "sequencesWidthPercent" : null,
+            "zugeklappt" : false
+          }
+        },
+        "flatNumbering" : false
+      } ], [ "specman.model.v001.SubsequenzSchrittModel_V001", {
+        "id" : {
+          "nummern" : [ "java.util.ArrayList", [ 3 ] ]
+        },
+        "nummer" : "3",
+        "inhalt" : {
+          "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+            "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\"><b>Wortpaare \n    ermitteln</b></font></span>\n  </body>\n</html>\n",
+            "plainText" : "\nWortpaare ermitteln",
+            "markups" : [ "java.util.ArrayList", [ ] ],
+            "aenderungsart" : "Untracked"
+          } ] ] ]
+        },
+        "farbe" : -1,
+        "aenderungsart" : "Untracked",
+        "quellschrittID" : null,
+        "decorationStyle" : "None",
+        "zugeklappt" : false,
+        "subsequenz" : {
+          "id" : {
+            "nummern" : [ "java.util.ArrayList", [ 3, 0 ] ]
+          },
+          "aenderungsart" : null,
+          "schritte" : [ "java.util.ArrayList", [ [ "specman.model.v001.WhileSchrittModel_V001", {
+            "id" : {
+              "nummern" : [ "java.util.ArrayList", [ 3, 1 ] ]
+            },
+            "nummer" : "3.1",
+            "inhalt" : {
+              "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <div>\n      F<span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">&#252;r \n      jedes Wort im Differenzverzeichnis f&#252;hrt das System folgende Schritte \n      aus:</font></span>\n    </div>\n    <div>\n      \n    </div>\n    <div>\n      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\" size=\"3\"><i>Anmerkung:</i></font></span><i><font size=\"3\"><br></font><span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\" size=\"3\">W&#246;rter, \n      die sich nicht im Differenzverzeichnis befinden, sind ohnehin ungeeignet \n      und brauchen hier nicht mehr weiter untersucht werden (siehe Schritt 2.1.2)</font></span></i>\n    </div>\n  </body>\n</html>\n",
+                "plainText" : "\nFür jedes Wort im Differenzverzeichnis führt das System folgende Schritte aus:\n\nAnmerkung: Wörter, die sich nicht im Differenzverzeichnis befinden, sind ohnehin ungeeignet und brauchen hier nicht mehr weiter untersucht werden (siehe Schritt 2.1.2)",
+                "markups" : [ "java.util.ArrayList", [ {
+                  "from" : 241,
+                  "to" : 245,
+                  "type" : "Steplink"
+                } ] ],
+                "aenderungsart" : "Untracked"
+              } ] ] ]
+            },
+            "farbe" : -1,
+            "aenderungsart" : "Untracked",
+            "quellschrittID" : null,
+            "decorationStyle" : "None",
+            "zugeklappt" : false,
+            "wiederholSequenz" : {
+              "id" : {
+                "nummern" : [ "java.util.ArrayList", [ 3, 1, 0 ] ]
+              },
+              "aenderungsart" : "Untracked",
+              "schritte" : [ "java.util.ArrayList", [ [ "specman.model.v001.EinfacherSchrittModel_V001", {
+                "id" : {
+                  "nummern" : [ "java.util.ArrayList", [ 3, 1, 1 ] ]
+                },
+                "nummer" : "3.1.1",
+                "inhalt" : {
+                  "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                    "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <div>\n      D<span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">as \n      System ermittelt alle anderen W&#246;rter im Differenzverzeichnis, deren \n      Buchstabendifferenz der vom aktuellen Wort zur Verf&#252;gung gestellten \n      Buchstaben entsprechen.</font></span>\n    </div>\n    <div>\n      \n    </div>\n    <div>\n      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Designanmerkung:</font></span><br>\n    </div>\n  </body>\n</html>\n",
+                    "plainText" : "\nDas System ermittelt alle anderen Wörter im Differenzverzeichnis, deren Buchstabendifferenz der vom aktuellen Wort zur Verfügung gestellten Buchstaben entsprechen.\n\nDesignanmerkung: ",
+                    "markups" : [ "java.util.ArrayList", [ ] ],
+                    "aenderungsart" : "Untracked"
+                  } ] ] ]
+                },
+                "farbe" : -1,
+                "aenderungsart" : "Untracked",
+                "quellschrittID" : null,
+                "decorationStyle" : "None"
+              } ], [ "specman.model.v001.EinfacherSchrittModel_V001", {
+                "id" : {
+                  "nummern" : [ "java.util.ArrayList", [ 3, 1, 2 ] ]
+                },
+                "nummer" : "3.1.2",
+                "inhalt" : {
+                  "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                    "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    F<span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">&#252;r \n    jedes gefundene Wort nimmt das System dieses gepaart mit dem aktuellen \n    Wort in die Liste der gefundenen Anagramme auf.</font></span>\n  </body>\n</html>\n",
+                    "plainText" : "\nFür jedes gefundene Wort nimmt das System dieses gepaart mit dem aktuellen Wort in die Liste der gefundenen Anagramme auf.",
+                    "markups" : [ "java.util.ArrayList", [ ] ],
+                    "aenderungsart" : "Untracked"
+                  } ] ] ]
+                },
+                "farbe" : -1,
+                "aenderungsart" : "Untracked",
+                "quellschrittID" : null,
+                "decorationStyle" : "None"
+              } ] ] ],
+              "catchBereich" : {
+                "catchSequences" : [ "java.util.ArrayList", [ ] ],
+                "sequencesWidthPercent" : null,
+                "zugeklappt" : false
+              }
+            },
+            "balkenbreite" : 34
+          } ] ] ],
+          "catchBereich" : {
+            "catchSequences" : [ "java.util.ArrayList", [ ] ],
+            "sequencesWidthPercent" : null,
+            "zugeklappt" : false
+          }
+        },
+        "flatNumbering" : false
+      } ], [ "specman.model.v001.EinfacherSchrittModel_V001", {
+        "id" : {
+          "nummern" : [ "java.util.ArrayList", [ 4 ] ]
+        },
+        "nummer" : "4",
+        "inhalt" : {
+          "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+            "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Das \n    System gibt die Liste der gefundenen Anagramme aus</font></span>.\n  </body>\n</html>\n",
+            "plainText" : "\nDas System gibt die Liste der gefundenen Anagramme aus.",
+            "markups" : [ "java.util.ArrayList", [ ] ],
+            "aenderungsart" : "Untracked"
+          } ] ] ]
+        },
+        "farbe" : -1,
+        "aenderungsart" : "Untracked",
+        "quellschrittID" : null,
+        "decorationStyle" : "None"
+      } ] ] ],
+      "catchBereich" : {
+        "catchSequences" : [ "java.util.ArrayList", [ {
+          "id" : {
+            "nummern" : [ "java.util.ArrayList", [ 1, 3 ] ]
+          },
+          "aenderungsart" : "Untracked",
+          "schritte" : [ "java.util.ArrayList", [ [ "specman.model.v001.EinfacherSchrittModel_V001", {
+            "id" : {
+              "nummern" : [ "java.util.ArrayList", [ 1, 3, 1 ] ]
+            },
+            "nummer" : "1.3.1",
+            "inhalt" : {
+              "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+                "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Das \n    System bricht den Vorgang mit einer entsprechenden Fehlermeldung ab</font></span>.\n  </body>\n</html>\n",
+                "plainText" : "\nDas System bricht den Vorgang mit einer entsprechenden Fehlermeldung ab.",
+                "markups" : [ "java.util.ArrayList", [ ] ],
+                "aenderungsart" : "Untracked"
+              } ] ] ]
+            },
+            "farbe" : -1,
+            "aenderungsart" : "Untracked",
+            "quellschrittID" : null,
+            "decorationStyle" : "None"
+          } ] ] ],
+          "catchBereich" : null,
+          "ueberschrift" : {
+            "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+              "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <b><span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Weniger \n    als zwei </font></span><font color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\">W&#246;rter</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\"> \n    im Vokabular </span></font></b>\n  </body>\n</html>\n",
+              "plainText" : "\nWeniger als zwei Wörter im Vokabular ",
+              "markups" : [ "java.util.ArrayList", [ ] ],
+              "aenderungsart" : "Untracked"
+            } ] ] ]
+          },
+          "coCatches" : [ "java.util.ArrayList", [ ] ],
+          "headingRightBarWidth" : 18
+        } ] ],
+        "sequencesWidthPercent" : null,
+        "zugeklappt" : false
+      }
+    },
+    "intro" : {
+      "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+        "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <h1>\n      F<span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">inde \n      Zweiwort-Anagramme</font></span>\n    </h1>\n    <h2>\n      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Beschreibung</font></span><font color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\"> \n      </span></font>\n    </h2>\n    <div>\n      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Dieser \n      Usecase findet alle Zweiwort-Anagramme des Wortes &#8222;documenting&#8220;, \n      basierend auf einem Vokabular, das als Datei vorliegt. </font></span><font color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\">Ein \n      Zweiwort-Anagramm ist eine Kombination aus zwei </span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">W&#246;rtern</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">, \n      die aus einer beliebigen Anordnung der Buchstaben des Wortes \n      &#8220;documenting&#8221; gebildet werden k&#246;nnen. </span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">Beispiel: \n      Die </span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">W&#246;rter</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\"> \n      &#8220;document&#8221; and &#8220;gin&#8221; sind ein Zweiwort-Anagramm von &#8220;documenting&#8221;</span><span style=\"background-color: rgba(255, 255, 255, 0.0)\">.</span></font>\n    </div>\n    <h2>\n      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Spezifikation</font></span><font color=\"#000000\"><span style=\"background-color: rgba(255, 255, 255, 0.0)\"> \n      </span></font>\n    </h2>\n  </body>\n</html>\n",
+        "plainText" : "\nFinde Zweiwort-Anagramme\nBeschreibung \nDieser Usecase findet alle Zweiwort-Anagramme des Wortes „documenting“, basierend auf einem Vokabular, das als Datei vorliegt. Ein Zweiwort-Anagramm ist eine Kombination aus zwei Wörtern, die aus einer beliebigen Anordnung der Buchstaben des Wortes “documenting” gebildet werden können. Beispiel: Die Wörter “document” and “gin” sind ein Zweiwort-Anagramm von “documenting”.\nSpezifikation ",
+        "markups" : [ "java.util.ArrayList", [ ] ],
+        "aenderungsart" : "Untracked"
+      } ] ] ]
+    },
+    "outro" : {
+      "areas" : [ "java.util.ArrayList", [ [ "specman.model.v001.TextEditAreaModel_V001", {
+        "text" : "<html>\n  <head>\n    \n  </head>\n  <body>\n    <div>\n      \n    </div>\n    <h2>\n      N<span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">ichtfunktionale \n      Anforderungen</font></span>\n    </h2>\n    <div>\n      <span style=\"background-color: rgba(255, 255, 255, 0.0)\"><font color=\"#000000\">Das \n      Vokabular kann eine 6-stellige Anzahl an W&#246;rtern enthalten. Das \n      Suchverfahren ist daher entsprechend optimiert, da der intuitive Ansatz \n      einer Bildung aller Wortpaare zu ineffizient w&#228;re.</font></span>\n    </div>\n  </body>\n</html>\n",
+        "plainText" : "\n\nNichtfunktionale Anforderungen\nDas Vokabular kann eine 6-stellige Anzahl an Wörtern enthalten. Das Suchverfahren ist daher entsprechend optimiert, da der intuitive Ansatz einer Bildung aller Wortpaare zu ineffizient wäre.",
+        "markups" : [ "java.util.ArrayList", [ ] ],
+        "aenderungsart" : "Untracked"
+      } ] ] ]
+    },
+    "pdfExportOptions" : null
+  }
+}
