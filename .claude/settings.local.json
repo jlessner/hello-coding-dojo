@@ -3,7 +3,11 @@
     "allow": [
       "Bash(mkdir -p /c/work/jlessner/presentations/spezifikation/javamagazin-2025/livesession-april-2026/livesession-april-2026-projekt/src/main/java/zweiwort_anagramme)",
       "Bash(mkdir -p /c/work/jlessner/presentations/spezifikation/javamagazin-2025/livesession-april-2026/livesession-april-2026-projekt/src/test/java/zweiwort_anagramme)",
-      "Bash(mvn test:*)"
+      "Bash(mvn test:*)",
+      "Bash(mkdir -p C:/work/jlessner/presentations/spezifikation/javamagazin-2025/livesession-april-2026/livesession-april-2026-projekt/src/main/java/org/example)",
+      "Bash(mkdir -p C:/work/jlessner/presentations/spezifikation/javamagazin-2025/livesession-april-2026/livesession-april-2026-projekt/src/test/java/org/example)",
+      "Bash(mvn -q compile)",
+      "Bash(java -cp target/classes org.example.TwoWordAnagrams)"
     ]
   }
 }
