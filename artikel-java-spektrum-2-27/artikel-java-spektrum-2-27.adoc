@@ -27,14 +27,10 @@ Eher nicht, denn um bei der Architekturarbeit qualitativ hochwertige Ergebnisse 
 
 
 ## Architektur _mit_ der KI
-Die Konzepte müssen also weiter von Menschen kommen, aber es wäre natürlich eine Schande, das enormen Allgemeinwissen der KI bzgl. Programmierung, Programmiersprachen, Paradigmen und Designpatterns dabei nicht zu nutzen. Was eine _menschliche_ Architekturentscheidung häufig schlecht macht, sind Faktoren, die sich mithilfe von KI gut abfangen lassen:
+Die Konzepte, Die Bewertung und die Verantwortung für den kompositorischen Akt müssen also weiter von Menschen kommen. Eine Aussage der Art "Keine Ahnung - hat Claude so gemacht" ist nicht akzeptabel und ein Alarmsignal für einsetzenden Kontrollverlust. Aber es wäre natürlich eine Schande, das enormen Allgemeinwissen der KI bzgl. Programmierung, Programmiersprachen, Paradigmen und Designpatterns dabei nicht zu nutzen. Was eine _menschliche_ Architekturentscheidung häufig schlecht macht, sind Faktoren, die sich mithilfe von KI gut abfangen lassen:
 
 ### Unbekannte Unbekannte
 Das meisten Wissen ist jenes, von dem wir nicht wissen, dass wir es nicht wissen. Das sind Lücken im persönlichen Wissensschatz, die sich logischerweise auch nicht gezielt schließen lassen, denn mir ist ja gar nicht bewusst, dass ich sie habe. Kollaborative Lernformen wie Coding Dojos sind ein Mittel, um über den Erfahrungsschatz anderer Leute solche Lücken zu erkennen.
-
-Das Wertvolle daran ist die Diskussion mit Leuten, die einen anderen Erfahrungsschatz als ich selbst haben. Hier kommt mit den KI-Agenten ein neuer Sparringspartner ins Spiel. .
-
-wobei KI dabei hervorragend unterstützen kann. Sie steuert einen enormen Wissensschatz bei und kann darauf basierend Vorschläge machen und für Inspiration sorgen. Sind Konzepte einmal ausgearbeitet, kann KI diese außerdem sehr gut auf ihre Konsistenz prüfen, bevor man damit in die Umsetzung geht. Die Bewertung und die Verantwortung für den kompositorischen Akt bleibt aber beim Menschen. Eine Aussage der Art "Keine Ahnung - hat Claude so gemacht" ist nicht akzeptabel und ein Alarmsignal in Richtung Abgabe der Kontrolle. Mindestens die Person, die ein Konzept entwirft, muss sie im Details verstanden haben und vermitteln können.
 
 
 ## Stichpunkte für den roten Faden - kein Kapitel!
