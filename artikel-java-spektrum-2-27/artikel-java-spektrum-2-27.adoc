@@ -26,7 +26,7 @@ Können wir nicht einfach ein Team von KI-Agenten darauf ansetzen und das lästi
 Eher nicht, denn um bei der Architekturarbeit qualitativ hochwertige Ergebnisse zu erzielen, gehen zu viele Faktoren in den Konzeptionierungsvorgang ein. Da diese außerdem großteilig _unausgesprochen_ sind, sind sie einem Agenten kaum vermittelbar. Was bei einer KI riesig ist, das ist der _allgemeine_ Wissensschatz über alle schon einmal dagewesenen Architektur- und Designpatterns dieser Welt. Und den sollte man tunlichst auch nutzen! Aber das projektspezifische Wissen ist zunächst einmal gleich 0. Wenn man also eine KI ein Konzept entwerfen lassen will, dass passgenau für das Projekt ist, dann steht maximal die Größe des Konversationskontexts zur Verfügung, um den Agenten alle relevanten Projektspezifika mitzugeben. Und diese Kontexte sind _winzig_ im Vergleich mit dem, was die beteiligten menschlichen Entwickler einbringen. Letztere entwickeln Konzepte, basierend auf einer jahrzehntelangen Erfahrungshistorie, auf jahrzehntelanger Sozialisierung und einem umfangreichen "Zwischen-den-Zeilen-Wissen" in ihrem Arbeitsumfeld. Das ist vmtl. das 1000'fache von dem, was in 1 Megabyte Kontext hinein passt - eine aktuell übliche Größe. Für gute Architekturentscheidungen ist das aber unerlässlich, wie man auch an der menschengemachten Arbeit sieht: wenn nennenswerte Teile der oben genannten Kontextinformationen fehlen (z.B. Projekt unbekannt, keine Erfahrung, anderer Kulturkreis), dann kommen häufig unbrauchbare Konzepte aus dem Elfenbeinturm heraus. Genau das also, was bei KI-entworfener Architektur auch zu erwarten ist.
 
 
-Stichpunkte
+#### Stichpunkte für den roten Faden - kein Kapitel!
 
 - KI - genauer gesagt: ein LLM - ist eine ultrahochentwickelte Patternmatching-Maschine, die hervorragend darin ist, Muster und Konzepte zu erkennen und ihnen zu folgen.
 - Das *Entwickeln* von Konzepten liegt aber nicht in ihrer Kernkompetenz.
@@ -35,6 +35,9 @@ Stichpunkte
 - Woran liegt das? Ein Mensch entwickelt Konzepte, basierend auf einem jahrzehntelangen Erfahrungsschatz, auf jahrzehntelanger Sozialisierung und einem umfangreichen "Zwischen-den-Zeilen-Wissen" in seinem Arbeitsumfeld.
 - In Begriffen der KI gesprochen: das ist ein so immenser Umfang an Kontextinformationen, das sie bei weitem nicht in das hinein passen, was einer KI als Gesprächskontext zur Verfügung hat.
 - Im Übrigen ist das auch bei Menschen zu beobachten: wenn ein großteil der oben genannten Kontextinformationen fehlt (z.B. Projekt unbekannt, keine Erfahrung), dann kommen häufig unbrauchbare Konzepte aus dem Elfenbeinturm heraus.
+
+HERE WE ARE
+
 - Die Konzepte müssen von Menschen kommen, wobei KI dabei hervorragend unterstützen kann.
 - Sie steuert einen enormen Wissensschatz bei und kann darauf basierend Vorschläge machen und für Inspiration sorgen.
 - Sind Konzepte einmal ausgearbeitet, kann KI diese außerdem sehr gut auf ihre Konsistenz prüfen, bevor man damit in die Umsetzung geht.
