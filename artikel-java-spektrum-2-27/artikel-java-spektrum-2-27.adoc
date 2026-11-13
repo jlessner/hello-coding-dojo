@@ -2,7 +2,7 @@
 
 # Kollege KI und die Architektur
 
-Ach bei der Architekturarbeit ist KI eine wertvolle Hilfe. Wer aber primär auf einen _Zeitgewinn_ schaut, der genießt vielleicht eine anfängliche Superbeschleunigung, klatscht aber umso schneller mit 200 Sachen unkontrolliert gegen eine Wand aus massiver Unwartbarkeit. Mit dem primären Ziel _Qualitätsgewinn_ fährt es sich dagegen deutlich kontrollierter, und am Ende sogar flotter.
+Auch bei der Architekturarbeit ist KI eine wertvolle Hilfe. Wer aber primär auf einen _Zeitgewinn_ schaut, der genießt vielleicht eine anfängliche Superbeschleunigung, klatscht aber umso schneller mit 200 Sachen unkontrolliert gegen eine Wand aus massiver Unwartbarkeit. Mit dem primären Ziel _Qualitätsgewinn_ und dem Lenkrad in den eigenen Händen fährt es sich dagegen deutlich kontrollierter und am Ende flotter.
 
 ## Einleitung
 
@@ -10,7 +10,20 @@ Nevio: _"Was ist das für ein Konzept? Was soll das??"_ +
 Jannik: _"Wieso Konzept? Das ist KI."_ +
 Aus "Die Burg", Hörbuchfassung, Ursula Poznanski, 2024
 
-Dieser kleine Dialog könnte passender nicht beschreiben, was derzeit die Diskussion über die Rolle von Künstlicher Intelligenz (KI) in der Softwareentwicklung und der Software-Architektur prägt.
+Dieser kleine Dialog könnte passender nicht beschreiben, was derzeit die Diskussion über die Rolle von Künstlicher Intelligenz (KI) in der Softwareentwicklung und der Software-Architektur prägt. Es beschreibt auch eine wiederkehrende Erkenntnis, die sich auch mit der rasant fortschreitenden Evolution von KI-Agenten im Kern nicht ändert: KI - genauer gesagt: ein LLM - ist eine ultrahochentwickelte Pattern-Matching-Maschine, die hervorragend darin ist, Muster und Konzepte zu erkennen und ihnen zu folgen. Das *Erfinden* von Konzepten liegt aber nicht in ihrer Kernkompetenz. Überlässt man der KI diese Aufgabe, ist das quasi eine Einladung zum "Halluzinieren" und die Trefferquote für projekt-geeignete Ergebnisse ist dabei zufällig. Zufall ist aber ein bisschen dünn für architektonische Konzepte, die zu ändern nach hinten raus ziemlich teuer werden kann.
+
+Mit "Architekturarbeit" sind im Rahmen dieses Artikels übrigens die Aspekte gemeint, bei denen das Team selbst Hand anlegt, basierend auf einem Spielraum, der durch Entscheidungen auf eine Makroebene bereits vorgegeben und geschenkt ist.
+
+*Ein Beispiel: Die Makro-Ebene* +
+Es soll ein neues Teilsystem mit gut isolierter Funktionalität in einem größeren Systemverbund hochgezogen werden. Die Makroebene gibt bereits vor, dass die Teilsysteme asynchron über Apache Kafka kommunizieren und die Datenhaltung über ein altes DB2-Schätzchen erfolgen muss, denn nur dafür hat der Kunde ausgebildete Admins. Eine Firmen-Policy schreibt Java als Programmiersprache und JOOQ als Persistenzmanager vor. All das ist für das zuständige Entwicklungsteam nicht verhandelbar. Aber zwischen diesen Vorgaben und ganz konkretem Anwendungscode klafft immer noch eine breite Lücke an architektonischen Entscheidungen, die das Team selbst treffen muss, damit der Anwendungscode hinterher elegant, wartbar und erweiterbar ist. Hier gibt es auch kein "richtig" oder "falsch" und nichts in Stein gemeißeltes. Auch dazu ein Beispiel...
+
+*Ein Beispiel: die Team-Ebene* +
+Angenommen das Teilsystem liegt in einer Serverlandschaft und erfordert Absicherung gegen konkurrierende Zugriffe. Wäre es also eine gute Idee, alle Entitäten mit einem Versionszähler für Optimistic Locking auszustatten, und dafür Basisklassen für alle zukünftigen Entitäten und alle Repositories bereitzustellen? Ist absehbar, dass es später Ausnahmen von diesem Grundkonzept geben muss? Hier bekommt das Team keinen Code von der Stange, sondern muss recherchieren, Erfahrung einbringen, diskutieren, im Mob-programming ausprobieren und Beschlüsse fassen. Sogar darüber debattieren, wie das Team überhaupt Beschlüsse fasst - im Konsent-Verfahren oder per Erlass vom einzigen Senior-Entwickler? Zwischen den Zeilen liest man hier schon: das klingt nach Vorgängen, die KI nicht leisten kann, nur unterstützen.
+
+## Architektur von der KI?
+Können wir nicht einfach ein Team von KI-Agenten darauf ansetzen und das lästige Menschenteam aus der Verantwortung nehmen?
+
+Eher nicht, denn um bei der Architekturarbeit qualitativ hochwertige Ergebnisse zu erzielen, gehen zu viele Faktoren in den Konzeptionierungsvorgang ein. Da diese außerdem großteilig _unausgesprochen_ sind, sind sie einem Agenten kaum vermittelbar. Was bei einer KI riesig ist, das ist der _allgemeine_ Wissensschatz über alle schon einmal dagewesenen Architektur- und Designpatterns dieser Welt. Und den sollte man tunlichst auch nutzen! Aber das projektspezifische Wissen ist zunächst einmal gleich 0. Wenn man also eine KI ein Konzept entwerfen lassen will, dass passgenau für das Projekt ist, dann steht maximal die Größe des Konversationskontexts zur Verfügung, um den Agenten alle relevanten Projektspezifika mitzugeben. Und diese Kontexte sind _winzig_ im Vergleich mit dem, was die beteiligten menschlichen Entwickler einbringen. Letztere entwickeln Konzepte, basierend auf einer jahrzehntelangen Erfahrungshistorie, auf jahrzehntelanger Sozialisierung und einem umfangreichen "Zwischen-den-Zeilen-Wissen" in ihrem Arbeitsumfeld. Das ist vmtl. das 1000'fache von dem, was in 1 Megabyte Kontext hinein passt - eine aktuell übliche Größe. Für gute Architekturentscheidungen ist das aber unerlässlich, wie man auch an der menschengemachten Arbeit sieht: wenn nennenswerte Teile der oben genannten Kontextinformationen fehlen (z.B. Projekt unbekannt, keine Erfahrung, anderer Kulturkreis), dann kommen häufig unbrauchbare Konzepte aus dem Elfenbeinturm heraus. Genau das also, was bei KI-entworfener Architektur auch zu erwarten ist.
 
 
 Stichpunkte
