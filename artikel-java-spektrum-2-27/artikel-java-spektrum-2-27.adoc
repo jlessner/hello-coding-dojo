@@ -1,0 +1,66 @@
+:toc:
+
+# Kollege KI und die Architektur
+
+Ach bei der Architekturarbeit ist KI eine wertvolle Hilfe. Wer aber primär auf einen _Zeitgewinn_ schaut, der genießt vielleicht eine anfängliche Superbeschleunigung, klatscht aber umso schneller mit 200 Sachen unkontrolliert gegen eine Wand aus massiver Unwartbarkeit. Mit dem primären Ziel _Qualitätsgewinn_ fährt es sich dagegen deutlich kontrollierter, und am Ende sogar flotter.
+
+## Einleitung
+
+Nevio: _"Was ist das für ein Konzept? Was soll das??"_ +
+Jannik: _"Wieso Konzept? Das ist KI."_ +
+Aus "Die Burg", Hörbuchfassung, Ursula Poznanski, 2024
+
+Dieser kleine Dialog könnte passender nicht beschreiben, was derzeit die Diskussion über die Rolle von Künstlicher Intelligenz (KI) in der Softwareentwicklung und der Software-Architektur prägt.
+
+
+Stichpunkte
+
+- KI - genauer gesagt: ein LLM - ist eine ultrahochentwickelte Patternmatching-Maschine, die hervorragend darin ist, Muster und Konzepte zu erkennen und ihnen zu folgen.
+- Das *Entwickeln* von Konzepten liegt aber nicht in ihrer Kernkompetenz.
+- Überlässt man der KI diese Aufgabe, ist das quasi eine Einladung zum "Halluzinieren"
+- Die Trefferquote für etwas optimal Geeignetes ist dabei eher gering.
+- Woran liegt das? Ein Mensch entwickelt Konzepte, basierend auf einem jahrzehntelangen Erfahrungsschatz, auf jahrzehntelanger Sozialisierung und einem umfangreichen "Zwischen-den-Zeilen-Wissen" in seinem Arbeitsumfeld.
+- In Begriffen der KI gesprochen: das ist ein so immenser Umfang an Kontextinformationen, das sie bei weitem nicht in das hinein passen, was einer KI als Gesprächskontext zur Verfügung hat.
+- Im Übrigen ist das auch bei Menschen zu beobachten: wenn ein großteil der oben genannten Kontextinformationen fehlt (z.B. Projekt unbekannt, keine Erfahrung), dann kommen häufig unbrauchbare Konzepte aus dem Elfenbeinturm heraus.
+- Die Konzepte müssen von Menschen kommen, wobei KI dabei hervorragend unterstützen kann.
+- Sie steuert einen enormen Wissensschatz bei und kann darauf basierend Vorschläge machen und für Inspiration sorgen.
+- Sind Konzepte einmal ausgearbeitet, kann KI diese außerdem sehr gut auf ihre Konsistenz prüfen, bevor man damit in die Umsetzung geht.
+- Die Bewertung und die Verantwortung für den kompositorischen Akt bleibt aber beim Menschen.
+- Eine Aussage der Art "Keine Ahnung - hat Claude so gemacht" ist nicht akzeptabel und ein Alarmsignal in Richtung Abgabe der Kontrolle.
+- Mindestens die Person, die ein Konzept entwirft, muss sie im Details verstanden haben und vermitteln können.
+- Das ist genau das, was Architekten über die Fähigkeiten des Software Entwickelns zusätzlich mitbringen müssen:
+- Sie sind in der Lage ein Konzept zu vermitteln
+- Sie können auch herleiten und erklären, warum genau dieses Konzept in dem jeweiligen Projekt das richtige ist
+- Architekturen genau zu definieren und zu dokumentieren wird wieder wichtiger denn je.
+- Hat gleich mehrere Gründe:
+- Der Vorgang des Dokumentierens *ist selbst* ein erkläglicher Teil des Entwurfsprozesses
+- Eine glasklare Beschreibung erlaubt Mensch und Maschine, das Konzept zu verstehen und ihm zu folgen
+- Man muss es nicht tausendmal wieder erklären. Die Info ist jederzeit abrufbar
+- Grade letzteres ist wichtig für KI-Agenten und ihr äußerst beschränktes Projektgedächtnis
+- Ralf Klemmert sprich von einem "betrunkenen Genie". Und nach einer durchzechten Nacht hat das Genie schon mal Filmriss und muss sich am nächsten Morgen wieder fast von vorn einarbeiten. Mit guter und gut strukturierter Dokumentation geht das auch blitzschnell.
+- Woraus besteht also eine "gute" Architekturdoku?
+- Es sind einerseits Dokumente und Visualisierungen und andererseits sauber isolierter Beispielcode
+- Wo immer möglich, verweisen die Dokumente auf diese Beispiele, denn der konkrete Code sagt häufig mehr als tausend Worte.
+- Wichtig: der Beispielcode steht zwar isoliert (z.B. ein separater Sourcefolder oder ein separates Package) aber im gleichen Repository wie der Produktivcode.
+- Er muss in der gleichen Umgebung kompilieren, seine Tests sind Teil der Suite, d.h. die Beispiele sind immer funktionstüchtig und kein veraltetes Zeug.
+- Die Beispiele sind so klein wie möglich, aber so groß wie nötig. Sie sollen die Konzepte klar und verständlich vermitteln.
+- Es entstehen natürlich auch sukzessive produktive Beispiele, aber nur die isolierten Beispiele haben den Anspruch, auf Verständlichkeit ausgelegt und dauerhaft "unverschmutzt" zu sein.
+- Was die Dokumente betrifft, besteht Innovationsbedarf. Auch sie müssen einerseits für Mensch und Maschine *lesbar* sein
+- Aber sie müssen auch leicht *pflegbar* sein, denn sonst passiert das lustlos und die Dokumente veralten.
+- Die Maschinenlesbarkeit ist auch hier eine Hilfe: es lässt sich einfach regelmäßig KI-gestützt prüfen, ob die Aussagen in den Dokumenten noch mit dem aktuellen Code übereinstimmen.
+- Aktueller Kompromiss mangels besserer Tools:
+- ASCIIDOC als Format
+- Zentraldokument + viele kleine Teildokumente für gut isolierbare Aspekte - sog. "How Tos"
+- z.B. how-to-add-new-table.adoc beschreibt alle wiederkehrenden, stereotypen technischen Schritte, die notwendig sind, um eine neue Datenbanktabelle in das Projekt einzuführen.
+- Erweiterung Datenmodell, Anlage der Entity-Klasse, einer DB-Adapterklasse, eines Repositorys. Erweiterung Exportskripte, Testdatenbuilder, Migrationsskript...
+- Das How-To wird von Entwicklern verwendet, wirkt aber auch direkt wie ein Skill für einen KI-Agenten.
+- Auf der Basis erfolgt die Neuanlage einer neuen Tabelle also üblicherweise fast vollautomatisch.
+- Die Gliederung in kleine Dokumente war schon vor Einführung von KI für die Entwickler praktisch. Für die KI bedeutet es, dass sie für eine isolierte Tätigkeit nicht die gesamte Architekturdoku in ihren Kontext ziehen muss.
+- Es ist auch ein Beispiel für eine sich wiederholende Erkenntnis: klassische Werte eines stringenten Software Engineerings werden durch KI nicht obsolet, sondern gewinnen sogar an Bedeutung.
+- Das gilt auch für die Absicherung der Einhaltung der Architektur.
+- Genau wie bei menschlichen Entwicklern, ignoriert unser "betrunkenes Genie" schon mal die Regeln.
+- Wann immer das passiert, empfiehlt sich eine Absicherung über "Leitplankentests".
+- Sie zielen nicht auf die produktive Funktionalität ab, sondern auf die Einhaltung der Architektur und des Software Engineerings.
+- Gut bekannt in diesem Zusammenhang sind Archunit-Tests
+- Dabei muss es aber nicht bleiben. Schönes anderes Beispiel: sind neue Systemkonfigurationsparameter auch im Betriebshandbuch dokumentiert?
+- Referenz auf iX-Artikel
