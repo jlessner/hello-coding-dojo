@@ -87,8 +87,21 @@ Abbildung 1 zeigt grob, wie das für das Beispiel aus der Einleitung aussehen k�
 
 Solche separaten Codebeispiele sind auch vorteilhaft, wenn die Konzepte mal geändert werden müssen. Dann kann man erstmal die kleinen Beispiele anpassen, und der Produktivcode bleibt unverändert. Aus der Abwandlung in den Beispielen kann ein KI-Agent dann mit etwas Hilfestellung die Abbildungsregeln vom alten auf das neue Konzept ableiten und später den Produktivcode auf das neue Konzept migrieren.
 
-### How-Tos
+### How-Tos und Skills
+Schon lange vor der Einführung von KI-Agenten habe die Projekte, aus denen die hier beschriebenen Erfahrungen stammen, mit sogenannten "How-To" Dokumenten gearbeitet. Dabei handelt es sich um kleine, isolierte Dokumente im ASCIIDOC-Format, die wiederkehrende, technischen Prozeduren beschreiben. Das Dokument `how-to-add-new-table.adoc` beschreibt beispielsweise alle notwendigen Schritte, um eine neue Datenbanktabelle in das Projekt einzuführen.
 
+- Erweiterung des Datenmodells
+- Anlage einer Entity-Klasse, einer Datenbank-Adapterklasse und eines Repositiorys
+- Erweiterung von Exportskripten
+- Bereitstellen eines Testdatenbuilders für Unittests
+- Migrationsskript
+- ...
+
+Die How-Tos wurden ursprünglich nur von Entwicklern verwendet, wirken aber mit geringfügiger Säuberung der Kapitelstruktur auch direkt wie ein Skill für einen KI-Agenten. Auf der Basis erfolgt die Neuanlage einer neuen Tabelle also üblicherweise fast vollautomatisch.
+
+Genau genommen erfolgt bei komplizierteren Prozeduren eine Zweiteilung. Das How-To enthält die Abläufe und Regeln, die für Mensch _und_ Maschine gelten. Braucht es noch _zusätzliche_ Hinweise, die nur für einen Agenten relevant sind, liegen diese in einer separaten KI-Skill-Datei, die neben einer Referenz auf das How-To so etwas enthält wie eine Aufteilung der Arbeit in Runden, weil erfahrungsgemäß sonst der Kontext überläuft und die KI auf der Hälfte der Arbeit anfängt rumzuspinnen.
+
+ASCIIDOC hat als Format den Vorteil, dass es einerseits noch relativ gut für Menschen editierbar ist und sich besser als z.B. Markdown dafür eignet, wirkliche _Dokumente_ zu verfassen mit einem automatischen Inhaltsverzeichnis, Kapitelnummerierung, Notizhervorhebungen usw. Andererseits ist die Maschinenlesbarkeit genauso gut wie bei Markdown.
 
 ## Stichpunkte für den roten Faden - kein Kapitel!
 
