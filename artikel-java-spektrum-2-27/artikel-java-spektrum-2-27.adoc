@@ -34,8 +34,26 @@ _"Keine Ahnung - hat Claude so gemacht."_
 ist nicht akzeptabel und ein Alarmsignal für einsetzenden Kontrollverlust. Aber es wäre natürlich eine Schande, das enormen Allgemeinwissen der KI bzgl. Programmierung, Programmiersprachen, Paradigmen und Designpatterns dabei nicht zu nutzen. Was eine _menschliche_ Architekturentscheidung häufig schlecht macht, sind Faktoren, die sich mithilfe von KI gut abfangen lassen:
 
 ### Unbekannte Unbekannte
-Das meisten Wissen ist jenes, von dem wir nicht wissen, dass wir es nicht wissen. Das sind Lücken im persönlichen Wissensschatz, die sich logischerweise auch nicht gezielt schließen lassen, denn mir ist ja gar nicht bewusst, dass ich sie habe. Kollaborative Lernformen wie Coding Dojos sind ein Mittel, um über den Erfahrungsschatz anderer Leute solche Lücken zu erkennen.
+Das meiste Wissen ist jenes, von dem wir nicht wissen, dass wir es nicht wissen. Das sind Lücken im persönlichen Wissensschatz, die sich logischerweise auch nicht gezielt schließen lassen, denn mir ist ja gar nicht bewusst, dass ich sie habe. Kollaborative Lernformen wie Coding Dojos sind ein Mittel, um über den Erfahrungsschatz anderer Leute solche Lücken zu erkennen. Hier kann die KI ein neuer Sparringspartner sein. Wenn ich einem Agenten eine Problematik schildere, dann kann er mir aus seinem Allgemeinwissen heraus Vorschläge machen und für Inspiration sorgen.
 
+Nehmen wir das Beispiel aus der Einleitung: wenn ich nur weiß, dass ich irgendwie konkurrierende Zugriffe absichern muss, aber von "Optimistic Locking" noch nie gehört habe, dann schildere ich einem Agenten möglichst ausführlich, was die Herausforderung ist. Viele Details, eigene Ideen, bekannte Randbedingungen und, und, und - wo ein menschlicher Sparringspartner eher mit den Augen rollen würde, sorgen bei einem Agenten im Gegenteil für gezieltere, gut erklärte Ergebnisse. Ausführlichkeit hat dabei auch noch einen anderen Effekt: sie zwingt mich, meine Fragestellung präzise zu formulieren und bei der Gelegenheit zu hinterfragen, ob mir denn die _Problemstellung_ zumindest hundertprozentig klar ist. Eine ganz wichtige Voraussetzung, um später in einer Architekturdoku einen ADR (Architecture Decision Record) zu verfassen.
+
+*JA, richtig gelesen!* +
+Die Architekturdokumentation wird mit der Nutzung von KI wieder wichtiger denn je. Dazu später mehr.
+
+### Lieblingslösungen
+
+Menschen neigen bei Richtungsentscheidungen dazu, sich an Lieblingslösungen zu klammern. Das ist auch nicht per se schlecht, denn gute Erfahrungen sind ein wichtiger Faktor. Aber es kann problematisch werden, wenn die Lösung nicht optimal passt. KI hat keine "Lieblinge" und macht daher neutralere Vorschläge, allerdings prinzipbedingt mit der Tendenz zu Standardlösungen. Wieder das Beispiel von oben herangezogen: gäbe es keine Vorgabe, den Persistenzmanager JOOQ zu verwenden, dann würde ein Agent wahrscheinlich auf die Standardlösung Hibernate / JPA verweisen. Das ist zwar eine "sichere Bank", aber nicht unbedingt das Beste für das konkrete Projekt. Aber das ist nicht schlimm, sondern bietet im Gegenteil gleich eine Chance, eine andere Quelle für menschliche Fehlentscheidungen zu eliminieren.
+
+### Inneres Kolloquium
+Ihren Lieblingslösungen gegenüber neigen Menschen zur Alternativenblindheit. Vielleicht gehen sie sogar unbewusst Diskussionen darüber mit Kollegen aus dem Weg, weil sie den Konflikt scheuen. Hat mich nun ein KI-Agent auf eine Alternative aufmerksam gemacht, kann ich dies zum Anlass nehmen, meinen eigenen Favoriten der KI gegenüber mit Argumenten zu verteidigen. Es ist egal, über wie viele Runden dieses innere Kolloquium geht und ob am Ende ein Dissens stehen bleibt. Der Agent ist hinterher nicht beleidigt und verweigert die Teamarbeit. Egal, ob ich danach bei meinem Favoriten bleibe oder mich von einer Alternative habe überzeugen lassen: Das "Warum" eines Konzeptvorschlags gegenüber meinen menschlichen Kollegen und in einem ADR in der Architekturdoku ist mit Sicherheit gut geschärft.
+
+### Gegenlesen
+Ist ein Konzept einmal ausgearbeitet, kann KI es oft gut auf seine Konsistenz prüfen, bevor man damit in die Umsetzung geht. Voraussetzung ist natürlich, dass es irgendwo klar beschrieben ist, was schon wieder zum Thema Architekturdokumentation führt. Sie muss also für Mensch und Maschine gleichermaßen zugänglich sein.
+
+Das ist übrigens nicht nur für den Vorgang der KI-unterstützten Konzeptprüfung relevant. Die Konzepte sollten später auch jederzeit für KI-Agenten abrufbar sein, die bei der darauf aufbauenden Implementierungsarbeit mitwirken. Da, wo sich sonst Kollegen mangels brauchbarer Doku in der Kaffeeküche absprechen und das Gesagte in ihrem Projekt-Langzeitgedächtnis speichern, fängt ein KI-Agent täglich von vorn an. Mit einem "Betrunkenen Genie" hat Ralf Klemmert auf seinem Block die KI-Agenten mal verglichen. Damit das Genie also nach durchzechter Nacht mit anschließendem Filmriss am nächsten Tag wieder auf Spur kommt, muss alles Wichtige parat liegen.
+
+Aber was heißt nun "Parat liegen"?
 
 ## Stichpunkte für den roten Faden - kein Kapitel!
 
@@ -46,15 +64,15 @@ Das meisten Wissen ist jenes, von dem wir nicht wissen, dass wir es nicht wissen
 - Woran liegt das? Ein Mensch entwickelt Konzepte, basierend auf einem jahrzehntelangen Erfahrungsschatz, auf jahrzehntelanger Sozialisierung und einem umfangreichen "Zwischen-den-Zeilen-Wissen" in seinem Arbeitsumfeld.
 - In Begriffen der KI gesprochen: das ist ein so immenser Umfang an Kontextinformationen, das sie bei weitem nicht in das hinein passen, was einer KI als Gesprächskontext zur Verfügung hat.
 - Im Übrigen ist das auch bei Menschen zu beobachten: wenn ein großteil der oben genannten Kontextinformationen fehlt (z.B. Projekt unbekannt, keine Erfahrung), dann kommen häufig unbrauchbare Konzepte aus dem Elfenbeinturm heraus.
-
-*HERE WE ARE*
-
 - Die Konzepte müssen von Menschen kommen, wobei KI dabei hervorragend unterstützen kann.
 - Sie steuert einen enormen Wissensschatz bei und kann darauf basierend Vorschläge machen und für Inspiration sorgen.
 - Sind Konzepte einmal ausgearbeitet, kann KI diese außerdem sehr gut auf ihre Konsistenz prüfen, bevor man damit in die Umsetzung geht.
 - Die Bewertung und die Verantwortung für den kompositorischen Akt bleibt aber beim Menschen.
 - Eine Aussage der Art "Keine Ahnung - hat Claude so gemacht" ist nicht akzeptabel und ein Alarmsignal in Richtung Abgabe der Kontrolle.
 - Mindestens die Person, die ein Konzept entwirft, muss sie im Details verstanden haben und vermitteln können.
+
+*HERE WE ARE*
+
 - Das ist genau das, was Architekten über die Fähigkeiten des Software Entwickelns zusätzlich mitbringen müssen:
 - Sie sind in der Lage ein Konzept zu vermitteln
 - Sie können auch herleiten und erklären, warum genau dieses Konzept in dem jeweiligen Projekt das richtige ist
