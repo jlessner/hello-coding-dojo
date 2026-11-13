@@ -27,7 +27,7 @@ Eher nicht, denn um bei der Architekturarbeit qualitativ hochwertige Ergebnisse 
 
 
 ## Architektur _mit_ der KI
-Die Konzepte, Die Bewertung und die Verantwortung für den kompositorischen Akt müssen also weiter von Menschen kommen. Eine Aussage der Art "Keine Ahnung - hat Claude so gemacht" ist nicht akzeptabel und ein Alarmsignal für einsetzenden Kontrollverlust. Aber es wäre natürlich eine Schande, das enormen Allgemeinwissen der KI bzgl. Programmierung, Programmiersprachen, Paradigmen und Designpatterns dabei nicht zu nutzen. Was eine _menschliche_ Architekturentscheidung häufig schlecht macht, sind Faktoren, die sich mithilfe von KI gut abfangen lassen:
+Die Konzepte, die Bewertung und die Verantwortung für den kompositorischen Akt müssen also weiter von Menschen kommen. Eine Aussage der Art "Keine Ahnung - hat Claude so gemacht" ist nicht akzeptabel und ein Alarmsignal für einsetzenden Kontrollverlust. Aber es wäre natürlich eine Schande, das enormen Allgemeinwissen der KI bzgl. Programmierung, Programmiersprachen, Paradigmen und Designpatterns dabei nicht zu nutzen. Was eine _menschliche_ Architekturentscheidung häufig schlecht macht, sind Faktoren, die sich mithilfe von KI gut abfangen lassen:
 
 ### Unbekannte Unbekannte
 Das meisten Wissen ist jenes, von dem wir nicht wissen, dass wir es nicht wissen. Das sind Lücken im persönlichen Wissensschatz, die sich logischerweise auch nicht gezielt schließen lassen, denn mir ist ja gar nicht bewusst, dass ich sie habe. Kollaborative Lernformen wie Coding Dojos sind ein Mittel, um über den Erfahrungsschatz anderer Leute solche Lücken zu erkennen.
