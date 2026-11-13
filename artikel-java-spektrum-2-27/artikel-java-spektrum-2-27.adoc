@@ -53,7 +53,7 @@ Ist ein Konzept einmal ausgearbeitet, kann KI es oft gut auf seine Konsistenz pr
 
 Spannend ist das Gegenlesen auch, wenn es darum geht, ein neues Konzept in eine bestehende Software einzuführen. Die KI kann wesentlich schneller als Menschen den Code daraufhin untersuchen, ob er sich mit dem Konzept verträgt oder ob irgendwo in den Tiefen noch ein fieser Stolperstein lauert. Auf das Optimistic-Locking-Beispiel bezogen: auf der "grünen Wiese" von Grund auf festgelegt, mag das unproblematisch sein. Bei einem Bestandsprojekt stellt man aber vielleicht fest, dass es eine Datenbanktabelle mit Milliarden von Datensätzen gibt, die nur über Massenoperationen beschickt werden kann. Ein Optimistic Locking auf Einzelsatzebene ist hier nicht praktikabel. KI-gestützte Codeanalyse findet so etwas wesentlich schneller heraus, als wenn ein Mensch das mühsam selber macht.
 
-Maschinen-zugängliche Dokumentation ist übrigens nicht nur für den Vorgang der KI-unterstützten Konzeptprüfung relevant. Die Konzepte sollten später auch jederzeit für Agenten abrufbar sein, die bei der darauf aufbauenden Implementierungsarbeit mitwirken. Da, wo sich sonst Kollegen mangels brauchbarer Doku in der Kaffeeküche absprechen und das Gesagte in ihrem Projekt-Langzeitgedächtnis speichern, fängt eine KI täglich von vorn an. Mit einem "Betrunkenen Genie" hat Ralf Klemmer auf seinem Blog die Agenten mal verglichen. Damit das Genie also nach durchzechter Nacht mit anschließendem Filmriss am nächsten Tag wieder auf Spur kommt, muss alles Wichtige parat liegen.
+Maschinen-zugängliche Dokumentation ist übrigens nicht nur für den Vorgang der KI-unterstützten Konzeptprüfung relevant. Die Konzepte sollten später auch jederzeit für Agenten abrufbar sein, die bei der darauf aufbauenden Implementierungsarbeit mitwirken. Da, wo sich sonst Kollegen mangels brauchbarer Doku in der Kaffeeküche absprechen und das Gesagte in ihrem Projekt-Langzeitgedächtnis speichern, fängt eine KI täglich von vorn an. Mit einem "Betrunkenen Genie" hat Ralf Klemmer auf seinem Blog die Agenten mal verglichen [RKB]. Damit das Genie also nach durchzechter Nacht mit anschließendem Filmriss am nächsten Tag wieder auf Spur kommt, muss alles Wichtige parat liegen.
 
 Aber was heißt nun "Parat liegen"?
 
@@ -62,12 +62,21 @@ Wer bis hierhin den Eindruck hat
 
 _"Das klingt aber irgendwie old-school, so mit Doku und selber Nachdenken"_
 
-der liegt gar nicht so falsch. Es entspricht der sich wiederholenden Erkenntnis, dass klassische Werte eines stringenten Software-Engineerings durch KI nicht obsolet werden, sondern zum Teil sogar an Bedeutung gewinnen. Benedikt Stemmildt hat es in einer Folge des Podcasts von Richard Seidl sehr schön auf den Punkt gebracht:
+der liegt gar nicht so falsch. Es entspricht der sich wiederholenden Erkenntnis, dass klassische Werte eines stringenten Software-Engineerings durch KI nicht obsolet werden, sondern zum Teil sogar an Bedeutung gewinnen. Benedikt Stemmildt hat es in einer Folge des Podcasts von Richard Seidl sehr schön auf den Punkt gebracht[BRB]:
 
 [quote]
 Wenn du schlechte Prinzipien hast und KI anwendest, wirst du schneller schlechter; wenn du gute Prinzipien hast, wirst du schneller besser, weil KI den vorhandenen Kurs einfach beschleunigt.
 
-Was sich ändert, ist das Tooling, um den neuen Kollegen KI mit ins Boot zu holen. Oben klang schon mehrfach an, dass Architekturdokumentation maschinen-zugänglich sein muss, und das ist aktuell eine noch wenig beachtete Herausforderung. Es sprießen
+Was sich ändert, ist das Tooling, um den neuen Kollegen KI mit ins Boot zu holen. Oben klang schon mehrfach an, dass Architekturdokumentation maschinen-zugänglich sein muss, und das ist aktuell eine noch wenig beachtete Herausforderung.
+
+Die textuellen Teile solche Dokumentationen entstanden traditionell mit Textprozessoren wie Microsoft Word, die komfortables Editieren erlauben - allem voran Arbeiten im WYSIWYG-Stil. Direkte Lesbarkeit durch KI ist aber mangelhaft. Im Moment schlägt das Pendel deshalb voll in die anderen Richtung aus. Im Zusammenhang mit dem Begriff Spec-driven Development sprießen neue Tools wie Speckit[SKT] und OpenSpec[OSP] aus dem Boden, die als grundlegendes Format Markdown verwenden. Hier wird der Maschinenzugänglichkeit alles andere untergeordnet, und nun ist es Lesbarkeit und Wartbarkeit durch den Menschen, die mangelhaft sind. Es muss also noch einiges passieren, um optimal effiziente Kollaboration von Mensch und Maschine hinzubekommen.
+
+Das open-source Spezifikationswerkzeug Specman[SMN] zeigt auf, wie so etwas in der Zukunft aussehen könnte. Strukturiertes WYSIWYG im UI einerseits und Pseudocode-artiges Dateiformat mit EBNF-Grammatik andererseits für optimale KI-Lesbarkeit, beides gekoppelt über ein CLI für kollaboratives Arbeiten an Usecase-Spezifikationen. Das ist ein spannender Ansatz, der aber noch nicht in der Breite angekommen ist. Für Architekturdokumentation gibt es auch noch keine Entsprechung und man muss sich ein wenig behelfen.
+
+### Code als Doku
+
+### How-Tos
+
 
 ## Stichpunkte für den roten Faden - kein Kapitel!
 
@@ -84,6 +93,8 @@ Was sich ändert, ist das Tooling, um den neuen Kollegen KI mit ins Boot zu hole
 - Die Bewertung und die Verantwortung für den kompositorischen Akt bleibt aber beim Menschen.
 - Eine Aussage der Art "Keine Ahnung - hat Claude so gemacht" ist nicht akzeptabel und ein Alarmsignal in Richtung Abgabe der Kontrolle.
 - Mindestens die Person, die ein Konzept entwirft, muss sie im Details verstanden haben und vermitteln können.
+- Grade letzteres ist wichtig für KI-Agenten und ihr äußerst beschränktes Projektgedächtnis
+- Ralf Klemmert sprich von einem "betrunkenen Genie". Und nach einer durchzechten Nacht hat das Genie schon mal Filmriss und muss sich am nächsten Morgen wieder fast von vorn einarbeiten. Mit guter und gut strukturierter Dokumentation geht das auch blitzschnell.
 
 *HERE WE ARE*
 
@@ -95,8 +106,6 @@ Was sich ändert, ist das Tooling, um den neuen Kollegen KI mit ins Boot zu hole
 - Der Vorgang des Dokumentierens *ist selbst* ein erkläglicher Teil des Entwurfsprozesses
 - Eine glasklare Beschreibung erlaubt Mensch und Maschine, das Konzept zu verstehen und ihm zu folgen
 - Man muss es nicht tausendmal wieder erklären. Die Info ist jederzeit abrufbar
-- Grade letzteres ist wichtig für KI-Agenten und ihr äußerst beschränktes Projektgedächtnis
-- Ralf Klemmert sprich von einem "betrunkenen Genie". Und nach einer durchzechten Nacht hat das Genie schon mal Filmriss und muss sich am nächsten Morgen wieder fast von vorn einarbeiten. Mit guter und gut strukturierter Dokumentation geht das auch blitzschnell.
 - Woraus besteht also eine "gute" Architekturdoku?
 - Es sind einerseits Dokumente und Visualisierungen und andererseits sauber isolierter Beispielcode
 - Wo immer möglich, verweisen die Dokumente auf diese Beispiele, denn der konkrete Code sagt häufig mehr als tausend Worte.
@@ -126,5 +135,8 @@ Was sich ändert, ist das Tooling, um den neuen Kollegen KI mit ins Boot zu hole
 - Richard Seidl / Benedikt Stemmildt, https://www.richard-seidl.com/de/podcast/agentic-engineering: Wenn du schlechte Prinzipien hast und KI anwendest, wirst du schneller schlechter; wenn du gute Prinzipien hast, wirst du schneller besser, weil KI den vorhandenen Kurs einfach beschleunigt.
 
 ## Quellen
-[1] Ralf Klemmer, Betrunkenes Genie, fehlt noch
-[2] Richard Seidl / Benedikt Stemmildt, https://www.richard-seidl.com/de/podcast/agentic-engineering
+[RKB] Ralf Klemmer, Betrunkenes Genie, fehlt noch
+[BRB] Richard Seidl / Benedikt Stemmildt, https://www.richard-seidl.com/de/podcast/agentic-engineering
+[SKT] Speckit Website, https://github.com/github/spec-kit
+[OSP] OpenSpec Website, https://github.com/Fission-AI/OpenSpec
+[SMN] Specman Website, https://specman.de
