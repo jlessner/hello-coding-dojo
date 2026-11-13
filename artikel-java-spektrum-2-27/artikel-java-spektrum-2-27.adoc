@@ -75,6 +75,18 @@ Das open-source Spezifikationswerkzeug Specman[SMN] zeigt auf, wie so etwas in d
 
 ### Code als Doku
 
+Genau wie bei menschlichen Entwicklern, sind es gar nicht immer Dokumente im klassischen Sinne, die ein Konzept alleinig vermitteln. Oft sagen kleine Codebeispiele mehr als tausend Worte, und eine Pattern-Matching-Maschine kann damit erst recht viel anfangen.
+
+Ein empfehlenswertes Prinzip liegt darin, isolierte Codebeispiele zu erstellen, die zwei wichtige Eigenschaften haben sollten:
+
+- Sie sind so klein wie möglich, aber so groß wie nötig. Sie sollen die Konzepte mit dem minimalen Umfang an Code vermitteln, um sie schnell erfassen zu können. Später hinzukommende _produktive_ Beispiel für die Anwendung des Konzepts können beliebig umfangreicher sein und "schmutziger" sein, ohne dass es jemals an mindestens einem sauberen, einfachen Beispiel mangelt.
+
+- Sie stehen zwar isoliert, aber liegen in einem echten Code-Repository vor. Wenn sie nicht mehr kompilieren oder die zugehörigen Tests rot werden, fällt das sofort auf. Produktivcode und Beispiele laufen also nicht schleichend auseinander. Sie teilen sich die gleichen Projektstrukturen, z.B. die gleichen zugrunde liegenden Frameworks, die gleichen Basisklassen, die gleichen Qualitätsmetriken usw. Ihre Tests sind Teil der Suite. Naheliegend ist so etwas wie ein separates Package oder ein separater Sourcefolder innerhalb desselben Repositories, in dem auch der Produktivcode liegt.
+
+Abbildung 1 zeigt grob, wie das für das Beispiel aus der Einleitung aussehen könnte. Eine auf das absolute Minimum reduzierte Entity-Klasse, ein Repository mit minimaler Funktionalität und ein Test, der nachweist, dass das Optimistic Locking auf der Grundlage funktioniert.
+
+Solche separaten Codebeispiele sind auch vorteilhaft, wenn die Konzepte mal geändert werden müssen. Dann kann man erstmal die kleinen Beispiele anpassen, und der Produktivcode bleibt unverändert. Aus der Abwandlung in den Beispielen kann ein KI-Agent dann mit etwas Hilfestellung die Abbildungsregeln vom alten auf das neue Konzept ableiten und später den Produktivcode auf das neue Konzept migrieren.
+
 ### How-Tos
 
 
