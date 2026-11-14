@@ -53,7 +53,7 @@ Ist ein Konzept einmal ausgearbeitet, kann KI es oft gut auf seine Konsistenz pr
 
 Spannend ist das Gegenlesen auch, wenn es darum geht, ein neues Konzept in eine bestehende Software einzuführen. Die KI kann wesentlich schneller als Menschen den Code daraufhin untersuchen, ob er sich mit dem Konzept verträgt oder ob irgendwo in den Tiefen noch ein fieser Stolperstein lauert. Auf das Optimistic-Locking-Beispiel bezogen: auf der "grünen Wiese" von Grund auf festgelegt, mag das unproblematisch sein. Bei einem Bestandsprojekt stellt man aber vielleicht fest, dass es eine Datenbanktabelle mit Milliarden von Datensätzen gibt, die nur über Massenoperationen beschickt werden kann. Ein Optimistic Locking auf Einzelsatzebene ist hier nicht praktikabel. KI-gestützte Codeanalyse findet so etwas wesentlich schneller heraus, als wenn ein Mensch das mühsam selber macht.
 
-Maschinen-zugängliche Dokumentation ist übrigens nicht nur für den Vorgang der KI-unterstützten Konzeptprüfung relevant. Die Konzepte sollten später auch jederzeit für Agenten abrufbar sein, die bei der darauf aufbauenden Implementierungsarbeit mitwirken. Da, wo sich sonst Kollegen mangels brauchbarer Doku in der Kaffeeküche absprechen und das Gesagte in ihrem Projekt-Langzeitgedächtnis speichern, fängt eine KI täglich von vorn an. Mit einem "Betrunkenen Genie" hat Ralf Klemmer auf seinem Blog die Agenten mal verglichen [RKB]. Damit das Genie also nach durchzechter Nacht mit anschließendem Filmriss am nächsten Tag wieder auf Spur kommt, muss alles Wichtige parat liegen.
+Maschinen-zugängliche Dokumentation ist übrigens nicht nur für den Vorgang der KI-unterstützten Konzeptprüfung relevant. Die Konzepte sollten später auch jederzeit für Agenten abrufbar sein, die bei der darauf aufbauenden Implementierungsarbeit mitwirken. Da, wo sich sonst Kollegen mangels brauchbarer Doku in der Kaffeeküche absprechen und das Gesagte in ihrem Projekt-Langzeitgedächtnis speichern, fängt eine KI täglich von vorn an. Mit "Betrunkenen Genies" hat Ralf Klemmer auf seinem Youtube-Kanal die Agenten mal verglichen [RKB]. Damit die Genies also nach durchzechter Nacht mit anschließendem Filmriss am nächsten Tag wieder auf Spur kommen, muss alles Wichtige sofort parat liegen.
 
 Aber was heißt nun "Parat liegen"?
 
@@ -164,7 +164,8 @@ Der andere wichtige Aspekt des Konzepts ist die Gliederung in viele kleine Dokum
 - Richard Seidl / Benedikt Stemmildt, https://www.richard-seidl.com/de/podcast/agentic-engineering: Wenn du schlechte Prinzipien hast und KI anwendest, wirst du schneller schlechter; wenn du gute Prinzipien hast, wirst du schneller besser, weil KI den vorhandenen Kurs einfach beschleunigt.
 
 ## Quellen
-[RKB] Ralf Klemmer, Betrunkenes Genie, fehlt noch
+[RKB] Ralf Klemmer,
+4 KI-Konzepte, https://www.youtube.com/watch?v=Xo0UxEu3NP4
 [BRB] Richard Seidl / Benedikt Stemmildt, https://www.richard-seidl.com/de/podcast/agentic-engineering
 [SKT] Speckit Website, https://github.com/github/spec-kit
 [OSP] OpenSpec Website, https://github.com/Fission-AI/OpenSpec
