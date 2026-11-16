@@ -36,7 +36,7 @@ ist nicht akzeptabel und ein Alarmsignal für einsetzenden Kontrollverlust. Aber
 ### Unbekannte Unbekannte
 Das meiste Wissen ist jenes, von dem wir nicht wissen, dass wir es nicht wissen. Das sind Lücken im persönlichen Wissensschatz, die sich logischerweise auch nicht gezielt schließen lassen, denn mir ist ja gar nicht bewusst, dass ich sie habe. Kollaborative Lernformen wie Coding Dojos sind ein Mittel, um über den Erfahrungsschatz anderer Leute solche Lücken zu erkennen. Hier kann die KI ein neuer Sparringspartner sein. Wenn ich einem Agenten eine Problematik schildere, dann kann er mir aus seinem Allgemeinwissen heraus Vorschläge machen und für Inspiration sorgen.
 
-Nehmen wir das Beispiel aus der Einleitung: wenn ich nur weiß, dass ich irgendwie konkurrierende Zugriffe absichern muss, aber von "Optimistic Locking" noch nie gehört habe, dann schildere ich einem Agenten möglichst ausführlich, was die Herausforderung ist. Viele Details, eigene Ideen, bekannte Randbedingungen und, und, und - wo ein menschlicher Sparringspartner eher mit den Augen rollen würde, sorgen bei einem Agenten im Gegenteil für gezieltere, gut erklärte Ergebnisse. Ausführlichkeit hat dabei auch noch einen anderen Effekt: sie zwingt mich, meine Fragestellung präzise zu formulieren und bei der Gelegenheit zu hinterfragen, ob mir denn die _Problemstellung_ zumindest hundertprozentig klar ist. Eine ganz wichtige Voraussetzung, um später in einer Architekturdoku einen ADR (Architecture Decision Record) zu verfassen.
+Nehmen wir das Beispiel aus der Einleitung: wenn ich nur weiß, dass ich irgendwie konkurrierende Zugriffe absichern muss, aber von "Optimistic Locking" noch nie gehört habe, dann schildere ich einem Agenten möglichst ausführlich, was die Herausforderung ist. Viele Details, eigene Ideen, bekannte Randbedingungen und, und, und - wo ein menschlicher Sparringspartner sich eher überfordert fühlt, sorgen bei einem Agenten im Gegenteil für gezieltere, gut erklärte Ergebnisse. Ausführlichkeit hat dabei auch noch einen anderen Effekt: sie zwingt mich, meine Fragestellung präzise zu formulieren und bei der Gelegenheit zu hinterfragen, ob mir denn die _Problemstellung_ zumindest hundertprozentig klar ist. Eine ganz wichtige Voraussetzung, um später in einer Architekturdoku einen ADR (Architecture Decision Record) zu verfassen.
 
 *JA, richtig gelesen!* +
 Die Architekturdokumentation wird mit der Nutzung von KI wieder wichtiger denn je. Dazu später mehr.
@@ -47,6 +47,8 @@ Menschen neigen bei Richtungsentscheidungen dazu, sich an Lieblingslösungen zu 
 
 ### Inneres Kolloquium
 Ihren Lieblingslösungen gegenüber neigen Menschen zur Alternativenblindheit. Vielleicht gehen sie sogar unbewusst Diskussionen darüber mit Kollegen aus dem Weg, weil sie den Konflikt scheuen. Hat mich nun ein KI-Agent auf eine Alternative aufmerksam gemacht, kann ich dies zum Anlass nehmen, meinen eigenen Favoriten der KI gegenüber mit Argumenten zu verteidigen. Es ist egal, über wie viele Runden dieses innere Kolloquium geht und ob am Ende ein Dissens stehen bleibt. Der Agent ist hinterher nicht beleidigt und verweigert die Teamarbeit. Egal, ob ich danach bei meinem Favoriten bleibe oder mich von einer Alternative habe überzeugen lassen: Das "Warum" eines Konzeptvorschlags gegenüber meinen menschlichen Kollegen und in einem ADR in der Architekturdoku ist mit Sicherheit gut geschärft.
+
+Wichtig ist dabei, der KI für diese Phase explizit eine kritische Haltung einzuprompten. Sie neigt sonst eher zur Verbreitung positiver Stimmung und damit zur Bestätigung von Vorlieben. Das ist auch deswegen ein wichtiger Punkt, weil die Agenten später weitgehend kritiklos den einmal vereinbarten Konzepten folgen. Sie rollt nicht mitten im Pair Programming mit den Augen und antwortet auf einen Prompt: _"Mir rollen sich jedes Mal die Fußnägel hoch, wenn wir ..."_ Schwachen Konzepte folgt sie genauso konsequent wie guten.
 
 ### Gegenlesen
 Ist ein Konzept einmal ausgearbeitet, kann KI es oft gut auf seine Konsistenz prüfen, bevor man damit in die Umsetzung geht. Voraussetzung ist natürlich, dass es irgendwo klar beschrieben ist, was schon wieder zum Thema Architekturdokumentation führt. Sie muss also für Mensch und Maschine gleichermaßen zugänglich sein.
@@ -88,10 +90,10 @@ Abbildung 1 zeigt grob, wie das für das Beispiel aus der Einleitung aussehen k�
 Solche separaten Codebeispiele sind auch vorteilhaft, wenn die Konzepte mal geändert werden müssen. Dann kann man erstmal die kleinen Beispiele anpassen, und der Produktivcode bleibt unverändert. Aus der Abwandlung in den Beispielen kann ein KI-Agent dann mit etwas Hilfestellung die Abbildungsregeln vom alten auf das neue Konzept ableiten und später den Produktivcode auf das neue Konzept migrieren.
 
 ### How-Tos und Skills
-Schon lange vor der Einführung von KI-Agenten habe die Projekte, aus denen die hier beschriebenen Erfahrungen stammen, mit sogenannten "How-To" Dokumenten gearbeitet. Dabei handelt es sich um kleine, isolierte Dokumente im ASCIIDOC-Format, die wiederkehrende, technischen Prozeduren beschreiben. Das Dokument `how-to-add-new-table.adoc` beschreibt beispielsweise alle notwendigen Schritte, um eine neue Datenbanktabelle in das Projekt einzuführen.
+Schon lange vor der Einführung von KI-Agenten haben die Projekte, aus denen die hier beschriebenen Erfahrungen stammen, mit sogenannten "How-To" Dokumenten gearbeitet. Dabei handelt es sich um kleine, isolierte Dokumente im ASCIIDOC-Format, die wiederkehrende, technischen Prozeduren beschreiben. Das Dokument `how-to-add-new-table.adoc` beschreibt beispielsweise alle notwendigen Schritte, um eine neue Datenbanktabelle in das Projekt einzuführen.
 
 - Erweiterung des Datenmodells
-- Anlage einer Entity-Klasse, einer Datenbank-Adapterklasse und eines Repositiorys
+- Anlage einer Entity-Klasse, einer Datenbank-Adapterklasse und eines Repository
 - Erweiterung von Exportskripten
 - Bereitstellen eines Testdatenbuilders für Unittests
 - Migrationsskript
@@ -101,59 +103,39 @@ Die How-Tos wurden ursprünglich nur von Entwicklern verwendet, wirken aber mit 
 
 Genau genommen erfolgt bei komplizierteren Prozeduren eine Zweiteilung. Das How-To enthält die Abläufe und Regeln, die für Mensch _und_ Maschine gelten. Braucht es noch _zusätzliche_ Hinweise, die nur für einen Agenten relevant sind, liegen diese in einer separaten KI-Skill-Datei, die neben einer Referenz auf das How-To beliebige Anreicherungen enthalten kann. Der Skill für die oben erwähnte GWT-nach-Vaadin-Portierung enthält z.B. den Hinweis, dass die Portierung an einem UI-Modul in Runden aufzuteilen ist, weil erfahrungsgemäß sonst der Kontext überläuft und die KI auf der Hälfte der Arbeit anfängt rumzuspinnen.
 
-Während die How-Tos den Anspruch haben, dass sie vom Team gemeinschaftlich redaktionell sauber gehalten werden (auch denn die KI öfter bei der Aktualisierung hilft), sind die Skill-Dateien eher "Sumpfgebiet". Hier darf die KI auch gerne selber nach Belieben schreiben, und die Dateien gelten als ständig im Wandel befindlich, bedingt durch die sich permanent ändernden Fähigkeiten der Agenten.
+ABBILDUNG: How-To und Skill-Datei
+
+Während die How-Tos den Anspruch haben, dass sie vom Team gemeinschaftlich redaktionell sauber gehalten werden (auch, wenn die KI öfter bei der Aktualisierung hilft), sind die Skill-Dateien eher "Sumpfgebiet". Hier darf die KI auch gerne selber nach Belieben schreiben, und die Dateien gelten als ständig im Wandel befindlich, bedingt durch die sich permanent ändernden Fähigkeiten der Agenten.
 
 ASCIIDOC hat als Format den Vorteil, dass es einerseits noch relativ gut für Menschen editierbar ist und sich besser als z.B. Markdown dafür eignet, wirkliche _Dokumente_ zu verfassen mit einem automatischen Inhaltsverzeichnis, Kapitelnummerierung, Hinweis-Hervorhebungen usw. Andererseits ist die Maschinenlesbarkeit genauso gut wie bei Markdown.
 
 Der andere wichtige Aspekt des Konzepts ist die Gliederung in viele kleine Dokumente statt sämtliche Beschreibungen als Abschnitte in einem Zentraldokument zu verwalten. Wenn sich Aufgaben gut isolieren lassen, dann ist es für einen Agenten auch besser, wenn er dafür ein separates Dokument an die Hand bekommt, statt für die Aufgabe die gesamte Architekturdoku in den Kontext ziehen zu müssen. Der Kontext ist eine kostbare Ressource, die man nicht verschwenden sollte. Außerdem ist es für Menschen auch angenehmer, wenn sie sich auf ein kleines Dokument konzentrieren können, statt in einem riesigen Zentraldokument zu suchen.
 
+### Die zentrale Architekturdoku
+Für alles, was nicht in den How-Tos beschrieben ist, gibt es ein zentrales Architekturdokument. Hier sammeln sich z.B. die ADRs, hier stehen zentrale querschnittliche Konzepte wie Authentifizierung / Autorisierung, Darstellung der Systemlandschaft, Technologiestack, Transaktionsmanagement, um ein paar Beispiele zu nennen. Üblicherweise ein recht umfangreiches Dokument, wenn man ernst nimmt, und vor allem reichlich mit illustrierenden Abbildungen versehen, die die Konzepte visualisieren. Hier wird es nun schwierig mit der Unterstützung für Mensch *und* Maschine.
+
+- Zum einen ist ein größeres Dokument mit so simplen Mitteln wie ASCIIDOC für Menschen nur noch mühsam zu pflegen. 10 Seiten ist in Ordnung, aber bei 50 Seiten stellt ein Gefühl von "Wrong tool for the job" ein.
+
+- Zum anderen ist die Frage, woher die Abbildungen kommen, für die selbst bei guten Editoren kaum sinnvolle Wege bestehen, sie direkt im Tool zu erstellen. Es ist eher ein breiter Kanon an Tools im Einsatz - z.B. UML-Tools für die Herstellung von Diagrammen. I.R. werden die Abbildungen dann als Screenshots in das Dokument eingebunden.
+
+Perfekte Maschinenlesbarkeit also eher nicht. Aber das kann durchaus OK sein, sofern man die permanent benötigten Bestandteile separiert (siehe How-Tos) und die zentrale Doku auf die Aspekte beschränkt, die wesentlich seltener gebraucht werden. Für die Einarbeitung eines neuen Team-Mitglieds ist diese Doku beispielsweise enorm wichtig. Aber das ist ein seltener Vorgang, und gute Verständlichkeit für Menschen steht klar im Vordergrund. Erfahrene Team-Mitglieder müssen meistens nur dran, wenn ein Konzept geändert oder ein neues aufgenommen wird. Auch das ist nicht oft der Fall und es besteht demnach auch nicht so oft der Bedarf, dass die KI bei Konzeptänderungen behilflich sein muss (siehe Kapitel "Gegenlesen" oben). Wenn es dann mal aufwendiger ist, weil es auch Bilder zu scannen gilt, dann ist das nicht so schlimm.
+
+## Durchsetzen der Architektur
+
+...
+
+## Fazit
+
+Eigentlich beruhigend festzustellen, dass klassische Werte des Software Engineerings sich durch KI-Einsatz eher bestätigen als zu verschwinden. Wer ohnehin schon immer um saubere Konzepte bemüht war, der wird die Qualitätsgewinne zu schätzen wissen. Die KI nimmt uns das Konzipieren nicht ab. Aber es ist ein gutes Gefühl, wenn man die grauen Zellen so richtig rauchen lässt und die KI dabei mit ihrem enormen Allgemeinwissen und ihrer Ermüdungsfreiheit noch die Flüchtigkeitsfehler ausmerzt und die Sahnehäubchen obendrauf setzt.
+
+Zum Schluss nochmal zurück zu "Die Burg" von Ursula Poznanski, wo es um eine amoklaufende KI geht, die autonom einen Hightech Escape Room steuert. Zur Vollkatastrophe kommt es dabei nur, weil die Kontrollsysteme, über die die Game Master das Geschehen überwachen, von der gleichen KI gesteuert werden, die auch im Escape Room die Fäden zieht. Eine völlig aberwitzige Software-Architektur, die uns hoffentlich erspart bleibt, wenn Menschen ihre Kopfcomputer eingeschaltet lassen.
+
 ## Stichpunkte für den roten Faden - kein Kapitel!
 
-- KI - genauer gesagt: ein LLM - ist eine ultrahochentwickelte Patternmatching-Maschine, die hervorragend darin ist, Muster und Konzepte zu erkennen und ihnen zu folgen.
-- Das *Entwickeln* von Konzepten liegt aber nicht in ihrer Kernkompetenz.
-- Überlässt man der KI diese Aufgabe, ist das quasi eine Einladung zum "Halluzinieren"
-- Die Trefferquote für etwas optimal Geeignetes ist dabei eher gering.
-- Woran liegt das? Ein Mensch entwickelt Konzepte, basierend auf einem jahrzehntelangen Erfahrungsschatz, auf jahrzehntelanger Sozialisierung und einem umfangreichen "Zwischen-den-Zeilen-Wissen" in seinem Arbeitsumfeld.
-- In Begriffen der KI gesprochen: das ist ein so immenser Umfang an Kontextinformationen, das sie bei weitem nicht in das hinein passen, was einer KI als Gesprächskontext zur Verfügung hat.
-- Im Übrigen ist das auch bei Menschen zu beobachten: wenn ein großteil der oben genannten Kontextinformationen fehlt (z.B. Projekt unbekannt, keine Erfahrung), dann kommen häufig unbrauchbare Konzepte aus dem Elfenbeinturm heraus.
-- Die Konzepte müssen von Menschen kommen, wobei KI dabei hervorragend unterstützen kann.
-- Sie steuert einen enormen Wissensschatz bei und kann darauf basierend Vorschläge machen und für Inspiration sorgen.
-- Sind Konzepte einmal ausgearbeitet, kann KI diese außerdem sehr gut auf ihre Konsistenz prüfen, bevor man damit in die Umsetzung geht.
-- Die Bewertung und die Verantwortung für den kompositorischen Akt bleibt aber beim Menschen.
-- Eine Aussage der Art "Keine Ahnung - hat Claude so gemacht" ist nicht akzeptabel und ein Alarmsignal in Richtung Abgabe der Kontrolle.
-- Mindestens die Person, die ein Konzept entwirft, muss sie im Details verstanden haben und vermitteln können.
-- Grade letzteres ist wichtig für KI-Agenten und ihr äußerst beschränktes Projektgedächtnis
-- Ralf Klemmert sprich von einem "betrunkenen Genie". Und nach einer durchzechten Nacht hat das Genie schon mal Filmriss und muss sich am nächsten Morgen wieder fast von vorn einarbeiten. Mit guter und gut strukturierter Dokumentation geht das auch blitzschnell.
-
-*HERE WE ARE*
-
-- Das ist genau das, was Architekten über die Fähigkeiten des Software Entwickelns zusätzlich mitbringen müssen:
-- Sie sind in der Lage ein Konzept zu vermitteln
-- Sie können auch herleiten und erklären, warum genau dieses Konzept in dem jeweiligen Projekt das richtige ist
 - Architekturen genau zu definieren und zu dokumentieren wird wieder wichtiger denn je.
 - Hat gleich mehrere Gründe:
 - Der Vorgang des Dokumentierens *ist selbst* ein erkläglicher Teil des Entwurfsprozesses
-- Eine glasklare Beschreibung erlaubt Mensch und Maschine, das Konzept zu verstehen und ihm zu folgen
-- Man muss es nicht tausendmal wieder erklären. Die Info ist jederzeit abrufbar
-- Woraus besteht also eine "gute" Architekturdoku?
-- Es sind einerseits Dokumente und Visualisierungen und andererseits sauber isolierter Beispielcode
-- Wo immer möglich, verweisen die Dokumente auf diese Beispiele, denn der konkrete Code sagt häufig mehr als tausend Worte.
-- Wichtig: der Beispielcode steht zwar isoliert (z.B. ein separater Sourcefolder oder ein separates Package) aber im gleichen Repository wie der Produktivcode.
-- Er muss in der gleichen Umgebung kompilieren, seine Tests sind Teil der Suite, d.h. die Beispiele sind immer funktionstüchtig und kein veraltetes Zeug.
-- Die Beispiele sind so klein wie möglich, aber so groß wie nötig. Sie sollen die Konzepte klar und verständlich vermitteln.
-- Es entstehen natürlich auch sukzessive produktive Beispiele, aber nur die isolierten Beispiele haben den Anspruch, auf Verständlichkeit ausgelegt und dauerhaft "unverschmutzt" zu sein.
-- Was die Dokumente betrifft, besteht Innovationsbedarf. Auch sie müssen einerseits für Mensch und Maschine *lesbar* sein
-- Aber sie müssen auch leicht *pflegbar* sein, denn sonst passiert das lustlos und die Dokumente veralten.
 - Die Maschinenlesbarkeit ist auch hier eine Hilfe: es lässt sich einfach regelmäßig KI-gestützt prüfen, ob die Aussagen in den Dokumenten noch mit dem aktuellen Code übereinstimmen.
-- Aktueller Kompromiss mangels besserer Tools:
-- ASCIIDOC als Format
-- Zentraldokument + viele kleine Teildokumente für gut isolierbare Aspekte - sog. "How Tos"
-- z.B. how-to-add-new-table.adoc beschreibt alle wiederkehrenden, stereotypen technischen Schritte, die notwendig sind, um eine neue Datenbanktabelle in das Projekt einzuführen.
-- Erweiterung Datenmodell, Anlage der Entity-Klasse, einer DB-Adapterklasse, eines Repositorys. Erweiterung Exportskripte, Testdatenbuilder, Migrationsskript...
-- Das How-To wird von Entwicklern verwendet, wirkt aber auch direkt wie ein Skill für einen KI-Agenten.
-- Auf der Basis erfolgt die Neuanlage einer neuen Tabelle also üblicherweise fast vollautomatisch.
-- Die Gliederung in kleine Dokumente war schon vor Einführung von KI für die Entwickler praktisch. Für die KI bedeutet es, dass sie für eine isolierte Tätigkeit nicht die gesamte Architekturdoku in ihren Kontext ziehen muss.
-- Es ist auch ein Beispiel für eine sich wiederholende Erkenntnis: klassische Werte eines stringenten Software Engineerings werden durch KI nicht obsolet, sondern gewinnen sogar an Bedeutung.
 - Das gilt auch für die Absicherung der Einhaltung der Architektur.
 - Genau wie bei menschlichen Entwicklern, ignoriert unser "betrunkenes Genie" schon mal die Regeln.
 - Wann immer das passiert, empfiehlt sich eine Absicherung über "Leitplankentests".
@@ -161,7 +143,6 @@ Der andere wichtige Aspekt des Konzepts ist die Gliederung in viele kleine Dokum
 - Gut bekannt in diesem Zusammenhang sind Archunit-Tests
 - Dabei muss es aber nicht bleiben. Schönes anderes Beispiel: sind neue Systemkonfigurationsparameter auch im Betriebshandbuch dokumentiert?
 - Referenz auf iX-Artikel
-- Richard Seidl / Benedikt Stemmildt, https://www.richard-seidl.com/de/podcast/agentic-engineering: Wenn du schlechte Prinzipien hast und KI anwendest, wirst du schneller schlechter; wenn du gute Prinzipien hast, wirst du schneller besser, weil KI den vorhandenen Kurs einfach beschleunigt.
 
 ## Quellen
 [RKB] Ralf Klemmer,
