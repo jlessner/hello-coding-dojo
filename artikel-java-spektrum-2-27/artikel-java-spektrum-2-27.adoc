@@ -146,8 +146,6 @@ Um zu vermeiden, dass solche Fälle erst im Merge-Request Review auffallen, habe
 
 Es folgt aber nach wie vor das menschliche Review, da weiterhin in der Umsetzung Fehler passieren oder Regeln nicht korrekt umgesetzt werden. Aber die KI hat schon mal die gröbsten Fehler gefunden und das menschliche Review kann sich auf die Feinheiten konzentrieren. Wenn sich in den Reviews dann Findings ergeben, welche sich als weitere Regeln verallgemeinern lassen, werden diese entweder in Tests oder in die Doku aufgenommen, sodass die Wahrscheinlichkeit, dass die KI diese Fehler in Zukunft wiederholt, minimiert werden. So entsteht ein Kreislauf, der die Architektur und die Qualität des Codes stetig verbessert. Denn umso besser der Code links und rechts ist, desto besser ist dann auch der neue Code, der von Mensch _oder_ Maschine entwickelt wird.
 
-- Referenz auf iX-Artikel
-
 ## Fazit
 
 Eigentlich beruhigend festzustellen, dass klassische Werte des Software Engineerings sich durch KI-Einsatz eher bestätigen als zu verschwinden. Wer ohnehin schon immer um saubere Konzepte bemüht war, der wird die Qualitätsgewinne zu schätzen wissen. Die KI nimmt uns das Konzipieren nicht ab. Aber es ist ein gutes Gefühl, wenn man die grauen Zellen so richtig rauchen lässt und die KI dabei mit ihrem enormen Allgemeinwissen und ihrer Unermüdlichkeit noch die Flüchtigkeitsfehler ausmerzt und die Sahnehäubchen obendrauf setzt.
