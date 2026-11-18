@@ -50,7 +50,11 @@ Menschen neigen bei Richtungsentscheidungen dazu, sich an Lieblingslösungen zu 
 ### Inneres Kolloquium
 Ihren Lieblingslösungen gegenüber neigen Menschen zur Alternativen-Blindheit. Vielleicht gehen sie sogar unbewusst Diskussionen darüber mit Kollegen aus dem Weg, weil sie den Konflikt scheuen. Hat mich nun ein KI-Agent auf eine Alternative aufmerksam gemacht, kann ich dies zum Anlass nehmen, meinen eigenen Favoriten der KI gegenüber mit Argumenten zu verteidigen. Es ist egal, über wie viele Runden dieses innere Kolloquium geht und ob am Ende ein Dissens stehen bleibt. Der Agent ist hinterher nicht beleidigt und verweigert die Teamarbeit. Ob ich danach bei meinem Favoriten bleibe oder mich von einer Alternative habe überzeugen lassen: Das "Warum" eines Konzeptvorschlags für meine menschlichen Kollegen und für einen ADR in der Architekturdoku ist mit Sicherheit gut geschärft.
 
-Wichtig ist dabei, der KI für diese Phase explizit eine kritische Haltung einzuprompten. Sie neigt sonst eher zur Verbreitung positiver Stimmung und damit zur Bestätigung von Vorlieben. Das ist auch deswegen ein wichtiger Punkt, weil die Agenten später weitgehend kritiklos den einmal vereinbarten Konzepten folgen. Sie rollen nicht mitten im Pair Programming mit den Augen und antworten auf einen Prompt: _"Mir rollen sich jedes Mal die Fußnägel hoch, wenn wir ..."._ Schwachen Konzepten folgen sie genauso konsequent wie guten.
+Wichtig ist dabei, der KI für diese Phase explizit eine kritische Haltung einzuprompten. Sie neigt sonst eher zur Verbreitung positiver Stimmung und damit zur Bestätigung von Vorlieben. Das ist auch deswegen ein wichtiger Punkt, weil die Agenten später weitgehend kritiklos den einmal vereinbarten Konzepten folgen. Sie rollen nicht mitten im Pair Programming mit den Augen und antworten auf einen Prompt:
+
+_"Mir rollen sich jedes Mal die Fußnägel hoch, wenn wir ..."._
+
+Schwachen Konzepten folgen sie genauso konsequent wie guten.
 
 ### Die Unermüdlichkeit
 
@@ -154,7 +158,11 @@ Zum Schluss nochmal zurück zu "Die Burg" von Ursula Poznanski, wo es um eine am
 ## Quellen
 [RKB] Ralf Klemmer,
 4 KI-Konzepte, https://www.youtube.com/watch?v=Xo0UxEu3NP4
+
 [BRB] Richard Seidl / Benedikt Stemmildt, https://www.richard-seidl.com/de/podcast/agentic-engineering
+
 [SKT] Speckit Website, https://github.com/github/spec-kit
+
 [OSP] OpenSpec Website, https://github.com/Fission-AI/OpenSpec
+
 [SMN] Specman Website, https://specman.de
