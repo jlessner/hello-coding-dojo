@@ -50,7 +50,13 @@ Menschen neigen bei Richtungsentscheidungen dazu, sich an Lieblingslösungen zu 
 ### Inneres Kolloquium
 Ihren Lieblingslösungen gegenüber neigen Menschen zur Alternativen-Blindheit. Vielleicht gehen sie sogar unbewusst Diskussionen darüber mit Kollegen aus dem Weg, weil sie den Konflikt scheuen. Hat mich nun ein KI-Agent auf eine Alternative aufmerksam gemacht, kann ich dies zum Anlass nehmen, meinen eigenen Favoriten der KI gegenüber mit Argumenten zu verteidigen. Es ist egal, über wie viele Runden dieses innere Kolloquium geht und ob am Ende ein Dissens stehen bleibt. Der Agent ist hinterher nicht beleidigt und verweigert die Teamarbeit. Ob ich danach bei meinem Favoriten bleibe oder mich von einer Alternative habe überzeugen lassen: Das "Warum" eines Konzeptvorschlags für meine menschlichen Kollegen und für einen ADR in der Architekturdoku ist mit Sicherheit gut geschärft.
 
-Wichtig ist dabei, der KI für diese Phase explizit eine kritische Haltung einzuprompten. Sie neigt sonst eher zur Verbreitung positiver Stimmung und damit zur Bestätigung von Vorlieben. Das ist auch deswegen ein wichtiger Punkt, weil die Agenten später weitgehend kritiklos den einmal vereinbarten Konzepten folgen. Sie rollen nicht mitten im Pair Programming mit den Augen und antworten auf einen Prompt: _"Mir rollen sich jedes Mal die Fußnägel hoch, wenn wir ..."_ Schwachen Konzepten folgen sie genauso konsequent wie guten.
+Wichtig ist dabei, der KI für diese Phase explizit eine kritische Haltung einzuprompten. Sie neigt sonst eher zur Verbreitung positiver Stimmung und damit zur Bestätigung von Vorlieben. Das ist auch deswegen ein wichtiger Punkt, weil die Agenten später weitgehend kritiklos den einmal vereinbarten Konzepten folgen. Sie rollen nicht mitten im Pair Programming mit den Augen und antworten auf einen Prompt: _"Mir rollen sich jedes Mal die Fußnägel hoch, wenn wir ..."._ Schwachen Konzepten folgen sie genauso konsequent wie guten.
+
+### Die Unermüdlichkeit
+
+##_"Och, schon wieder?"_##
+
+##Wenn man das fünfte Mal am Tag mit einer weiteren Idee vorbeikommt, dann ist selbst die motivierteste Kollegin oder Kollege irgendwann genervt - nicht so aber die KI. Vor der KI brauchte es oft frühzeitig eine Entscheidung, da die Ausarbeitung verschiedener Konzepte viel Zeit in Anspruch nahm. Heutzutage kann man verschiedene Konzepte in kurzer Zeit analysieren lassen. Dadurch bietet sich bei der Erarbeitung neuer Konzepte auch die Möglichkeit zunächst einmal kreativ zu sein und verschiedene Ideen zu ergründen, bevor man sich auf eine konkrete Richtung festlegt. Das Gleiche gilt auch für die Anpassungen alter Architekturkonzepte: Zuvor bedeuteten Anpassungen an den bestehenden Konzepten viel zeitaufwendige Handarbeit, die sich zwar auch oft vor KI schon gelohnt hätten, aber bei der neuen Entwicklungsgeschwindigkeit, kann sich die Projektleitung jetzt nicht mehr wehren. Natürlich sollte aber zuletzt der Weg zu den Kollegen nicht eingespart werden, dieser Austausch ist weiterhin enorm wertvoll - aber dann lieber mit einer ausgereifteren Idee, weil mit genervten Kollegen lässt es sich nicht gut Kaffee trinken.##
 
 ### Gegenlesen
 Ist ein Konzept einmal ausgearbeitet, kann KI es oft gut auf seine Konsistenz prüfen, bevor man damit in die Umsetzung geht. Voraussetzung ist natürlich, dass es irgendwo klar beschrieben ist, was schon wieder zum Thema Architekturdokumentation führt. Sie muss also für Mensch und Maschine gleichermaßen zugänglich sein.
@@ -109,14 +115,16 @@ ABBILDUNG: How-To und Skill-Datei
 
 Während die How-Tos den Anspruch haben, dass sie vom Team gemeinschaftlich redaktionell sauber gehalten werden (auch, wenn die KI öfter bei der Aktualisierung hilft), sind die Skill-Dateien eher "Sumpfgebiet". Hier darf die KI auch gerne selber nach Belieben schreiben, und die Dateien gelten als ständig im Wandel befindlich, bedingt durch die sich permanent ändernden Fähigkeiten der Agenten.
 
+##Kommentar: Irgendwie ist der Sprung zu ASCIIDOC bisschen abrupt##
+
 ASCIIDOC hat als Format den Vorteil, dass es einerseits noch relativ gut für Menschen editierbar ist und sich besser als z.B. Markdown dafür eignet, wirkliche _Dokumente_ zu verfassen mit einem automatischen Inhaltsverzeichnis, Kapitelnummerierung, Hinweis-Hervorhebungen usw. Andererseits ist die Maschinenlesbarkeit genauso gut wie bei Markdown.
 
-Der andere wichtige Aspekt des Konzepts ist die Gliederung in viele kleine Dokumente statt sämtliche Beschreibungen als Abschnitte in einem Zentraldokument zu verwalten. Wenn sich Aufgaben gut isolieren lassen, dann ist es für einen Agenten auch besser, wenn er dafür ein separates Dokument an die Hand bekommt, statt für die Aufgabe die gesamte Architekturdoku in den Kontext ziehen zu müssen. Der Kontext ist eine kostbare Ressource, die man nicht verschwenden sollte. Außerdem ist es für Menschen auch angenehmer, wenn sie sich auf ein kleines Dokument konzentrieren können, statt in einem riesigen Zentraldokument zu suchen.
+Der andere wichtige Aspekt des Konzepts ist die Gliederung in viele kleine Dokumente statt sämtliche Beschreibungen als Abschnitte in einem Zentraldokument zu verwalten. Wenn sich Aufgaben gut isolieren lassen, dann ist es für einen Agenten umso besser, wenn er dafür ein separates Dokument an die Hand bekommt, statt für die Aufgabe die gesamte Architekturdoku in den Kontext ziehen zu müssen. Der Kontext ist eine kostbare Ressource, die man nicht verschwenden sollte. Außerdem ist es für Menschen auch angenehmer, wenn sie sich auf ein kleines Dokument konzentrieren können, statt in einem riesigen Zentraldokument zu suchen.
 
 ### Die zentrale Architekturdoku
-Für alles, was nicht in den How-Tos beschrieben ist, gibt es ein zentrales Architekturdokument. Hier sammeln sich z.B. die ADRs, hier stehen zentrale querschnittliche Konzepte wie Authentifizierung / Autorisierung, Darstellung der Systemlandschaft, Technologiestack, Transaktionsmanagement, um ein paar Beispiele zu nennen. Üblicherweise ein recht umfangreiches Dokument, wenn man ernst nimmt, und vor allem reichlich mit illustrierenden Abbildungen versehen, die die Konzepte visualisieren. Hier wird es nun schwierig mit der Unterstützung für Mensch *und* Maschine.
+Für alles, was nicht in den How-Tos beschrieben ist, gibt es ein zentrales Architekturdokument. Hier sammeln sich z.B. die ADRs, hier stehen zentrale querschnittliche Konzepte wie Authentifizierung / Autorisierung, Darstellung der Systemlandschaft, Technologiestack, Transaktionsmanagement, um ein paar Beispiele zu nennen. Üblicherweise ein recht umfangreiches Dokument, wenn man es ernst nimmt, und vor allem reichlich mit illustrierenden Abbildungen versehen, die die Konzepte visualisieren. Hier wird es nun schwierig mit der Unterstützung für Mensch *und* Maschine.
 
-- Zum einen ist ein größeres Dokument mit so simplen Mitteln wie ASCIIDOC für Menschen nur noch mühsam zu pflegen. 10 Seiten ist in Ordnung, aber bei 50 Seiten stellt ein Gefühl von "Wrong tool for the job" ein.
+- Zum einen ist ein größeres Dokument mit so simplen Mitteln wie ASCIIDOC für Menschen nur noch mühsam zu pflegen. 10 Seiten sind in Ordnung, aber bei 50 Seiten stellt sich ein Gefühl von "Wrong tool for the job" ein.
 
 - Zum anderen ist die Frage, woher die Abbildungen kommen, für die selbst bei guten Editoren kaum sinnvolle Wege bestehen, sie direkt im Tool zu erstellen. Es ist eher ein breiter Kanon an Tools im Einsatz - z.B. UML-Tools für die Herstellung von Diagrammen. I.R. werden die Abbildungen dann als Screenshots in das Dokument eingebunden.
 
@@ -124,31 +132,21 @@ Perfekte Maschinenlesbarkeit also eher nicht. Aber das kann durchaus OK sein, so
 
 ## Durchsetzen der Architektur
 
-- Das gilt auch für die Absicherung der Einhaltung der Architektur.
+Aber wie sorgt man jetzt dafür, dass unser betrunkenes Genie sich nicht wie der Elefant im Porzellanladen verhält? Wie kann man die Einhaltung der Architektur sicherstellen, wenn die KI-Agenten die Konzepte nicht verstehen, sondern nur befolgen? Eine Antwort: durch Leitplankentests. Und zwar zielen diese nicht auf die Ebene der produktiven Funktionalität, sondern auch auf die Ebene der Architektur ab. ArchUnit-Tests sind dafür ein hervorragendes Mittel. Sie prüfen, ob die Architekturregeln eingehalten werden und geben sofort Feedback, wenn etwas nicht stimmt. So kann man sicherstellen, dass die KI-Agenten nicht nur schnell, sondern auch korrekt arbeiten. Auch die KI-Agenten können sich mit diesen Tests laufend selbst prüfen und ihre Lücken in der Umsetzung schließen. Wenn dann entsprechend die CI/CD-Pipelines bei Fehlern einen Merge blockieren, dann können grobe Verstöße gegen die Architektur gar nicht erst in den produktiven Code gelangen.
+Neben ArchUnit-Tests können das aber auch Tests sein, die Konfigurationsdaten prüfen, welche in der alltäglichen Arbeit schnell mal übersehen werden. Ein Beispiel aus unseren Projekten ist ein Test, welcher überprüft das keine Datenbankskripte angepasst werden, welche bereits Teil eines Releases waren.
+Zusätzlich setzen wir auf eine strenge Codequalität-Analyse mit SonarQube, sodass auch das Fundament für die Architektur, nämlich der Code, sauber bleibt.
 
-- Genau wie menschliche Entwickler, ignoriert unser "betrunkenes Genie" schon mal die Regeln.
+Leider gibt es aber neben Architektur Regeln, die sich deterministisch durch Tests abbilden lassen, auch Regeln, die sich nicht so einfach testen lassen. In unserem Projekt gibt es z.B. bestimmte Daten die immer in der Datenbank vorhanden sein müssen. Das bedeutet, dass sie auch die Basis für Tests bilden. Jedoch gibt es auch Test-Cases für welche diese Daten manipuliert werden müssen. Um den Umgang mit solchen Tests zu vereinfachen, haben wir wiederverwendbare Basis-Logik entwickelt, die es ermöglicht, dass die Datenbank nach dem Test wieder in den Ausgangszustand zurückgesetzt wird.
+Nur vergisst die KI sehr gerne während der Entwicklung, dass dieses Vorgehen nötig ist und plötzlich schlagen zufällige Tests fehl.
+Um zu vermeiden, dass solche Fälle erst im Merge-Request Review auffallen, haben wir überlegt, wer unserer Schnapsdrossel am besten als erstes auf die Finger schaut - die KI selbst. Die Basis für diese Überprüfung haben wir schon in Form unserer Architekturdokumentation und der How-Tos. Diese nutzen wir dann um vor dem menschlichen Review ein automatisiertes Review durch die KI durchführen zu lassen. Für diesen Workflow gibt es je nach technischen Stack verschieden OpenSource-Tools, die man nutzen kann, aber es ist auch einfach möglich eigene zu erstellen. In unseren Projekten haben wir einen eigenen Workflow entwickelt, welcher die Doku und den geänderten Code entsprechend clustert und dann in einzelnen Units reviewt. Denn auch hier ist es wichtig den Kontext klar zu halten. Neben der Konformität des neuen Codes mit den Architekturregeln, wird auch die Einhaltung gegenüber der Specs, als auch auf Logikfehler überprüft. Dadurch werden potenzielle Findings die erst im menschlichen Review auffallen würden, schon vorher von der KI gefunden und können direkt behoben werden.
 
-- Wann immer das passiert, empfiehlt sich eine Absicherung über "Leitplankentests".
-
-- Sie zielen nicht auf die produktive Funktionalität ab, sondern auf die Einhaltung der Architektur und des Software Engineerings.
-
-- Gut bekannt in diesem Zusammenhang sind Archunit-Tests
-
-- Dabei muss es aber nicht bleiben. Schönes anderes Beispiel: sind neue Systemkonfigurationsparameter auch im Betriebshandbuch dokumentiert?
+Es folgt aber weiterhin das menschliche Review, da weiterhin in der Umsetzung Fehler passieren oder Regeln nicht korrekt umgesetzt werden. Aber die KI hat schon mal die gröbsten Fehler gefunden und das menschliche Review kann sich auf die Feinheiten konzentrieren. Wenn sich in den Reviews dann Findings ergeben, welche sich als weitere Architekturregeln herausstellen, werden diese entweder in Tests oder in die Doku aufgenommen, sodass die Wahrscheinlichkeit, dass die KI diese Fehler in Zukunft wiederholt, minimiert wird. So entsteht ein Kreislauf, der die Architektur und die Qualität des Codes stetig verbessert. Denn umso besser der Code links und rechts ist, desto besser ist dann auch der neue Code, der von Mensch _oder_ Maschine entwickelt wird.
 
 - Referenz auf iX-Artikel
 
-- Permanentes "Auf die Finger schauen" ist auch unterhalb der Ebene der großen Architekturkonzepte ratsam.
-
-- Auch im Kleinen stellt man in Reviews fest, dass die KI-Agenten mitunter wunderliche Ideen haben.
-
-- Es gilt dann schnell einzugreifen und Regeln auch auf der Mikroebene festzuhalten, denn auch dort gilt, dass schlechte Beispiele sich schnell weiterverbreiten, wenn die KI sie erstmal im Code vorfindet und sie durch ihr bloßes Vorhandensein als "richtig" interpretiert.
-
-- Die Maschinenlesbarkeit der Architekturdoku ist auch hier eine Hilfe: es lässt regelmäßig KI-gestützt prüfen, ob die Aussagen in den Dokumenten noch mit dem aktuellen Code übereinstimmen.
-
 ## Fazit
 
-Eigentlich beruhigend festzustellen, dass klassische Werte des Software Engineerings sich durch KI-Einsatz eher bestätigen als zu verschwinden. Wer ohnehin schon immer um saubere Konzepte bemüht war, der wird die Qualitätsgewinne zu schätzen wissen. Die KI nimmt uns das Konzipieren nicht ab. Aber es ist ein gutes Gefühl, wenn man die grauen Zellen so richtig rauchen lässt und die KI dabei mit ihrem enormen Allgemeinwissen und ihrer Ermüdungsfreiheit noch die Flüchtigkeitsfehler ausmerzt und die Sahnehäubchen obendrauf setzt.
+Eigentlich beruhigend festzustellen, dass klassische Werte des Software Engineerings sich durch KI-Einsatz eher bestätigen als zu verschwinden. Wer ohnehin schon immer um saubere Konzepte bemüht war, der wird die Qualitätsgewinne zu schätzen wissen. Die KI nimmt uns das Konzipieren nicht ab. Aber es ist ein gutes Gefühl, wenn man die grauen Zellen so richtig rauchen lässt und die KI dabei mit ihrem enormen Allgemeinwissen und ihrer Unermüdlichkeit noch die Flüchtigkeitsfehler ausmerzt und die Sahnehäubchen obendrauf setzt.
 
 Zum Schluss nochmal zurück zu "Die Burg" von Ursula Poznanski, wo es um eine amoklaufende KI geht, die autonom einen Hightech Escape Room steuert. Zur Vollkatastrophe kommt es dabei nur, weil die Kontrollsysteme, über die die Game Master das Geschehen überwachen, von der gleichen KI gesteuert werden, die auch im Escape Room die Fäden zieht. Eine völlig aberwitzige Software-Architektur, die uns hoffentlich erspart bleibt, wenn Menschen ihre Kopfcomputer eingeschaltet lassen.
 
