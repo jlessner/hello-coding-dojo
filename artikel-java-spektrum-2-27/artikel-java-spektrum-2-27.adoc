@@ -1,6 +1,6 @@
 :toc:
 
-# Kollege KI und die Architektur
+# Kollegin KI und die Architektur
 
 Auch bei der Architekturarbeit ist KI eine wertvolle Hilfe. Wer aber primär auf einen _Zeitgewinn_ schaut, der genießt vielleicht eine anfängliche Superbeschleunigung, klatscht aber umso schneller unkontrolliert gegen eine Wand aus massiver Unwartbarkeit. Mit dem primären Ziel _Qualitätsgewinn_ und dem Lenkrad in den eigenen Händen fährt es sich dagegen deutlich kontrollierter und am Ende flotter.
 
@@ -16,7 +16,7 @@ Mit "Architekturarbeit" sind in diesem Artikel die Aspekte gemeint, bei denen da
 
 Z.B. braucht das Teilsystem eine Absicherung gegen konkurrierende Zugriffe. Macht man das mit Optimistic Locking und Basisklassen für alle zukünftigen Entitäten und Repositories? Sind später Ausnahmen absehbar? Passt das zu den nicht-funktionalen _fachlichen_ Anforderungen? Das Team muss recherchieren, Erfahrung einbringen, diskutieren, im Mob-Programming ausprobieren und Beschlüsse fassen. Das klingt nach Vorgängen, die KI nicht leisten, nur unterstützen kann.
 
-Die hier geschilderten Erfahrungen stammen übrigens aus Systemen der Bilanzanalyse mit einigen Hunderttausend Zeilen nicht-trivialen Codes, betreut von typischen 2-Pizza-Teams.
+Die hier geschilderten Erfahrungen stammen übrigens aus Systemen der Bilanzanalyse mit einigen Hunderttausend Zeilen nicht-trivialen Codes, betreut von typischen 2-Pizza-Teams. Vibe-Coding mit nur ungefähr vorhersagbaren Ergebnisse ist hier fehl am Platze.
 
 ## Architektur _von_ der KI?
 Können wir nicht einfach ein Team von KI-Agenten auf die Architektur ansetzen und das lästige Menschenteam aus der Verantwortung nehmen?
@@ -74,7 +74,7 @@ der liegt gar nicht so falsch. Klassische Werte eines stringenten Software-Engin
 [quote]
 Wenn du schlechte Prinzipien hast und KI anwendest, wirst du schneller schlechter; wenn du gute Prinzipien hast, wirst du schneller besser, weil KI den vorhandenen Kurs einfach beschleunigt.
 
-Was sich ändert, ist das Tooling. Dass Architekturdokumentation maschinen-zugänglich sein muss, ist aktuell eine noch wenig beachtete Herausforderung.
+Was sich ändert, ist das Tooling, um die neue Kollegin KI mit ins Boot zu holen. Dass Architekturdokumentation maschinen-zugänglich aber trotzdem menschentauglich sein muss, ist aktuell eine noch wenig beachtete Herausforderung.
 
 Die textuellen Teile solcher Dokumentationen entstanden traditionell mit WYSIWYG-Textprozessoren wie Microsoft Word, die für KI schlecht lesbar sind. Das Pendel schlägt deshalb gerade voll in die andere Richtung aus: Im Umfeld von Spec-driven Development sprießen Tools wie Speckit[SKT] und OpenSpec[OSP] aus dem Boden, die auf Markdown setzen. Hier wird alles der Maschinenzugänglichkeit untergeordnet, und nun sind Lesbarkeit und Wartbarkeit durch den Menschen mangelhaft.
 
