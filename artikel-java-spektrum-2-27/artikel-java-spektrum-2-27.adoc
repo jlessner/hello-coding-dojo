@@ -21,7 +21,7 @@ Die hier geschilderten Erfahrungen stammen übrigens aus Systemen der Bilanzanal
 ## Architektur _von_ der KI?
 Können wir nicht einfach ein Team von KI-Agenten auf die Architektur ansetzen und das lästige Menschenteam aus der Verantwortung nehmen?
 
-Eher nicht. Zu viele Faktoren gehen in die Konzeption ein, und großteils sind sie _unausgesprochen_ und damit einem Agenten kaum vermittelbar. Der _allgemeine_ Wissensschatz einer KI über alle je dagewesenen Architektur- und Designpatterns ist riesig. Den sollte man tunlichst auch nutzen! Das _projektspezifische_ Wissen ist aber zunächst gleich 0, und für dessen Vermittlung steht maximal der Konversationskontext zur Verfügung. Der ist winzig im Vergleich zu dem, was menschliche Entwickler einbringen: Jahre an Erfahrungshistorie, jahrzehntelange Sozialisierung und viel "Zwischen-den-Zeilen-Wissen" passen nicht ansatzweise in die aktuell üblichen 1 Million Kontexttokens. Fehlen solche Informationen bei Menschen (Projekt unbekannt, keine Berufserfahrung, anderer Kulturkreis), kommen häufig unbrauchbare Konzepte aus dem Elfenbeinturm heraus. Genau das ist auch von KI-entworfener Architektur zu erwarten. Da hilft es auch nicht, wenn der Entwurf 100 Mal schneller fertig ist. Eine schlechte Entscheidung bleibt schlecht, egal wie schnell sie zustande kam.
+Eher nicht. Zu viele Faktoren gehen in die Konzeption ein, und großteils sind sie _unausgesprochen_ und damit einem Agenten kaum vermittelbar. Der _allgemeine_ Wissensschatz einer KI über alle je dagewesenen Architektur- und Designpatterns ist riesig. Den sollte man tunlichst auch nutzen! Das _projektspezifische_ Wissen ist aber zunächst gleich 0, und für dessen Vermittlung steht maximal der Konversationskontext zur Verfügung. Der ist winzig im Vergleich zu dem, was menschliche Entwickler einbringen: Jahre an Erfahrungshistorie, jahrzehntelange Sozialisierung und viel "Zwischen-den-Zeilen-Wissen" passen nicht ansatzweise in die aktuell üblichen 1 Million Kontexttokens. Fehlen solche Informationen bei Menschen (Projekt unbekannt, keine Berufserfahrung, andere Arbeitskultur), kommen häufig unbrauchbare Konzepte aus dem Elfenbeinturm heraus. Genau das ist auch von KI-entworfener Architektur zu erwarten. Da hilft es auch nicht, wenn der Entwurf 100 Mal schneller fertig ist. Eine schlechte Entscheidung bleibt schlecht, egal wie schnell sie zustande kam.
 
 ## Architektur _mit_ der KI
 Konzepte, Bewertung und Verantwortung müssen also weiter von Menschen kommen. Eine Aussage der Art
@@ -76,7 +76,7 @@ Wenn du schlechte Prinzipien hast und KI anwendest, wirst du schneller schlechte
 
 Was sich ändert, ist das Tooling, um die neue Kollegin KI mit ins Boot zu holen. Dass Architekturdokumentation maschinen-zugänglich aber trotzdem menschentauglich sein muss, ist aktuell eine noch wenig beachtete Herausforderung.
 
-Die textuellen Teile solcher Dokumentationen entstanden traditionell mit WYSIWYG-Textprozessoren wie Microsoft Word, die für KI schlecht lesbar sind. Das Pendel schlägt deshalb gerade voll in die andere Richtung aus: Im Umfeld von Spec-driven Development sprießen Tools wie Speckit[SKT] und OpenSpec[OSP] aus dem Boden, die auf Markdown setzen. Hier wird alles der Maschinenzugänglichkeit untergeordnet, und nun sind Lesbarkeit und Wartbarkeit durch den Menschen mangelhaft.
+Die textuellen Teile solcher Dokumentationen entstanden traditionell mit WYSIWYG-Textprozessoren wie Microsoft Word, die für KI schlecht lesbar sind. Das Pendel schlägt deshalb gerade voll in die andere Richtung aus: Im Umfeld von Spec-driven Development sprießen Tools wie spec-kit[SKT] und OpenSpec[OSP] aus dem Boden, die auf Markdown setzen. Hier wird alles der Maschinenzugänglichkeit untergeordnet, und nun sind Lesbarkeit und Wartbarkeit durch den Menschen mangelhaft.
 
 Das open-source Spezifikationswerkzeug Specman[SMN] zeigt, wie es künftig alternativ aussehen könnte: strukturiertes WYSIWYG im UI, ein Pseudocode-artiges Dateiformat mit EBNF-Grammatik für optimale KI-Lesbarkeit, beides gekoppelt über ein CLI. Für Usecase-Spezifikationen ist das ein spannender Ansatz. Für Architekturdokumentation gibt es noch keine Entsprechung, und man muss sich ein wenig behelfen.
 
@@ -150,7 +150,7 @@ Zum Schluss nochmal zurück zu "Die Burg" von Ursula Poznanski, wo eine amoklauf
 
 [ASC] ASCIIDOC Website, https://asciidoc.org/
 
-[SKT] Speckit Website, https://github.com/github/spec-kit
+[SKT] spec-kit Website, https://github.com/github/spec-kit
 
 [OSP] OpenSpec Website, https://github.com/Fission-AI/OpenSpec
 
