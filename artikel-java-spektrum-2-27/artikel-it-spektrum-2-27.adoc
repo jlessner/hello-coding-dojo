@@ -11,7 +11,7 @@ Nevio: _"Was ist das für ein Konzept? Was soll das??"_ +
 Jannik: _"Wieso Konzept? Das ist KI."_ +
 Aus "Die Burg", Hörbuchfassung, Ursula Poznanski, 2024
 
-Dieser kleine Dialog könnte passender nicht beschreiben, was derzeit die Diskussion über die Rolle von Künstlicher Intelligenz (KI) in der Softwareentwicklung und der Software-Architektur prägt. Er beschreibt auch eine Erkenntnis, die sich trotz der rasanten Evolution von KI-Agenten im Kern nicht ändert: Ein LLM ist eine ultrahochentwickelte Pattern-Matching-Maschine, die hervorragend darin ist, Muster und Konzepte zu erkennen und ihnen zu folgen. Das *Erfinden* von Konzepten liegt aber nicht in ihrer Kernkompetenz. Überlässt man ihr diese Aufgabe, ist das quasi eine Einladung zum "Halluzinieren", und die Trefferquote für projekt-geeignete Ergebnisse ist zufällig. Zufall ist aber ein bisschen dünn für architektonische Konzepte, die auch KI-unterstützt nach hinten raus teuer zu ändern sind.
+Dieser kleine Dialog könnte passender nicht beschreiben, was derzeit die Diskussion über die Rolle von Künstlicher Intelligenz (KI) in der Softwareentwicklung und der Software-Architektur prägt. Er beschreibt auch eine Erkenntnis, die sich trotz der rasanten Evolution von KI-Agenten im Kern nicht ändert: Ein LLM ist eine ultrahochentwickelte Pattern-Matching-Maschine, die hervorragend darin ist, Muster und Konzepte zu erkennen und ihnen zu folgen. Das *Erfinden* von Konzepten liegt aber nicht in ihrer Kernkompetenz. Überlässt man ihr diese Aufgabe, ist das quasi eine Einladung zum "Halluzinieren", und die Trefferquote für projektgeeignete Ergebnisse ist zufällig. Zufall ist aber ein bisschen dünn für architektonische Konzepte, die auch KI-unterstützt nach hinten raus teuer zu ändern sind.
 
 Mit "Architekturarbeit" sind in diesem Artikel die Aspekte gemeint, bei denen das Team selbst Hand anlegt. Für den Bau eines neuen Teilsystems gibt die Makroebene beispielsweise vor, dass die Kommunikation mit anderen Systemen asynchron über JMS läuft und die Daten in einem alten DB2-Schätzchen liegen, weil nur dafür Lizenzen und ausgebildete Admins verfügbar sind. Zwischen diesen Vorgaben und konkretem Anwendungscode klafft aber noch eine breite Lücke an Entscheidungen, die das Team selbst treffen muss, damit der Code hinterher elegant, wartbar und erweiterbar ist. Hier gibt es kein allgemeingültig "richtig" oder "falsch", nichts in Stein gemeißeltes und viel subjektiven Team-Spirit.
 
@@ -61,7 +61,7 @@ Ein ausgearbeitetes Konzept kann KI oft gut auf Konsistenz prüfen, bevor man in
 
 Spannend ist das Gegenlesen auch, wenn ein neues Konzept in eine _bestehende_ Software eingeführt werden soll. Die KI kann den Code wesentlich schneller als Menschen darauf untersuchen, ob er sich mit dem Konzept verträgt. Bezogen auf das Beispiel vom Anfang: auf der "grünen Wiese" mag Optimistic Locking unproblematisch sein. Bei einem Bestandsprojekt stellt man aber vielleicht fest, dass es eine Tabelle mit Milliarden von Datensätzen gibt, die nur über Massenoperationen beschickt wird. Optimistic Locking auf Einzelsatzebene ist hier nicht praktikabel.
 
-Die Dokumentation muss auch für jene Agenten jederzeit abrufbar sein, die später implementieren. Wo sich Kollegen sonst mangels brauchbarer Doku in der Kaffeeküche absprechen und das Gesagte im Langzeitgedächtnis speichern, fängt eine KI täglich von vorn an. Ralf Klemmer hat Agenten auf seinem Youtube-Kanal mit "Betrunkenen Genies" verglichen [RKB]. Damit diese Genies nach durchzechter Nacht am nächsten Morgen mit Filmriss wieder auf Spur kommen, muss alles Wichtige sofort parat liegen.
+Die Dokumentation muss auch für jene Agenten jederzeit abrufbar sein, die später implementieren. Wo sich Kollegen sonst mangels brauchbarer Doku in der Kaffeeküche absprechen und das Gesagte im Langzeitgedächtnis speichern, fängt eine KI täglich von vorn an. Ralf Klemmer hat Agenten auf seinem YouTube-Kanal mit "Betrunkenen Genies" verglichen [RKB]. Damit diese Genies nach durchzechter Nacht am nächsten Morgen mit Filmriss wieder auf Spur kommen, muss alles Wichtige sofort parat liegen.
 
 Aber was heißt nun "parat liegen"?
 
@@ -75,11 +75,11 @@ der liegt gar nicht so falsch. Klassische Werte eines stringenten Software-Engin
 [quote]
 Wenn du schlechte Prinzipien hast und KI anwendest, wirst du schneller schlechter; wenn du gute Prinzipien hast, wirst du schneller besser, weil KI den vorhandenen Kurs einfach beschleunigt.
 
-Was sich ändert, ist das Tooling, um die neue Kollegin KI mit ins Boot zu holen. Dass Architekturdokumentation maschinen-zugänglich aber trotzdem menschentauglich sein muss, ist aktuell eine noch wenig beachtete Herausforderung.
+Was sich ändert, ist das Tooling, um die neue Kollegin KI mit ins Boot zu holen. Dass Architekturdokumentation maschinenzugänglich, aber trotzdem menschentauglich sein muss, ist aktuell eine noch wenig beachtete Herausforderung.
 
-Die textuellen Teile solcher Dokumentationen entstanden traditionell mit WYSIWYG-Textprozessoren wie Microsoft Word, die für KI schlecht lesbar sind. Das Pendel schlägt deshalb gerade voll in die andere Richtung aus: Im Umfeld von Spec-driven Development sprießen Tools wie spec-kit[SKT] und OpenSpec[OSP] aus dem Boden, die auf Markdown setzen. Hier wird alles der Maschinenzugänglichkeit untergeordnet, und nun sind Lesbarkeit und Wartbarkeit durch den Menschen mangelhaft.
+Die textuellen Teile solcher Dokumentationen entstanden traditionell mit WYSIWYG-Textprozessoren wie Microsoft Word, die für KI schlecht lesbar sind. Das Pendel schlägt deshalb gerade voll in die andere Richtung aus: Im Umfeld von Spec-driven Development sprießen Tools wie spec-kit [SKT] und OpenSpec [OSP] aus dem Boden, die auf Markdown setzen. Hier wird alles der Maschinenzugänglichkeit untergeordnet, und nun sind Lesbarkeit und Wartbarkeit durch den Menschen mangelhaft.
 
-Das open-source Spezifikationswerkzeug Specman[SMN] zeigt, wie es künftig alternativ aussehen könnte: strukturiertes WYSIWYG im UI, ein Pseudocode-artiges Dateiformat mit EBNF-Grammatik für optimale KI-Lesbarkeit, beides gekoppelt über ein CLI. Für Usecase-Spezifikationen ist das ein spannender Ansatz. Für Architekturdokumentation gibt es noch keine Entsprechung, und man muss sich ein wenig behelfen.
+Das Open-Source-Spezifikationswerkzeug Specman [SMN] zeigt, wie es künftig alternativ aussehen könnte: strukturiertes WYSIWYG im UI, ein Pseudocode-artiges Dateiformat mit EBNF-Grammatik für optimale KI-Lesbarkeit, beides gekoppelt über ein CLI. Für Usecase-Spezifikationen ist das ein spannender Ansatz. Für Architekturdokumentation gibt es noch keine Entsprechung, und man muss sich ein wenig behelfen.
 
 ### Code als Doku
 
@@ -107,7 +107,7 @@ Die How-Tos wurden ursprünglich nur von Entwicklern verwendet, wirken aber auch
 
 Bei komplizierteren Prozeduren erfolgt eine Zweiteilung. Das How-To enthält Abläufe und Regeln für Mensch _und_ Maschine. Hinweise, die nur für einen Agenten relevant sind, liegen in einer separaten KI-Skill-Datei, die auf das How-To verweist und beliebig angereichert werden kann. Der Skill für eine umfangreiche Portierung eines UIs von GWT nach Vaadin enthält z.B. den Hinweis, die Arbeit in Runden aufzuteilen, weil sonst erfahrungsgemäß der Kontext überläuft und die KI auf halber Strecke anfängt rumzuspinnen.
 
-ABBILDUNG: How-To und Skill-Datei (wird nachgereicht)
+ABBILDUNG: How-To und Skill-Datei (wird nach Annahme des Artikels nachgereicht)
 
 Kontextüberläufe sind auch der Grund, warum für isolierte Aufgaben kleine isolierte Dokumente besser geeignet sind als Abschnitte in einem Zentraldokument.
 
@@ -118,11 +118,11 @@ Für alles, was nicht in den How-Tos steht, gibt es ein zentrales Architekturdok
 
 - Ein größeres Dokument ist mit so simplen Mitteln wie AsciiDoc für Menschen mühsamer zu pflegen als mit komfortablen Textprozessoren. 10 Seiten sind in Ordnung, aber bei 50 Seiten und mehr stellt sich ein Gefühl von "Wrong tool for the job" ein. Selbst Tabellen und Kapitelreferenzen werden zur Herausforderung. Mit Markdown ist es noch schwieriger.
 
-- Für die Abbildungen gibt es kaum sinnvolle Wege, sie direkt im Editor zu erstellen. Üblich ist ein breiter Kanon an Tools, z.B. UML-Tools für Diagramme, die üblicherweise als Screenshots eingebunden werden.
+- Für die Abbildungen gibt es kaum bequeme Wege, sie direkt im Editor zu erstellen. Üblich ist ein breiter Kanon an Tools, z.B. UML-Tools für Diagramme, die üblicherweise als Screenshots eingebunden werden.
 
-Perfekte Maschinenlesbarkeit also eher nicht. Das kann aber OK sein, wenn man die permanent benötigten Bestandteile wie die How-Tos separiert und die zentrale Doku auf die wesentlich seltener gebrauchten Aspekte beschränkt. Für die Einarbeitung neuer Team-Mitglieder ist sie beispielsweise enorm wichtig, aber das ist ein seltener Vorgang, bei dem gute Verständlichkeit für Menschen im Vordergrund steht. Erfahrene Mitglieder müssen meist nur ran, wenn ein Konzept geändert oder neu aufgenommen wird (siehe "Gegenlesen"). Wenn die KI dann für ihre Mitarbeit auch Bilder zu scannen muss, ist das nicht so schlimm.
+Perfekte Maschinenlesbarkeit also eher nicht. Das kann aber OK sein, wenn man die permanent benötigten Bestandteile wie die How-Tos separiert und die zentrale Doku auf die wesentlich seltener gebrauchten Aspekte beschränkt. Für die Einarbeitung neuer Team-Mitglieder ist sie beispielsweise enorm wichtig, aber das ist ein seltener Vorgang, bei dem gute Verständlichkeit für Menschen im Vordergrund steht. Erfahrene Mitglieder müssen meist nur ran, wenn ein Konzept geändert oder neu aufgenommen wird (siehe "Gegenlesen"). Wenn die KI dann für ihre Mitarbeit auch Bilder scannen muss, ist das nicht so schlimm.
 
-Ärgerlich ist die Hürde allerdings, wenn die KI auch _direkt_ an der Doku mitarbeiten soll, wie das bei den oben erwähnten Specman-Spezifikationen der Fall ist. Gängige UML-Tools sind darauf z.B. noch nicht ausgelegt und das Arbeiten mit Screenshots ist auch nicht förderlich. Im Tooling steckt also noch richtig Potenzial für die Zukunft.
+Ärgerlich ist die Hürde allerdings, wenn die KI auch _direkt_ an der Doku mitarbeiten soll. Die Entstehung dieses Artikels selbst liefert ein Beispiel für das Problem. Er entstand in AsciiDoc, um von der direkten Mithilfe von GitHub Copilot beim Zu-Ende-Formulieren einzelner Sätze zu profitieren. Er ist klein genug dafür. Aber für das Einholen von Review-Kommentaren von Kolleginnen und Kollegen wurde das Dokument nach Microsoft Word exportiert, weil nur dort Änderungsmodus und Kommentarfunktion zur Verfügung stehen. Eine Form, die für Mensch _und_ Maschine gleichermaßen taugt, fehlt. Im Tooling steckt also noch richtig Potenzial.
 
 ## Durchsetzen der Architektur
 
@@ -130,9 +130,9 @@ Saubere Konzepte, sauber dokumentiert, also alles gut?
 
 Es ist in der Tat beeindruckend, welche Produktivitätsgewinne sich auf der oben beschriebenen Grundlage in der Implementierungsarbeit realisieren lassen. Es entsteht ein ganz anderer Drive, wenn die KI einen Großteil der kanonischen Arbeit schultert, und der menschliche Entwickler sich viel besser auf die Kniffligkeiten konzentieren kann. Er wird zunehmend zum "Supervisor" und sollte einen Teil der gesparten Zeit in eine ganz neue dieser Kniffligkeiten investieren: darauf achten, dass sich das "betrunkene Genie" nicht mitten drin wie der Elefant im Porzellanladen aufführt. Mitunter kommt es nämlich schleichend oder plötzlich ohne ersichtlichen Grund zu einer Qualitätsdrift in der Arbeit der KI. Schlechte Vorbilder im Code oder zu volle Kontextfenster können z.B. dafür sorgen, dass Konzepte nur noch halbherzig Berücksichtigung finden, zumal die KI sie nicht wirklich "versteht", sondern nur nach Pattern-Matching-Prinzip befolgt.
 
-Eine automatische Absicherung gegen solche Fälle sind "Leitplankentests". Sie zielen nicht auf die produktive Funktionalität ab, sondern auf die Einhaltung der eigenen Regeln des Software-Engineerings. Bei architektonischen Aspekten sind ArchUnit-Tests eine verbreitete Variante [AUT]. In die Build-Pipeline eingebettet, verhindern sie, dass regel-verletzender Code überhaupt in Produktion gelangt. Außerdem können KI-Agenten sich anhand der Testergebnisse gleich selber korrigieren. Der Artikel "Leitplankentests" [JLL] gibt weitere Beispiele.
+Eine automatische Absicherung gegen solche Fälle sind "Leitplankentests". Sie zielen nicht auf die produktive Funktionalität ab, sondern auf die Einhaltung der eigenen Regeln des Software-Engineerings. Bei architektonischen Aspekten sind ArchUnit-Tests eine verbreitete Variante [AUT]. In die Build-Pipeline eingebettet, verhindern sie, dass regelverletzender Code überhaupt in Produktion gelangt. Außerdem können KI-Agenten sich anhand der Testergebnisse gleich selber korrigieren. Der Artikel "Leitplankentests" [JLL] gibt weitere Beispiele.
 
-Wo weder programmierte Tests noch Qualitätsanalysen à la SonarQube greifen, kann wiederum die KI helfen. Mit sauberer, maschinen-zugänglicher Architekturdokumentation lässt sich nämlich maschinell prüfen, ob der Code die dokumentierten Konzepte einhält und die Schritte der How-Tos befolgt wurden - egal, ob er von einem Agenten, einem Menschen oder einem Mensch-Agenten-Pair stammt. Da in diese Aufgabe viele Quellen eingehen, lohnt hier ganz besonders ein Blick auf die Kontextgrößen: Clustern von Dokumentation und Code sorgt für überschaubare Teilaufgaben. Auch die Einhaltung von Usecase-Spezifikationen und das Vorkommen von Logikfehlern lassen sich prüfen. Das entlastet die menschlichen Reviewer erheblich.
+Wo weder programmierte Tests noch Qualitätsanalysen à la SonarQube greifen, kann wiederum die KI helfen. Mit sauberer, maschinenzugänglicher Architekturdokumentation lässt sich nämlich maschinell prüfen, ob der Code die dokumentierten Konzepte einhält und die Schritte der How-Tos befolgt wurden - egal, ob er von einem Agenten, einem Menschen oder einem Mensch-Agenten-Pair stammt. Da in diese Aufgabe viele Quellen eingehen, lohnt hier ganz besonders ein Blick auf die Kontextgrößen: Clustern von Dokumentation und Code sorgt für überschaubare Teilaufgaben. Auch die Einhaltung von Usecase-Spezifikationen und das Vorkommen von Logikfehlern lassen sich prüfen. Das entlastet die menschlichen Reviewer erheblich.
 
 Warum dann überhaupt noch menschliche Reviews?
 
@@ -140,7 +140,7 @@ Weil niemand vorher weiß, wie weit sich Menschen und Agenten über die als selb
 
 ## Fazit
 
-Eigentlich beruhigend, dass klassische Werte des Software-Engineerings durch KI-Einsatz eher bestätigt als abgelöst werden. Wer schon immer um saubere Konzepte bemüht war, wird die Qualitätsgewinne zu schätzen wissen. Die KI nimmt uns das Konzipieren nicht ab. Aber es ist ein gutes Gefühl, die grauen Zellen so richtig rauchen zu lassen, während die KI mit ihrem enormen Allgemeinwissen und ihrer Unermüdlichkeit unterstützt, Flüchtigkeitsfehler ausmerzt und - bildlich besprochen - am Ende auch noch Fußleisten anbringt und durchfegt.
+Eigentlich beruhigend, dass klassische Werte des Software-Engineerings durch KI-Einsatz eher bestätigt als abgelöst werden. Wer schon immer um saubere Konzepte bemüht war, wird die Qualitätsgewinne zu schätzen wissen. Die KI nimmt uns das Konzipieren nicht ab. Aber es ist ein gutes Gefühl, die grauen Zellen so richtig rauchen zu lassen, während die KI mit ihrem enormen Allgemeinwissen und ihrer Unermüdlichkeit unterstützt, Flüchtigkeitsfehler ausmerzt und - bildlich gesprochen - am Ende auch noch Fußleisten anbringt und durchfegt.
 
 Zum Schluss nochmal zurück zu "Die Burg" von Ursula Poznanski, wo eine amoklaufende KI autonom einen Hightech-Escape-Room steuert. Zur Vollkatastrophe kommt es nur, weil die Kontrollsysteme, über welche die Game-Master das Geschehen überwachen, von genau der gleichen KI gesteuert werden. Eine völlig aberwitzige System-Architektur, die uns hoffentlich erspart bleibt, wenn Menschen ihre Kopfcomputer eingeschaltet lassen.
 
@@ -155,7 +155,7 @@ Zum Schluss nochmal zurück zu "Die Burg" von Ursula Poznanski, wo eine amoklauf
 
 [BRB] Richard Seidl / Benedikt Stemmildt, https://www.richard-seidl.com/de/podcast/agentic-engineering
 
-[ASC] AsciiDoc Website, https://AsciiDoc.org/
+[ASC] AsciiDoc Website, https://asciidoc.org/
 
 [SKT] spec-kit Website, https://github.com/github/spec-kit
 
