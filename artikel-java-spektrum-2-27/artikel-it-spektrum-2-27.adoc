@@ -1,4 +1,5 @@
 :toc:
+:author: Jan Leßner, Luca Pieprzyk
 
 # Kollegin KI und die Architektur
 
@@ -10,13 +11,13 @@ Nevio: _"Was ist das für ein Konzept? Was soll das??"_ +
 Jannik: _"Wieso Konzept? Das ist KI."_ +
 Aus "Die Burg", Hörbuchfassung, Ursula Poznanski, 2024
 
-Dieser kleine Dialog könnte passender nicht beschreiben, was derzeit die Diskussion über die Rolle von Künstlicher Intelligenz (KI) in der Softwareentwicklung und der Software-Architektur prägt. Er beschreibt auch eine Erkenntnis, die sich trotz der rasanten Evolution von KI-Agenten im Kern nicht ändert: Ein LLM ist eine ultrahochentwickelte Pattern-Matching-Maschine, die hervorragend darin ist, Muster und Konzepte zu erkennen und ihnen zu folgen. Das *Erfinden* von Konzepten liegt aber nicht in ihrer Kernkompetenz. Überlässt man ihr diese Aufgabe, ist das quasi eine Einladung zum "Halluzinieren", und die Trefferquote für projekt-geeignete Ergebnisse ist zufällig. Zufall ist aber ein bisschen dünn für architektonische Konzepte, die nach hinten raus ziemlich teuer zu ändern sind.
+Dieser kleine Dialog könnte passender nicht beschreiben, was derzeit die Diskussion über die Rolle von Künstlicher Intelligenz (KI) in der Softwareentwicklung und der Software-Architektur prägt. Er beschreibt auch eine Erkenntnis, die sich trotz der rasanten Evolution von KI-Agenten im Kern nicht ändert: Ein LLM ist eine ultrahochentwickelte Pattern-Matching-Maschine, die hervorragend darin ist, Muster und Konzepte zu erkennen und ihnen zu folgen. Das *Erfinden* von Konzepten liegt aber nicht in ihrer Kernkompetenz. Überlässt man ihr diese Aufgabe, ist das quasi eine Einladung zum "Halluzinieren", und die Trefferquote für projekt-geeignete Ergebnisse ist zufällig. Zufall ist aber ein bisschen dünn für architektonische Konzepte, die auch KI-unterstützt nach hinten raus teuer zu ändern sind.
 
 Mit "Architekturarbeit" sind in diesem Artikel die Aspekte gemeint, bei denen das Team selbst Hand anlegt. Für den Bau eines neuen Teilsystems gibt die Makroebene beispielsweise vor, dass die Kommunikation mit anderen Systemen asynchron über JMS läuft und die Daten in einem alten DB2-Schätzchen liegen, weil nur dafür Lizenzen und ausgebildete Admins verfügbar sind. Zwischen diesen Vorgaben und konkretem Anwendungscode klafft aber noch eine breite Lücke an Entscheidungen, die das Team selbst treffen muss, damit der Code hinterher elegant, wartbar und erweiterbar ist. Hier gibt es kein "richtig" oder "falsch", nichts in Stein gemeißeltes und viel subjektiven Team-Spirit.
 
-Z.B. braucht das Teilsystem eine Absicherung gegen konkurrierende Zugriffe. Macht man das mit Optimistic Locking und Basisklassen für alle zukünftigen Entitäten und Repositories? Sind später Ausnahmen absehbar? Passt das zu den nicht-funktionalen _fachlichen_ Anforderungen? Das Team muss recherchieren, Erfahrung einbringen, diskutieren, im Mob-Programming ausprobieren und Beschlüsse fassen. Das klingt nach Vorgängen, die KI nicht leisten, nur unterstützen kann.
+Wenn das Teilsystem z.B. eine Absicherung gegen konkurrierende Zugriffe braucht: macht man das dann mit Optimistic Locking und Basisklassen für alle zukünftigen Entitäten und Repositories? Sind später Ausnahmen absehbar? Passt das zu den nicht-funktionalen _fachlichen_ Anforderungen? Das Team muss recherchieren, Erfahrung einbringen, diskutieren, im Mob-Programming ausprobieren und Beschlüsse fassen. Das klingt nach Vorgängen, die KI nicht leisten, nur unterstützen kann.
 
-Die hier geschilderten Erfahrungen stammen übrigens aus Systemen der Bilanzanalyse mit einigen Hunderttausend Zeilen nicht-trivialen Codes, betreut von typischen 2-Pizza-Teams. Vibe-Coding mit nur ungefähr vorhersagbaren Ergebnisse ist hier fehl am Platze.
+Die im Folgenden geschilderten Erfahrungen stammen übrigens aus Systemen der Bilanzanalyse mit einigen Hunderttausend Zeilen nicht-trivialen Codes, betreut von typischen 2-Pizza-Teams. Vibe-Coding mit nur ungefähr vorhersagbaren Ergebnissen ist hier fehl am Platze.
 
 ## Architektur _von_ der KI?
 Können wir nicht einfach ein Team von KI-Agenten auf die Architektur ansetzen und das lästige Menschenteam aus der Verantwortung nehmen?
@@ -35,16 +36,16 @@ image::artikel-it-spektrum-2-27-01.png[Architektur mit KI, 600]
 Was eine _menschliche_ Architekturentscheidung häufig schlecht macht, lässt sich mithilfe von KI zum Teil gut abfangen.
 
 ### Unbekannte Unbekannte
-Das meiste Wissen ist jenes, von dem wir nicht wissen, dass wir es nicht wissen. Solche Lücken lassen sich nicht gezielt schließen, weil sie uns gar nicht bewusst sind. Kollaborative Lernformen wie Coding Dojos helfen, sie über den Erfahrungsschatz anderer zu erkennen. Hier kann die KI ein neuer Sparringspartner sein, der aus seinem Allgemeinwissen heraus Vorschläge macht und für Inspiration sorgt.
+Das meiste Wissen ist jenes, von dem wir nicht wissen, dass wir es nicht wissen [NNT]. Solche Lücken lassen sich nicht gezielt schließen, weil sie uns gar nicht bewusst sind. Kollaborative Lernformen wie Coding Dojos helfen, sie über den Erfahrungsschatz anderer zu erkennen. Hier kann die KI ein neuer Sparringspartner sein, der aus seinem Allgemeinwissen heraus Vorschläge macht und für Inspiration sorgt.
 
-Wer im Beispiel aus der Einleitung nur weiß, dass er irgendwie konkurrierende Zugriffe absichern muss, aber von "Optimistic Locking" noch nie gehört hat, der schildert einem Agenten möglichst ausführlich die Herausforderung: bekannte Details, eigene Ideen, Randbedingungen. Wo sich ein menschlicher Sparringspartner eher überfordert fühlt, sorgt das bei einem Agenten für gezieltere, gut erklärte Ergebnisse. Ausführlichkeit zwingt außerdem dazu, die Frage präzise zu formulieren und zu hinterfragen, ob einem die _Problemstellung_ hundertprozentig klar ist. Das ist eine wichtige Voraussetzung für einen späteren ADR (Architecture Decision Record). Der Vorgang des präzisen Formulierens ist übrigens ein erklecklicher Teil eines guten Entwurfsprozesses.
+Wer im Beispiel aus der Einleitung nur weiß, dass er irgendwie konkurrierende Zugriffe absichern muss, aber von "Optimistic Locking" noch nie gehört hat, der schildert einem Agenten möglichst ausführlich die Herausforderung: bekannte Details, eigene Ideen, Randbedingungen. Wo sich ein menschlicher Sparringspartner eher überfordert fühlt, sorgt das bei einem Agenten für gezieltere, gut erklärte Ergebnisse. Ausführlichkeit zwingt außerdem dazu, die Frage präzise zu formulieren und zu verifizieren, ob einem die _Problemstellung_ hundertprozentig klar ist. Das ist eine wichtige Voraussetzung für einen späteren ADR (Architecture Decision Record). Der Vorgang des präzisen Formulierens ist übrigens ein erklecklicher Teil eines guten Entwurfsprozesses.
 
 *JA, richtig gelesen!* +
 Die Architekturdokumentation wird mit der Nutzung von KI wieder wichtiger denn je. Dazu später mehr.
 
 ### Lieblingslösungen
 
-Menschen klammern sich bei Richtungsentscheidungen gern an Lieblingslösungen. Das ist nicht per se schlecht, denn gute Erfahrungen zählen. Problematisch wird es, wenn die Lösung nicht optimal passt. KI hat hingegen keine "Lieblinge" und macht daher neutralere Vorschläge, allerdings prinzipbedingt mit der Tendenz zu Standardlösungen. Das ist aber nicht schlimm, sondern hilft bei einer anderen Quelle menschlicher Fehlentscheidungen...
+Menschen klammern sich bei Richtungsentscheidungen gern an Lieblingslösungen. Das ist nicht per se schlecht, denn gute Erfahrungen zählen. Problematisch wird es, wenn die Lösung nicht optimal passt - sei es technisch oder organisatorisch bedingt. KI hat hingegen keine "Lieblinge" und macht daher neutralere Vorschläge, allerdings prinzipbedingt mit der Tendenz zu Standardlösungen. Das ist aber nicht schlimm, sondern hilft bei einer anderen Quelle menschlicher Fehlentscheidungen...
 
 ### Inneres Kolloquium
 Ihren Lieblingslösungen gegenüber neigen Menschen zur Alternativen-Blindheit und scheuen mitunter die Diskussion mit Kollegen. Hat mich aber ein KI-Agent auf eine Alternative aufmerksam gemacht, kann ich meinen Favoriten erstmal ihm gegenüber mit Argumenten verteidigen. Es ist egal, über wie viele Runden dieses innere Kolloquium geht und ob am Ende ein Dissens bleibt: Der Agent ist unermüdlich und hinterher nicht beleidigt. Ob ich bei meinem Favoriten bleibe oder mich überzeugen lasse - das "Warum" für meine menschlichen Kollegen und den ADR ist mit Sicherheit gut geschärft.
@@ -53,7 +54,7 @@ Wichtig ist, der KI für diese Phase explizit eine kritische Haltung einzuprompt
 
 _"Mir rollen sich jedes Mal die Fußnägel hoch, wenn wir ..."._
 
-Schwachen Konzepten folgen sie genauso konsequent wie guten.
+Schwachen Konzepten folgen sie leider genauso konsequent wie guten.
 
 ### Gegenlesen
 Ein ausgearbeitetes Konzept kann KI oft gut auf Konsistenz prüfen, bevor man in die Umsetzung geht. Voraussetzung ist, dass es irgendwo klar beschrieben ist, was wieder zur Architekturdokumentation führt. Sie muss für Mensch und Maschine gleichermaßen zugänglich sein.
@@ -106,14 +107,14 @@ Die How-Tos wurden ursprünglich nur von Entwicklern verwendet, wirken aber auch
 
 Bei komplizierteren Prozeduren erfolgt eine Zweiteilung. Das How-To enthält Abläufe und Regeln für Mensch _und_ Maschine. Hinweise, die nur für einen Agenten relevant sind, liegen in einer separaten KI-Skill-Datei, die auf das How-To verweist und beliebig angereichert werden kann. Der Skill für eine umfangreiche Portierung eines UIs von GWT nach Vaadin enthält z.B. den Hinweis, die Arbeit in Runden aufzuteilen, weil sonst erfahrungsgemäß der Kontext überläuft und die KI auf halber Strecke anfängt rumzuspinnen.
 
-ABBILDUNG: How-To und Skill-Datei
+ABBILDUNG: How-To und Skill-Datei (wird nachgereicht)
 
 Kontextüberläufe sind auch der Grund, warum für isolierte Aufgaben kleine isolierte Dokumente besser geeignet sind als Abschnitte in einem Zentraldokument.
 
 How-Tos pflegt das Team gemeinschaftlich und redaktionell sauber, auch wenn die KI öfter bei der Aktualisierung hilft. Skill-Dateien sind hingegen eher "Sumpfgebiet": Hier darf die KI nach Belieben selbst schreiben, und sie gelten als ständig im Wandel, weil sich die Fähigkeiten der Agenten permanent ändern.
 
 ### Die zentrale Architekturdoku
-Für alles, was nicht in den How-Tos steht, gibt es ein zentrales Architekturdokument: die ADRs, querschnittliche Konzepte wie Authentifizierung / Autorisierung, die Systemlandschaft, den Technologiestack, das Transaktionsmanagement. Wenn man es ernst nimmt, ist das ein recht umfangreiches Dokument mit vielen illustrierenden Abbildungen. Hier wird die Unterstützung für Mensch *und* Maschine schwierig:
+Für alles, was nicht in den How-Tos steht, gibt es ein zentrales Architekturdokument: die ADRs, querschnittliche Konzepte wie Authentifizierung / Autorisierung, die Systemlandschaft, den Technologiestack, das Transaktionsmanagement, um einige Beispiele zu nennen. Wenn man es ernst nimmt, ist das ein recht umfangreiches Dokument mit vielen illustrierenden Abbildungen [A42]. Hier wird die Unterstützung für Mensch *und* Maschine schwierig:
 
 - Ein größeres Dokument ist mit so simplen Mitteln wie ASCIIDOC für Menschen mühsam zu pflegen. 10 Seiten sind in Ordnung, aber bei 50 Seiten stellt sich ein Gefühl von "Wrong tool for the job" ein. Selbst Tabellen und Kapitelreferenzen werden zur Herausforderung. Mit Markdown ist es noch schwieriger.
 
@@ -121,13 +122,15 @@ Für alles, was nicht in den How-Tos steht, gibt es ein zentrales Architekturdok
 
 Perfekte Maschinenlesbarkeit also eher nicht. Das kann aber OK sein, wenn man die permanent benötigten Bestandteile wie die How-Tos separiert und die zentrale Doku auf die wesentlich seltener gebrauchten Aspekte beschränkt. Für die Einarbeitung neuer Team-Mitglieder ist sie beispielsweise enorm wichtig, aber das ist ein seltener Vorgang, bei dem gute Verständlichkeit für Menschen im Vordergrund steht. Erfahrene Mitglieder müssen meist nur ran, wenn ein Konzept geändert oder neu aufgenommen wird (siehe "Gegenlesen"). Wenn die KI dann für ihre Mitarbeit auch Bilder zu scannen muss, ist das nicht so schlimm.
 
+Ärgerlich ist die Hürde allerdings, wenn die KI auch _direkt_ an der Doku mitarbeiten soll, wie das bei den oben erwähnten Specman-Spezifikationen der Fall ist. Gängige UML-Tools sind darauf z.B. noch nicht ausgelegt und das Arbeiten mit Screenshots ist auch nicht förderlich. Im Tooling steckt also noch richtig Potenzial für die Zukunft.
+
 ## Durchsetzen der Architektur
 
 Saubere Konzepte, sauber dokumentiert, also alles gut?
 
-Na ja - nicht immer. Auch die KI verhält sich mitunter wie der Elefant im Porzellanladen. Zu volle Kontexte und schlechte Vorbilder im Code sorgen dafür, dass Konzepte nur halbherzig berücksichtigt werden, zumal die KI sie nicht versteht, sondern nur nach Pattern-Matching-Prinzip befolgt.
+Es ist vor allem erstmal beeindruckend, welche Produktivitätsgewinne sich auf der oben beschriebenen Grundlage in der Implementierungsarbeit realisieren lassen. Es entsteht ein ganz anderer Drive, wenn die KI einen Großteil der kanonischen Arbeit schultert, und der menschliche Entwickler sich viel besser auf die Kniffligkeiten konzentieren kann. Er wird zunehmend zum "Supervisor" und sollte einen Teil der gesparten Zeit in eine ganz neue dieser Kniffligkeiten investieren: darauf acht geben, dass sich das "betrunkene Genie" nicht mitten drin wie der Elefant im Porzellanladen aufführt. Mitunter kommt es nämlich plötzlich oder schleichend und ohne ersichtlichen Grund zu einer Qualitätsdrift in der Arbeit der KI. Zu volle Kontexte und schlechte Vorbilder im Code können z.B. dafür sorgen, dass Konzepte nur noch halbherzig Berücksichtigung finden, zumal die KI sie nicht wirklich "versteht", sondern nur nach Pattern-Matching-Prinzip befolgt.
 
-Eine Absicherung sind "Leitplankentests". Sie zielen nicht auf die produktive Funktionalität ab, sondern auf die Einhaltung der eigenen Regeln des Software-Engineerings. Bei architektonischen Aspekten sind ArchUnit-Tests eine verbreitete Variante. In die Build-Pipeline eingebettet, verhindern sie, dass regelverletzender Code überhaupt in Produktion gelangt. Außerdem können KI-Agenten sich anhand der Testergebnisse auch gleich selber korrigieren. Der Artikel "Leitplankentests" [JLL] gibt weitere Beispiele.
+Eine automatische Absicherung gegen solche Fälle sind "Leitplankentests". Sie zielen nicht auf die produktive Funktionalität ab, sondern auf die Einhaltung der eigenen Regeln des Software-Engineerings. Bei architektonischen Aspekten sind ArchUnit-Tests eine verbreitete Variante. In die Build-Pipeline eingebettet, verhindern sie, dass regelverletzender Code überhaupt in Produktion gelangt. Außerdem können KI-Agenten sich anhand der Testergebnisse auch gleich selber korrigieren. Der Artikel "Leitplankentests" [JLL] gibt weitere Beispiele.
 
 Wo weder programmierte Tests noch Qualitätsanalysen à la SonarQube greifen, steht eine KI-basierte Option zur Verfügung. Mit sauberer, maschinen-zugänglicher Architekturdokumentation lässt sich auch maschinell prüfen, ob der Code die dokumentierten Konzepte einhält und die Schritte der How-Tos befolgt wurden - egal ob er von einem Agenten, einem Menschen oder einem Mensch-Agenten-Pair stammt. Da in diese Aufgabe viele Quellen eingehen, lohnt ein Blick auf die Kontextgrößen: Clustern von Dokumentation und Code sorgt für überschaubare Teilaufgaben. Auch die Einhaltung von Usecase-Spezifikationen und das Vorkommen von Logikfehlern lassen sich prüfen. Das entlastet die menschlichen Reviewer erheblich.
 
@@ -137,12 +140,16 @@ Weil niemand vorher weiß, wie weit sich Menschen und Agenten über die als selb
 
 ## Fazit
 
-Eigentlich beruhigend, dass klassische Werte des Software-Engineerings durch KI-Einsatz eher bestätigt als abgelöst werden. Wer schon immer um saubere Konzepte bemüht war, wird die Qualitätsgewinne zu schätzen wissen. Die KI nimmt uns das Konzipieren nicht ab. Aber es ist ein gutes Gefühl, die grauen Zellen so richtig rauchen zu lassen, während die KI mit ihrem enormen Allgemeinwissen und ihrer Unermüdlichkeit unterstützt, Flüchtigkeitsfehler ausmerzt und am Ende auch noch die Muße hat, Fußleisten anzubringen.
+Eigentlich beruhigend, dass klassische Werte des Software-Engineerings durch KI-Einsatz eher bestätigt als abgelöst werden. Wer schon immer um saubere Konzepte bemüht war, wird die Qualitätsgewinne zu schätzen wissen. Die KI nimmt uns das Konzipieren nicht ab. Aber es ist ein gutes Gefühl, die grauen Zellen so richtig rauchen zu lassen, während die KI mit ihrem enormen Allgemeinwissen und ihrer Unermüdlichkeit unterstützt, Flüchtigkeitsfehler ausmerzt und - bildlich besprochen - am Ende auch noch Fußleisten anbringt und durchfegt.
 
-Zum Schluss nochmal zurück zu "Die Burg" von Ursula Poznanski, wo eine amoklaufende KI autonom einen Hightech-Escape-Room steuert. Zur Vollkatastrophe kommt es nur, weil die Kontrollsysteme, über die die Game-Master das Geschehen überwachen, von genau der gleichen KI gesteuert werden. Eine völlig aberwitzige Software-Architektur, die uns hoffentlich erspart bleibt, wenn Menschen ihre Kopfcomputer eingeschaltet lassen.
+Zum Schluss nochmal zurück zu "Die Burg" von Ursula Poznanski, wo eine amoklaufende KI autonom einen Hightech-Escape-Room steuert. Zur Vollkatastrophe kommt es nur, weil die Kontrollsysteme, über welche die Game-Master das Geschehen überwachen, von genau der gleichen KI gesteuert werden. Eine völlig aberwitzige System-Architektur, die uns hoffentlich erspart bleibt, wenn Menschen ihre Kopfcomputer eingeschaltet lassen.
 
 
 ## Quellen
+[NNT] Nassim Nicholas Taleb, Der Schwarze Schwan, 2007
+
+[A42] arc42, Architektur-Dokumentation, https://arc42.org/
+
 [RKB] Ralf Klemmer,
 4 KI-Konzepte, https://www.youtube.com/watch?v=Xo0UxEu3NP4
 
