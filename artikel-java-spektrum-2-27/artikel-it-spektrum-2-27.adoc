@@ -13,7 +13,7 @@ Aus "Die Burg", Hörbuchfassung, Ursula Poznanski, 2024
 
 Dieser kleine Dialog könnte passender nicht beschreiben, was derzeit die Diskussion über die Rolle von Künstlicher Intelligenz (KI) in der Softwareentwicklung und der Software-Architektur prägt. Er beschreibt auch eine Erkenntnis, die sich trotz der rasanten Evolution von KI-Agenten im Kern nicht ändert: Ein LLM ist eine ultrahochentwickelte Pattern-Matching-Maschine, die hervorragend darin ist, Muster und Konzepte zu erkennen und ihnen zu folgen. Das *Erfinden* von Konzepten liegt aber nicht in ihrer Kernkompetenz. Überlässt man ihr diese Aufgabe, ist das quasi eine Einladung zum "Halluzinieren", und die Trefferquote für projekt-geeignete Ergebnisse ist zufällig. Zufall ist aber ein bisschen dünn für architektonische Konzepte, die auch KI-unterstützt nach hinten raus teuer zu ändern sind.
 
-Mit "Architekturarbeit" sind in diesem Artikel die Aspekte gemeint, bei denen das Team selbst Hand anlegt. Für den Bau eines neuen Teilsystems gibt die Makroebene beispielsweise vor, dass die Kommunikation mit anderen Systemen asynchron über JMS läuft und die Daten in einem alten DB2-Schätzchen liegen, weil nur dafür Lizenzen und ausgebildete Admins verfügbar sind. Zwischen diesen Vorgaben und konkretem Anwendungscode klafft aber noch eine breite Lücke an Entscheidungen, die das Team selbst treffen muss, damit der Code hinterher elegant, wartbar und erweiterbar ist. Hier gibt es kein "richtig" oder "falsch", nichts in Stein gemeißeltes und viel subjektiven Team-Spirit.
+Mit "Architekturarbeit" sind in diesem Artikel die Aspekte gemeint, bei denen das Team selbst Hand anlegt. Für den Bau eines neuen Teilsystems gibt die Makroebene beispielsweise vor, dass die Kommunikation mit anderen Systemen asynchron über JMS läuft und die Daten in einem alten DB2-Schätzchen liegen, weil nur dafür Lizenzen und ausgebildete Admins verfügbar sind. Zwischen diesen Vorgaben und konkretem Anwendungscode klafft aber noch eine breite Lücke an Entscheidungen, die das Team selbst treffen muss, damit der Code hinterher elegant, wartbar und erweiterbar ist. Hier gibt es kein allgemeingültig "richtig" oder "falsch", nichts in Stein gemeißeltes und viel subjektiven Team-Spirit.
 
 Wenn das Teilsystem z.B. eine Absicherung gegen konkurrierende Zugriffe braucht: macht man das dann mit Optimistic Locking und Basisklassen für alle zukünftigen Entitäten und Repositories? Sind später Ausnahmen absehbar? Passt das zu den nicht-funktionalen _fachlichen_ Anforderungen? Das Team muss recherchieren, Erfahrung einbringen, diskutieren, im Mob-Programming ausprobieren und Beschlüsse fassen. Das klingt nach Vorgängen, die KI nicht leisten, nur unterstützen kann.
 
@@ -91,10 +91,10 @@ Empfehlenswert sind isolierte "Referenzimplementierungen" mit zwei Eigenschaften
 
 - Sie liegen in einem echten Code-Repository, z.B. in separaten Packages oder Sourcefoldern neben dem Produktivcode. Kompiliert eine Referenz nicht mehr oder werden ihre Tests rot, fällt das sofort auf. Sie teilen sich mit dem Produktivcode Frameworks, Basisklassen, Qualitätsmetriken usw., sodass beide nicht schleichend auseinanderlaufen.
 
-Das hilft auch, wenn Konzepte geändert werden müssen. Das probiert man dann nämlich erstmal nur an der Referenzimplementierung aus. Aus der Abwandlung kann ein KI-Agent anschließend mit etwas Hilfestellung die Abbildungsregeln vom alten auf das neue Konzept ableiten und die nervige mechanische Migration des Produktivcodes übernehmen. Die Grenze für die alte Regel, dass Architektur der schwer zu ändernde Teil einer Software ist, verschiebt sich so ein ordentliches Stück. Zu viel Mühsal taugt nicht mehr als Ausrede für das Festhalten an veralteten Konzepten.
+Das hilft auch, wenn Konzepte geändert werden müssen. Das probiert man dann nämlich erstmal nur an der Referenzimplementierung aus. Aus der Abwandlung kann ein KI-Agent anschließend mit etwas Hilfestellung die Abbildungsregeln vom alten auf das neue Konzept ableiten und die nervige mechanische Migration des Produktivcodes übernehmen. Die Grenze für die alte Regel, dass Architektur der schwer zu ändernde Teil einer Software ist, verschiebt sich also ein Stück. Zu viel Mühsal taugt seltener als Ausrede für das Festhalten an veralteten Konzepten.
 
 ### How-Tos und Skills
-Schon lange vor KI-Agenten haben die Projekte, aus denen die hier beschriebenen Erfahrungen stammen, mit "How-To"-Dokumenten gearbeitet: kleinen, isolierten Dokumenten, die wiederkehrende technische Prozeduren beschreiben. Als Format hat sich dafür aus unterschiedlichen Gründen ASCIIDOC [ASC] bewährt. Das Dokument `how-to-add-new-table.adoc` beschreibt beispielsweise alle Schritte, um eine neue Datenbanktabelle einzuführen:
+Schon lange vor KI-Agenten haben die Projekte, aus denen die hier beschriebenen Erfahrungen stammen, mit "How-To"-Dokumenten gearbeitet: kleinen, isolierten Dokumenten, die wiederkehrende technische Prozeduren beschreiben. Als Format hat sich dafür aus unterschiedlichen Gründen AsciiDoc [ASC] bewährt. Das Dokument `how-to-add-new-table.adoc` beschreibt beispielsweise alle Schritte, um eine neue Datenbanktabelle einzuführen:
 
 - Erweiterung des Datenmodells
 - Anlage einer Entity-Klasse, einer Datenbank-Adapterklasse und eines Repository
@@ -116,7 +116,7 @@ How-Tos pflegt das Team gemeinschaftlich und redaktionell sauber, auch wenn die 
 ### Die zentrale Architekturdoku
 Für alles, was nicht in den How-Tos steht, gibt es ein zentrales Architekturdokument: die ADRs, querschnittliche Konzepte wie Authentifizierung / Autorisierung, die Systemlandschaft, den Technologiestack, das Transaktionsmanagement, um einige Beispiele zu nennen. Wenn man es ernst nimmt, ist das ein recht umfangreiches Dokument mit vielen illustrierenden Abbildungen [A42]. Hier wird die Unterstützung für Mensch *und* Maschine schwierig:
 
-- Ein größeres Dokument ist mit so simplen Mitteln wie ASCIIDOC für Menschen mühsam zu pflegen. 10 Seiten sind in Ordnung, aber bei 50 Seiten stellt sich ein Gefühl von "Wrong tool for the job" ein. Selbst Tabellen und Kapitelreferenzen werden zur Herausforderung. Mit Markdown ist es noch schwieriger.
+- Ein größeres Dokument ist mit so simplen Mitteln wie AsciiDoc für Menschen mühsamer zu pflegen als mit komfortablen Textprozessoren. 10 Seiten sind in Ordnung, aber bei 50 Seiten und mehr stellt sich ein Gefühl von "Wrong tool for the job" ein. Selbst Tabellen und Kapitelreferenzen werden zur Herausforderung. Mit Markdown ist es noch schwieriger.
 
 - Für die Abbildungen gibt es kaum sinnvolle Wege, sie direkt im Editor zu erstellen. Üblich ist ein breiter Kanon an Tools, z.B. UML-Tools für Diagramme, die üblicherweise als Screenshots eingebunden werden.
 
@@ -128,7 +128,7 @@ Perfekte Maschinenlesbarkeit also eher nicht. Das kann aber OK sein, wenn man di
 
 Saubere Konzepte, sauber dokumentiert, also alles gut?
 
-Es ist in der Tat beeindruckend, welche Produktivitätsgewinne sich auf der oben beschriebenen Grundlage in der Implementierungsarbeit realisieren lassen. Es entsteht ein ganz anderer Drive, wenn die KI einen Großteil der kanonischen Arbeit schultert, und der menschliche Entwickler sich viel besser auf die Kniffligkeiten konzentieren kann. Er wird zunehmend zum "Supervisor" und sollte einen Teil der gesparten Zeit in eine ganz neue dieser Kniffligkeiten investieren: darauf acht geben, dass sich das "betrunkene Genie" nicht mitten drin wie der Elefant im Porzellanladen aufführt. Mitunter kommt es nämlich schleichend oder plötzlich ohne ersichtlichen Grund zu einer Qualitätsdrift in der Arbeit der KI. Schlechte Vorbilder im Code oder zu volle Kontextfenster können z.B. dafür sorgen, dass Konzepte nur noch halbherzig Berücksichtigung finden, zumal die KI sie nicht wirklich "versteht", sondern nur nach Pattern-Matching-Prinzip befolgt.
+Es ist in der Tat beeindruckend, welche Produktivitätsgewinne sich auf der oben beschriebenen Grundlage in der Implementierungsarbeit realisieren lassen. Es entsteht ein ganz anderer Drive, wenn die KI einen Großteil der kanonischen Arbeit schultert, und der menschliche Entwickler sich viel besser auf die Kniffligkeiten konzentieren kann. Er wird zunehmend zum "Supervisor" und sollte einen Teil der gesparten Zeit in eine ganz neue dieser Kniffligkeiten investieren: darauf achten, dass sich das "betrunkene Genie" nicht mitten drin wie der Elefant im Porzellanladen aufführt. Mitunter kommt es nämlich schleichend oder plötzlich ohne ersichtlichen Grund zu einer Qualitätsdrift in der Arbeit der KI. Schlechte Vorbilder im Code oder zu volle Kontextfenster können z.B. dafür sorgen, dass Konzepte nur noch halbherzig Berücksichtigung finden, zumal die KI sie nicht wirklich "versteht", sondern nur nach Pattern-Matching-Prinzip befolgt.
 
 Eine automatische Absicherung gegen solche Fälle sind "Leitplankentests". Sie zielen nicht auf die produktive Funktionalität ab, sondern auf die Einhaltung der eigenen Regeln des Software-Engineerings. Bei architektonischen Aspekten sind ArchUnit-Tests eine verbreitete Variante [AUT]. In die Build-Pipeline eingebettet, verhindern sie, dass regel-verletzender Code überhaupt in Produktion gelangt. Außerdem können KI-Agenten sich anhand der Testergebnisse gleich selber korrigieren. Der Artikel "Leitplankentests" [JLL] gibt weitere Beispiele.
 
@@ -155,7 +155,7 @@ Zum Schluss nochmal zurück zu "Die Burg" von Ursula Poznanski, wo eine amoklauf
 
 [BRB] Richard Seidl / Benedikt Stemmildt, https://www.richard-seidl.com/de/podcast/agentic-engineering
 
-[ASC] ASCIIDOC Website, https://asciidoc.org/
+[ASC] AsciiDoc Website, https://AsciiDoc.org/
 
 [SKT] spec-kit Website, https://github.com/github/spec-kit
 
@@ -163,6 +163,6 @@ Zum Schluss nochmal zurück zu "Die Burg" von Ursula Poznanski, wo eine amoklauf
 
 [SMN] Specman Website, https://specman.de
 
-[JLL] Jan Leßner, Leitplankentests, iX-Sonderausgabe, ...
+[JLL] Jan Leßner, Leitplankentests, iX-Sonderausgabe, https://www.heise.de/select/ix/2026/13/2605412445056705998
 
 [AUT] ArchUnit-Tests, https://www.archunit.org/
